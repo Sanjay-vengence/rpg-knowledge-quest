@@ -48,7 +48,7 @@ class AnswerSubmission(BaseModel):
 def home(request: Request):
     return templates.TemplateResponse(
         request,
-        "quest.html"
+        "hub.html"
     )
 @app.get("/quest")
 def quest_page(request: Request):
