@@ -1,0 +1,152 @@
+[
+  {
+    "quest_id": "purananuru_001",
+    "literature": "Purananuru",
+    "topic": "Sangam Literature",
+    "difficulty": "easy",
+    "story": "Purananuru is one of the important anthologies of classical Tamil Sangam literature.",
+    "question": "Purananuru belongs to which collection of Sangam literature?",
+    "options": [
+      "Ettuthokai",
+      "Pathupattu",
+      "Pathinenkilkanakku",
+      "Aimperumkappiyam"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "quest_id": "purananuru_002",
+    "literature": "Purananuru",
+    "topic": "Structure",
+    "difficulty": "easy",
+    "story": "The name Purananuru refers to an anthology containing four hundred poems.",
+    "question": "How many poems are traditionally included in Purananuru?",
+    "options": [
+      "100",
+      "200",
+      "300",
+      "400"
+    ],
+    "correct_answer": 3
+  },
+  {
+    "quest_id": "purananuru_003",
+    "literature": "Purananuru",
+    "topic": "Themes",
+    "difficulty": "easy",
+    "story": "Purananuru mainly deals with public and social aspects of life rather than private love.",
+    "question": "Which broad theme is strongly associated with Purananuru?",
+    "options": [
+      "War and public life",
+      "Astronomy",
+      "Grammar",
+      "Mathematics"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "quest_id": "purananuru_004",
+    "literature": "Purananuru",
+    "topic": "Poets",
+    "difficulty": "easy",
+    "story": "Several celebrated Tamil poets are represented in the Purananuru anthology.",
+    "question": "Which famous Tamil poet is associated with poems in Purananuru?",
+    "options": [
+      "Kaniyan Pungundranar",
+      "Kambar",
+      "Sekkizhar",
+      "Andal"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "quest_id": "purananuru_005",
+    "literature": "Purananuru",
+    "topic": "Poets",
+    "difficulty": "medium",
+    "story": "Kaniyan Pungundranar is remembered for a famous Purananuru poem expressing a broad view of humanity.",
+    "question": "Which idea is famously associated with Kaniyan Pungundranar's Purananuru poem?",
+    "options": [
+      "All places are my own and all people are my kin",
+      "Only kings are important",
+      "War is the only path to greatness",
+      "Knowledge belongs only to poets"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "quest_id": "purananuru_006",
+    "literature": "Purananuru",
+    "topic": "Themes",
+    "difficulty": "medium",
+    "story": "Purananuru contains poems about kings, warriors, generosity, war, death, and the values of society.",
+    "question": "Which quality of rulers is frequently praised in Purananuru?",
+    "options": [
+      "Generosity",
+      "Silence",
+      "Isolation",
+      "Secrecy"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "quest_id": "purananuru_007",
+    "literature": "Purananuru",
+    "topic": "Kings",
+    "difficulty": "medium",
+    "story": "The poems of Purananuru provide information about the rulers and social life of ancient Tamilakam.",
+    "question": "Which three major Tamil dynasties are frequently associated with the historical world described in Sangam literature?",
+    "options": [
+      "Chera, Chola and Pandya",
+      "Pallava, Chalukya and Rashtrakuta",
+      "Mughal, Chola and Pandya",
+      "Maurya, Gupta and Chera"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "quest_id": "purananuru_008",
+    "literature": "Purananuru",
+    "topic": "Ethics",
+    "difficulty": "medium",
+    "story": "Purananuru contains reflections on human life, death, fame, generosity, and the temporary nature of worldly power.",
+    "question": "Which idea is commonly explored in Purananuru poems?",
+    "options": [
+      "The impermanence of life",
+      "The invention of machines",
+      "Modern political elections",
+      "Space exploration"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "quest_id": "purananuru_009",
+    "literature": "Purananuru",
+    "topic": "Puram",
+    "difficulty": "hard",
+    "story": "Classical Tamil literary tradition divides themes into Akam and Puram. Purananuru is associated with the Puram tradition.",
+    "question": "What does the Puram tradition mainly deal with?",
+    "options": [
+      "Public life, war, valor and social values",
+      "Secret romantic feelings",
+      "Marriage ceremonies only",
+      "Descriptions of plants only"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "quest_id": "purananuru_010",
+    "literature": "Purananuru",
+    "topic": "Historical Value",
+    "difficulty": "hard",
+    "story": "Purananuru is valuable not only as poetry but also for the information it preserves about ancient Tamil society.",
+    "question": "Why is Purananuru important for understanding ancient Tamil society?",
+    "options": [
+      "It provides poetic descriptions of rulers, warriors, society, values and historical life",
+      "It is a manual about modern science",
+      "It contains only religious rituals",
+      "It was written as a modern historical textbook"
+    ],
+    "correct_answer": 0
+  }
+]
