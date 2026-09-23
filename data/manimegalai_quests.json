@@ -1,0 +1,152 @@
+[
+  {
+    "quest_id": "manimegalai_001",
+    "literature": "Manimegalai",
+    "topic": "Characters",
+    "difficulty": "easy",
+    "story": "Manimegalai is a major Tamil Buddhist epic that follows the spiritual journey of its central character.",
+    "question": "Who is the central female character of Manimegalai?",
+    "options": [
+      "Manimegalai",
+      "Kannagi",
+      "Madhavi",
+      "Avvaiyar"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "quest_id": "manimegalai_002",
+    "literature": "Manimegalai",
+    "topic": "Author",
+    "difficulty": "easy",
+    "story": "Manimegalai is traditionally associated with the poet who also wrote about Buddhist ideas and moral teachings.",
+    "question": "Who is traditionally credited as the author of Manimegalai?",
+    "options": [
+      "Sattanar",
+      "Ilango Adigal",
+      "Thiruvalluvar",
+      "Kambar"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "quest_id": "manimegalai_003",
+    "literature": "Manimegalai",
+    "topic": "Characters",
+    "difficulty": "easy",
+    "story": "Manimegalai is connected to the characters and events of Silappadhigaram.",
+    "question": "Who is Manimegalai's mother?",
+    "options": [
+      "Madhavi",
+      "Kannagi",
+      "Avvaiyar",
+      "Manimekala Devi"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "quest_id": "manimegalai_004",
+    "literature": "Manimegalai",
+    "topic": "Religion",
+    "difficulty": "easy",
+    "story": "The epic presents Manimegalai's movement away from worldly life toward spiritual values.",
+    "question": "Which religious tradition is strongly associated with Manimegalai?",
+    "options": [
+      "Buddhism",
+      "Jainism",
+      "Saivism",
+      "Vaishnavism"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "quest_id": "manimegalai_005",
+    "literature": "Manimegalai",
+    "topic": "Story",
+    "difficulty": "medium",
+    "story": "Manimegalai rejects a worldly life and chooses a path connected with spiritual practice and compassion.",
+    "question": "What does Manimegalai primarily seek through her spiritual journey?",
+    "options": [
+      "Spiritual liberation and compassion",
+      "Political power",
+      "Military victory",
+      "Wealth and fame"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "quest_id": "manimegalai_006",
+    "literature": "Manimegalai",
+    "topic": "Symbols",
+    "difficulty": "medium",
+    "story": "A magical bowl plays an important role in the story and is connected with Manimegalai's charitable activities.",
+    "question": "What is the name of the magical bowl associated with Manimegalai?",
+    "options": [
+      "Amudhasurabhi",
+      "Silambu",
+      "Kundalam",
+      "Valai"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "quest_id": "manimegalai_007",
+    "literature": "Manimegalai",
+    "topic": "Themes",
+    "difficulty": "medium",
+    "story": "The epic emphasizes compassion and helping people who suffer from hunger and poverty.",
+    "question": "Which value is strongly emphasized through Manimegalai's charitable actions?",
+    "options": [
+      "Compassion",
+      "Revenge",
+      "Conquest",
+      "Luxury"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "quest_id": "manimegalai_008",
+    "literature": "Manimegalai",
+    "topic": "Epic Tradition",
+    "difficulty": "medium",
+    "story": "Manimegalai continues the literary world introduced in Silappadhigaram.",
+    "question": "Manimegalai is traditionally considered which type of Tamil literary work?",
+    "options": [
+      "One of the Aimperumkappiyam, the Five Great Epics",
+      "A Sangam anthology",
+      "A grammar text",
+      "A devotional hymn collection"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "quest_id": "manimegalai_009",
+    "literature": "Manimegalai",
+    "topic": "Philosophy",
+    "difficulty": "hard",
+    "story": "The epic discusses Buddhist ideas and questions concerning suffering, desire, and liberation.",
+    "question": "Which philosophical idea is important in Manimegalai's spiritual journey?",
+    "options": [
+      "Freedom from desire and suffering",
+      "The pursuit of military glory",
+      "The accumulation of wealth",
+      "The expansion of kingdoms"
+    ],
+    "correct_answer": 0
+  },
+  {
+    "quest_id": "manimegalai_010",
+    "literature": "Manimegalai",
+    "topic": "Themes",
+    "difficulty": "hard",
+    "story": "Manimegalai combines its narrative with ethical and philosophical teachings.",
+    "question": "What broader message is strongly expressed through Manimegalai's transformation?",
+    "options": [
+      "Compassion, renunciation and spiritual pursuit",
+      "Power, conquest and wealth",
+      "Trade, warfare and politics",
+      "Fame, luxury and entertainment"
+    ],
+    "correct_answer": 0
+  }
+]
