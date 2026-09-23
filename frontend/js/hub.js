@@ -1,3 +1,3 @@
-function startSilappadhigaram() {
-    alert("Silappadhigaram adventure starting...");
+function startThirukkural() {
+    window.location.href = "http://127.0.0.1:8000/world";
 }
