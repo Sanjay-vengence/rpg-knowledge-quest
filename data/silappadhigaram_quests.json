@@ -1,0 +1,152 @@
+[
+  {
+    "quest_id": "silappadhigaram_001",
+    "literature": "Silappadhigaram",
+    "topic": "Characters",
+    "difficulty": "easy",
+    "story": "The ancient tale begins with the story of Kannagi and Kovalan. Your first challenge is to identify one of the central characters of the epic.",
+    "question": "Who is the central female character of Silappadhigaram?",
+    "options": [
+      "Kannagi",
+      "Manimekalai",
+      "Avvaiyar",
+      "Madhavi"
+    ],
+    "correct_answer": 0
+   },
+  {
+    "quest_id": "silappadhigaram_002",
+    "literature": "Silappadhigaram",
+    "topic": "Characters",
+    "difficulty": "easy",
+    "story": "Kannagi's story is closely connected with the story of Kovalan.",
+    "question": "Who is Kannagi's husband in Silappadhigaram?",
+    "options": [
+      "Kovalan",
+      "Cheran Senguttuvan",
+      "Nedunchezhiyan",
+      "Ilango Adigal"
+    ],
+    "correct_answer": 0
+    },
+  {
+    "quest_id": "silappadhigaram_003",
+    "literature": "Silappadhigaram",
+    "topic": "Author",
+    "difficulty": "easy",
+    "story": "Silappadhigaram is one of the important Tamil epics.",
+    "question": "Who is traditionally credited as the author of Silappadhigaram?",
+    "options": [
+      "Ilango Adigal",
+      "Thiruvalluvar",
+      "Kambar",
+      "Sattanar"
+    ],
+    "correct_answer": 0
+    },
+  {
+    "quest_id": "silappadhigaram_004",
+    "literature": "Silappadhigaram",
+    "topic": "Story",
+    "difficulty": "easy",
+    "story": "The story of Silappadhigaram follows the experiences of Kannagi and Kovalan.",
+    "question": "What is the name of the anklet that gives Silappadhigaram its title?",
+    "options": [
+      "Silambu",
+      "Valai",
+      "Thali",
+      "Kundalam"
+    ],
+    "correct_answer": 0
+    },
+  {
+    "quest_id": "silappadhigaram_005",
+    "literature": "Silappadhigaram",
+    "topic": "Story",
+    "difficulty": "easy",
+    "story": "Kannagi's story becomes a journey of justice after a serious injustice is committed against Kovalan.",
+    "question": "Which theme is strongly associated with Kannagi's story?",
+    "options": [
+      "Justice",
+      "Astronomy",
+      "Agriculture",
+      "Music"
+    ],
+    "correct_answer": 0
+    },
+  {
+    "quest_id": "silappadhigaram_006",
+    "literature": "Silappadhigaram",
+    "topic": "Story",
+    "difficulty": "medium",
+    "story": "The epic connects Kannagi's personal tragedy with a larger question of justice.",
+    "question": "Which pair are the central married couple in Silappadhigaram?",
+    "options": [
+      "Kannagi and Kovalan",
+      "Kannagi and Ilango Adigal",
+      "Madhavi and Nedunchezhiyan",
+      "Manimekalai and Kovalan"
+    ],
+    "correct_answer": 0
+    },
+  {
+    "quest_id": "silappadhigaram_007",
+    "literature": "Silappadhigaram",
+    "topic": "Places",
+    "difficulty": "medium",
+    "story": "The epic is closely connected with the ancient Tamil kingdoms and their important cities.",
+    "question": "Which city is associated with the Pandya kingdom in Silappadhigaram?",
+    "options": [
+      "Madurai",
+      "Puhar",
+      "Vanji",
+      "Kanchi"
+    ],
+    "correct_answer": 0
+    },
+  {
+    "quest_id": "silappadhigaram_008",
+    "literature": "Silappadhigaram",
+    "topic": "Places",
+    "difficulty": "medium",
+    "story": "Silappadhigaram begins in the ancient port city of Puhar, also known as Kaveripattinam.",
+    "question": "What is another name for Puhar, the ancient Chola port city in Silappadhigaram?",
+    "options": [
+      "Kaveripattinam",
+      "Madurai",
+      "Vanji",
+      "Uraiyur"
+    ],
+    "correct_answer": 0
+    },
+  {
+    "quest_id": "silappadhigaram_009",
+    "literature": "Silappadhigaram",
+    "topic": "Themes",
+    "difficulty": "hard",
+    "story": "Kannagi's journey raises questions about justice, responsibility, and the consequences of an unjust decision.",
+    "question": "Which theme is central to Kannagi's response to the injustice suffered by Kovalan?",
+    "options": [
+      "Justice",
+      "Adventure",
+      "Trade",
+      "Education"
+    ],
+    "correct_answer": 0
+    },
+  {
+    "quest_id": "silappadhigaram_010",
+    "literature": "Silappadhigaram",
+    "topic": "Themes",
+    "difficulty": "hard",
+    "story": "Silappadhigaram connects personal tragedy with ideas of justice and the consequences of decisions made by rulers.",
+    "question": "What broader idea does Silappadhigaram explore through Kannagi's story?",
+    "options": [
+      "Justice and the consequences of unjust decisions",
+      "The invention of modern technology",
+      "The history of astronomy",
+      "The development of modern science"
+    ],
+    "correct_answer": 0
+  }
+]
