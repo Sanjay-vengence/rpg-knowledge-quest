@@ -35,7 +35,8 @@
 
 
             <!-- THIRUKKURAL -->
-            <div class="literature-card active">
+            <div class="literature-card active"
+                 onclick="startLiterature('thirukkural')">
 
                 <div class="card-icon">📜</div>
 
@@ -48,7 +49,7 @@
                     Ancient Tamil wisdom and teachings
                 </p>
 
-                <button onclick="startThirukkural()">
+                <button onclick="event.stopPropagation(); startLiterature('thirukkural')">
                     ENTER GAME
                 </button>
 
@@ -56,7 +57,8 @@
 
 
             <!-- SILAPPADHIGARAM -->
-            <div class="literature-card locked">
+            <div class="literature-card active"
+                 onclick="startLiterature('silappadhigaram')">
 
                 <div class="card-icon">🔥</div>
 
@@ -69,15 +71,16 @@
                     Journey through the epic story of Kannagi
                 </p>
 
-                <span class="lock">
-                    🔒 Coming Soon
-                </span>
+                <button onclick="event.stopPropagation(); startLiterature('silappadhigaram')">
+                    ENTER GAME
+                </button>
 
             </div>
 
 
             <!-- PURANAANOORU -->
-            <div class="literature-card locked">
+            <div class="literature-card active"
+                 onclick="startLiterature('puranaanooru')">
 
                 <div class="card-icon">🌿</div>
 
@@ -90,15 +93,16 @@
                     Explore ancient Tamil poetry
                 </p>
 
-                <span class="lock">
-                    🔒 Coming Soon
-                </span>
+                <button onclick="event.stopPropagation(); startLiterature('puranaanooru')">
+                    ENTER GAME
+                </button>
 
             </div>
 
 
             <!-- MANIMEGALAI -->
-            <div class="literature-card locked">
+            <div class="literature-card active"
+                 onclick="startLiterature('manimegalai')">
 
                 <div class="card-icon">🌊</div>
 
@@ -111,9 +115,9 @@
                     Discover another great Tamil epic
                 </p>
 
-                <span class="lock">
-                    🔒 Coming Soon
-                </span>
+                <button onclick="event.stopPropagation(); startLiterature('manimegalai')">
+                    ENTER GAME
+                </button>
 
             </div>
 
@@ -127,5 +131,4 @@
 
 </body>
 
-</html>
 </html>

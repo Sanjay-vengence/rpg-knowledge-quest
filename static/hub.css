@@ -15,7 +15,6 @@
 
 body {
     min-height: 100vh;
-
     font-family:
         "Noto Sans Tamil",
         "Latha",
@@ -56,7 +55,7 @@ body {
 
 .hub-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
 
@@ -65,6 +64,11 @@ body {
 .temple-icon {
     font-size: 55px;
     margin-bottom: 10px;
+
+    filter:
+        drop-shadow(
+            0 0 10px rgba(243, 201, 105, 0.35)
+        );
 }
 
 
@@ -73,7 +77,6 @@ body {
 .hub-header h1 {
     font-size: 42px;
     letter-spacing: 5px;
-
     color: #f3c969;
 
     text-shadow:
@@ -85,11 +88,8 @@ body {
 
 .hub-header h2 {
     margin-top: 6px;
-
     font-size: 28px;
-
     letter-spacing: 2px;
-
     color: #f3c969;
 }
 
@@ -98,12 +98,27 @@ body {
 
 .hub-header p {
     margin-top: 15px;
-
     font-size: 17px;
-
     color: #d7c19a;
-
     line-height: 1.6;
+}
+
+
+/* =========================
+   SELECT YOUR ADVENTURE
+========================= */
+
+.hub-header::after {
+    content: "SELECT YOUR ADVENTURE";
+
+    display: block;
+
+    margin-top: 22px;
+
+    font-size: 13px;
+    letter-spacing: 3px;
+
+    color: #b99455;
 }
 
 
@@ -113,7 +128,6 @@ body {
 
 .literature-grid {
     max-width: 1100px;
-
     margin: auto;
 
     display: grid;
@@ -130,7 +144,9 @@ body {
 ========================= */
 
 .literature-card {
-    min-height: 270px;
+    position: relative;
+
+    min-height: 290px;
 
     padding: 35px;
 
@@ -157,17 +173,38 @@ body {
 }
 
 
+/* Small decorative corner */
+
+.literature-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 10px;
+    left: 10px;
+
+    width: 18px;
+    height: 18px;
+
+    border-top: 2px solid #9b7538;
+    border-left: 2px solid #9b7538;
+
+    opacity: 0.7;
+}
+
+
 /* =========================
    CARD HOVER
 ========================= */
 
 .literature-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) scale(1.015);
 
     border-color: #d6a84d;
 
     box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.65);
+        0 15px 40px rgba(0, 0, 0, 0.65),
+        0 0 25px rgba(214, 168, 77, 0.18);
 }
 
 
@@ -179,6 +216,22 @@ body {
     font-size: 55px;
 
     margin-bottom: 18px;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+/* Icon hover */
+
+.literature-card:hover .card-icon {
+    transform: translateY(-4px) scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 0 8px rgba(243, 201, 105, 0.45)
+        );
 }
 
 
@@ -247,7 +300,8 @@ body {
     border-color: #f0bd50;
 
     box-shadow:
-        0 0 30px rgba(240, 189, 80, 0.3);
+        0 0 30px rgba(240, 189, 80, 0.3),
+        0 15px 40px rgba(0, 0, 0, 0.65);
 }
 
 
@@ -346,7 +400,6 @@ body {
 
     .hub-header h1 {
         font-size: 28px;
-
         letter-spacing: 3px;
     }
 
@@ -365,11 +418,18 @@ body {
     }
 
 
+    /* Adventure label */
+
+    .hub-header::after {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+
     /* One card per row */
 
     .literature-grid {
         grid-template-columns: 1fr;
-
         gap: 20px;
     }
 
@@ -413,7 +473,6 @@ body {
 
     .hub-header h1 {
         font-size: 24px;
-
         letter-spacing: 2px;
     }
 
