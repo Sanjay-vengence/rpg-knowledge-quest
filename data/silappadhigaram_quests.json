@@ -1,0 +1,232 @@
+[
+  {
+    "quest_id": "silappadhigaram_001",
+    "literature": "Silappadhigaram",
+    "topic": "Characters",
+    "difficulty": "easy",
+    "story": "The ancient tale begins with the story of Kannagi and Kovalan. Your first challenge is to identify one of the central characters of the epic.",
+    "question": "Who is the central female character of Silappadhigaram?",
+    "options": [
+      "Kannagi",
+      "Manimekalai",
+      "Avvaiyar",
+      "Madhavi"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "சிலப்பதிகாரத்தின் மையப் பெண் கதாபாத்திரம் யார்?",
+    "tamil_options": [
+      "கண்ணகி",
+      "மணிமேகலை",
+      "அவ்வையார்",
+      "மாதவி"
+    ],
+    "tamil_story": "பண்டைய கதை கண்ணகி மற்றும் கோவலனின் வாழ்க்கையுடன் தொடங்குகிறது. இந்தக் காப்பியத்தின் முக்கிய கதாபாத்திரங்களில் ஒருவரை அடையாளம் காண்பதே உன் முதல் சோதனை."
+  },
+  {
+    "quest_id": "silappadhigaram_002",
+    "literature": "Silappadhigaram",
+    "topic": "Characters",
+    "difficulty": "easy",
+    "story": "Kannagi's story is closely connected with the story of Kovalan.",
+    "question": "Who is Kannagi's husband in Silappadhigaram?",
+    "options": [
+      "Kovalan",
+      "Cheran Senguttuvan",
+      "Nedunchezhiyan",
+      "Ilango Adigal"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "சிலப்பதிகாரத்தில் கண்ணகியின் கணவர் யார்?",
+    "tamil_options": [
+      "கோவலன்",
+      "சேரன் செங்குட்டுவன்",
+      "நெடுஞ்செழியன்",
+      "இளங்கோ அடிகள்"
+    ],
+    "tamil_story": "கண்ணகியின் கதை கோவலனின் வாழ்க்கைக் கதையுடன் நெருக்கமாக இணைந்துள்ளது."
+  },
+  {
+    "quest_id": "silappadhigaram_003",
+    "literature": "Silappadhigaram",
+    "topic": "Author",
+    "difficulty": "easy",
+    "story": "Silappadhigaram is one of the important Tamil epics.",
+    "question": "Who is traditionally credited as the author of Silappadhigaram?",
+    "options": [
+      "Ilango Adigal",
+      "Thiruvalluvar",
+      "Kambar",
+      "Sattanar"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "சிலப்பதிகாரத்தை இயற்றியவர் என மரபாகக் கருதப்படுபவர் யார்?",
+    "tamil_options": [
+      "இளங்கோ அடிகள்",
+      "திருவள்ளுவர்",
+      "கம்பர்",
+      "சாத்தனார்"
+    ],
+    "tamil_story": "சிலப்பதிகாரம் தமிழின் முக்கியமான காப்பியங்களில் ஒன்றாகும்."
+  },
+  {
+    "quest_id": "silappadhigaram_004",
+    "literature": "Silappadhigaram",
+    "topic": "Story",
+    "difficulty": "easy",
+    "story": "The story of Silappadhigaram follows the experiences of Kannagi and Kovalan.",
+    "question": "What is the name of the anklet that gives Silappadhigaram its title?",
+    "options": [
+      "Silambu",
+      "Valai",
+      "Thali",
+      "Kundalam"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "சிலப்பதிகாரத்திற்கு அதன் பெயரை வழங்கிய சிலம்பின் பெயர் என்ன?",
+    "tamil_options": [
+      "சிலம்பு",
+      "வளையல்",
+      "தாலி",
+      "குண்டலம்"
+    ],
+    "tamil_story": "சிலப்பதிகாரத்தின் கதை கண்ணகி மற்றும் கோவலனின் வாழ்க்கை அனுபவங்களைப் பின்தொடர்கிறது."
+  },
+  {
+    "quest_id": "silappadhigaram_005",
+    "literature": "Silappadhigaram",
+    "topic": "Story",
+    "difficulty": "easy",
+    "story": "Kannagi's story becomes a journey of justice after a serious injustice is committed against Kovalan.",
+    "question": "Which theme is strongly associated with Kannagi's story?",
+    "options": [
+      "Justice",
+      "Astronomy",
+      "Agriculture",
+      "Music"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "கண்ணகியின் கதையுடன் வலுவாகத் தொடர்புடைய கருப்பொருள் எது?",
+    "tamil_options": [
+      "நீதி",
+      "வானியல்",
+      "வேளாண்மை",
+      "இசை"
+    ],
+    "tamil_story": "கோவலனுக்கு இழைக்கப்பட்ட அநீதிக்குப் பிறகு, கண்ணகியின் கதை நீதியைத் தேடும் பயணமாக மாறுகிறது."
+  },
+  {
+    "quest_id": "silappadhigaram_006",
+    "literature": "Silappadhigaram",
+    "topic": "Story",
+    "difficulty": "medium",
+    "story": "The epic connects Kannagi's personal tragedy with a larger question of justice.",
+    "question": "Which pair are the central married couple in Silappadhigaram?",
+    "options": [
+      "Kannagi and Kovalan",
+      "Kannagi and Ilango Adigal",
+      "Madhavi and Nedunchezhiyan",
+      "Manimekalai and Kovalan"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "சிலப்பதிகாரத்தின் மையத் திருமணத் தம்பதியர் யார்?",
+    "tamil_options": [
+      "கண்ணகி மற்றும் கோவலன்",
+      "கண்ணகி மற்றும் இளங்கோ அடிகள்",
+      "மாதவி மற்றும் நெடுஞ்செழியன்",
+      "மணிமேகலை மற்றும் கோவலன்"
+    ],
+    "tamil_story": "கண்ணகியின் தனிப்பட்ட துயரத்தை நீதியின் பெரிய கேள்வியுடன் இந்தக் காப்பியம் இணைக்கிறது."
+  },
+  {
+    "quest_id": "silappadhigaram_007",
+    "literature": "Silappadhigaram",
+    "topic": "Places",
+    "difficulty": "medium",
+    "story": "The epic is closely connected with the ancient Tamil kingdoms and their important cities.",
+    "question": "Which city is associated with the Pandya kingdom in Silappadhigaram?",
+    "options": [
+      "Madurai",
+      "Puhar",
+      "Vanji",
+      "Kanchi"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "சிலப்பதிகாரத்தில் பாண்டிய நாட்டுடன் தொடர்புடைய நகரம் எது?",
+    "tamil_options": [
+      "மதுரை",
+      "புகார்",
+      "வஞ்சி",
+      "காஞ்சி"
+    ],
+    "tamil_story": "இந்தக் காப்பியம் பண்டைய தமிழ் அரசுகளுடனும் அவற்றின் முக்கிய நகரங்களுடனும் நெருக்கமாகத் தொடர்புடையது."
+  },
+  {
+    "quest_id": "silappadhigaram_008",
+    "literature": "Silappadhigaram",
+    "topic": "Places",
+    "difficulty": "medium",
+    "story": "Silappadhigaram begins in the ancient port city of Puhar, also known as Kaveripattinam.",
+    "question": "What is another name for Puhar, the ancient Chola port city in Silappadhigaram?",
+    "options": [
+      "Kaveripattinam",
+      "Madurai",
+      "Vanji",
+      "Uraiyur"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "சிலப்பதிகாரத்தில் வரும் பண்டைய சோழர் துறைமுக நகரமான புகாரின் மற்றொரு பெயர் என்ன?",
+    "tamil_options": [
+      "காவேரிப்பட்டினம்",
+      "மதுரை",
+      "வஞ்சி",
+      "உறையூர்"
+    ],
+    "tamil_story": "சிலப்பதிகாரம் பண்டைய துறைமுக நகரமான புகாரில் தொடங்குகிறது; அது காவேரிப்பட்டினம் என்றும் அழைக்கப்படுகிறது."
+  },
+  {
+    "quest_id": "silappadhigaram_009",
+    "literature": "Silappadhigaram",
+    "topic": "Themes",
+    "difficulty": "hard",
+    "story": "Kannagi's journey raises questions about justice, responsibility, and the consequences of an unjust decision.",
+    "question": "Which theme is central to Kannagi's response to the injustice suffered by Kovalan?",
+    "options": [
+      "Justice",
+      "Adventure",
+      "Trade",
+      "Education"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "கோவலனுக்கு ஏற்பட்ட அநீதிக்கு கண்ணகி அளிக்கும் பதிலின் மையக் கருத்து எது?",
+    "tamil_options": [
+      "நீதி",
+      "சாகசம்",
+      "வாணிபம்",
+      "கல்வி"
+    ],
+    "tamil_story": "கண்ணகியின் பயணம் நீதி, பொறுப்பு மற்றும் அநீதியான முடிவுகளின் விளைவுகளைப் பற்றிய கேள்விகளை எழுப்புகிறது."
+  },
+  {
+    "quest_id": "silappadhigaram_010",
+    "literature": "Silappadhigaram",
+    "topic": "Themes",
+    "difficulty": "hard",
+    "story": "Silappadhigaram connects personal tragedy with ideas of justice and the consequences of decisions made by rulers.",
+    "question": "What broader idea does Silappadhigaram explore through Kannagi's story?",
+    "options": [
+      "Justice and the consequences of unjust decisions",
+      "The invention of modern technology",
+      "The history of astronomy",
+      "The development of modern science"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "கண்ணகியின் கதையின் மூலம் சிலப்பதிகாரம் எந்தப் பரந்த கருத்தை எடுத்துரைக்கிறது?",
+    "tamil_options": [
+      "நீதி மற்றும் அநீதியான முடிவுகளின் விளைவுகள்",
+      "நவீன தொழில்நுட்பத்தின் கண்டுபிடிப்பு",
+      "வானியலின் வரலாறு",
+      "நவீன அறிவியலின் வளர்ச்சி"
+    ],
+    "tamil_story": "தனிப்பட்ட துயரத்தை நீதியுடனும் ஆட்சியாளர்கள் எடுக்கும் முடிவுகளின் விளைவுகளுடனும் சிலப்பதிகாரம் இணைக்கிறது."
+  }
+]

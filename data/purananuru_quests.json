@@ -1,0 +1,232 @@
+[
+  {
+    "quest_id": "purananuru_001",
+    "literature": "Purananuru",
+    "topic": "Sangam Literature",
+    "difficulty": "easy",
+    "story": "Purananuru is one of the important anthologies of classical Tamil Sangam literature.",
+    "question": "Purananuru belongs to which collection of Sangam literature?",
+    "options": [
+      "Ettuthokai",
+      "Pathupattu",
+      "Pathinenkilkanakku",
+      "Aimperumkappiyam"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "புறநானூறு சங்க இலக்கியத்தின் எந்தத் தொகுப்பைச் சேர்ந்தது?",
+    "tamil_options": [
+      "எட்டுத்தொகை",
+      "பத்துப்பாட்டு",
+      "பதினெண்கீழ்க்கணக்கு",
+      "ஐம்பெருங்காப்பியம்"
+    ],
+    "tamil_story": "புறநானூறு செம்மையான தமிழ் சங்க இலக்கியத்தின் முக்கியமான தொகுப்புகளில் ஒன்றாகும்."
+  },
+  {
+    "quest_id": "purananuru_002",
+    "literature": "Purananuru",
+    "topic": "Structure",
+    "difficulty": "easy",
+    "story": "The name Purananuru refers to an anthology containing four hundred poems.",
+    "question": "How many poems are traditionally included in Purananuru?",
+    "options": [
+      "100",
+      "200",
+      "300",
+      "400"
+    ],
+    "correct_answer": 3,
+    "tamil_question": "புறநானூற்றில் மரபாக எத்தனை பாடல்கள் உள்ளதாகக் கருதப்படுகிறது?",
+    "tamil_options": [
+      "100",
+      "200",
+      "300",
+      "400"
+    ],
+    "tamil_story": "புறநானூறு என்ற பெயர் நானூறு பாடல்களைக் கொண்ட தொகுப்பைக் குறிக்கிறது."
+  },
+  {
+    "quest_id": "purananuru_003",
+    "literature": "Purananuru",
+    "topic": "Themes",
+    "difficulty": "easy",
+    "story": "Purananuru mainly deals with public and social aspects of life rather than private love.",
+    "question": "Which broad theme is strongly associated with Purananuru?",
+    "options": [
+      "War and public life",
+      "Astronomy",
+      "Grammar",
+      "Mathematics"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "புறநானூற்றுடன் வலுவாகத் தொடர்புடைய பரந்த கருப்பொருள் எது?",
+    "tamil_options": [
+      "போர் மற்றும் பொது வாழ்க்கை",
+      "வானியல்",
+      "இலக்கணம்",
+      "கணிதம்"
+    ],
+    "tamil_story": "புறநானூறு தனிப்பட்ட காதலைவிட பொது மற்றும் சமூக வாழ்க்கையின் அம்சங்களை முக்கியமாக எடுத்துரைக்கிறது."
+  },
+  {
+    "quest_id": "purananuru_004",
+    "literature": "Purananuru",
+    "topic": "Poets",
+    "difficulty": "easy",
+    "story": "Several celebrated Tamil poets are represented in the Purananuru anthology.",
+    "question": "Which famous Tamil poet is associated with poems in Purananuru?",
+    "options": [
+      "Kaniyan Pungundranar",
+      "Kambar",
+      "Sekkizhar",
+      "Andal"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "புறநானூற்றில் பாடல்கள் இயற்றிய புகழ்பெற்ற தமிழ் புலவர் யார்?",
+    "tamil_options": [
+      "கணியன் பூங்குன்றனார்",
+      "கம்பர்",
+      "சேக்கிழார்",
+      "ஆண்டாள்"
+    ],
+    "tamil_story": "பல புகழ்பெற்ற தமிழ் புலவர்களின் பாடல்கள் புறநானூறு தொகுப்பில் இடம்பெற்றுள்ளன."
+  },
+  {
+    "quest_id": "purananuru_005",
+    "literature": "Purananuru",
+    "topic": "Poets",
+    "difficulty": "medium",
+    "story": "Kaniyan Pungundranar is remembered for a famous Purananuru poem expressing a broad view of humanity.",
+    "question": "Which idea is famously associated with Kaniyan Pungundranar's Purananuru poem?",
+    "options": [
+      "All places are my own and all people are my kin",
+      "Only kings are important",
+      "War is the only path to greatness",
+      "Knowledge belongs only to poets"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "கணியன் பூங்குன்றனாரின் புறநானூற்றுப் பாடலுடன் புகழ்பெற்ற முறையில் தொடர்புடைய கருத்து எது?",
+    "tamil_options": [
+      "யாதும் ஊரே யாவரும் கேளிர்",
+      "அரசர்கள் மட்டுமே முக்கியமானவர்கள்",
+      "போர் மட்டுமே பெருமைக்கான பாதை",
+      "அறிவு புலவர்களுக்கு மட்டுமே உரியது"
+    ],
+    "tamil_story": "கணியன் பூங்குன்றனார் மனிதகுலத்தைப் பற்றிய பரந்த பார்வையை வெளிப்படுத்தும் புகழ்பெற்ற புறநானூற்றுப் பாடலுக்காக நினைவுகூரப்படுகிறார்."
+  },
+  {
+    "quest_id": "purananuru_006",
+    "literature": "Purananuru",
+    "topic": "Themes",
+    "difficulty": "medium",
+    "story": "Purananuru contains poems about kings, warriors, generosity, war, death, and the values of society.",
+    "question": "Which quality of rulers is frequently praised in Purananuru?",
+    "options": [
+      "Generosity",
+      "Silence",
+      "Isolation",
+      "Secrecy"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "புறநானூற்றில் ஆட்சியாளர்களின் எந்தப் பண்பு அடிக்கடி பாராட்டப்படுகிறது?",
+    "tamil_options": [
+      "கொடைத்தன்மை",
+      "மௌனம்",
+      "தனிமை",
+      "ரகசியம்"
+    ],
+    "tamil_story": "அரசர்கள், வீரர்கள், கொடை, போர், மரணம் மற்றும் சமூகத்தின் மதிப்புகள் பற்றிய பாடல்கள் புறநானூற்றில் உள்ளன."
+  },
+  {
+    "quest_id": "purananuru_007",
+    "literature": "Purananuru",
+    "topic": "Kings",
+    "difficulty": "medium",
+    "story": "The poems of Purananuru provide information about the rulers and social life of ancient Tamilakam.",
+    "question": "Which three major Tamil dynasties are frequently associated with the historical world described in Sangam literature?",
+    "options": [
+      "Chera, Chola and Pandya",
+      "Pallava, Chalukya and Rashtrakuta",
+      "Mughal, Chola and Pandya",
+      "Maurya, Gupta and Chera"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "சங்க இலக்கியத்தில் விவரிக்கப்படும் வரலாற்று உலகத்துடன் அடிக்கடி தொடர்புடைய மூன்று முக்கிய தமிழ் அரச வம்சங்கள் எவை?",
+    "tamil_options": [
+      "சேரர், சோழர் மற்றும் பாண்டியர்",
+      "பல்லவர், சாளுக்கியர் மற்றும் ராஷ்டிரகூடர்",
+      "முகலாயர், சோழர் மற்றும் பாண்டியர்",
+      "மௌரியர், குப்தர் மற்றும் சேரர்"
+    ],
+    "tamil_story": "புறநானூற்றுப் பாடல்கள் பண்டைய தமிழகத்தின் ஆட்சியாளர்கள் மற்றும் சமூக வாழ்க்கை பற்றிய தகவல்களை வழங்குகின்றன."
+  },
+  {
+    "quest_id": "purananuru_008",
+    "literature": "Purananuru",
+    "topic": "Ethics",
+    "difficulty": "medium",
+    "story": "Purananuru contains reflections on human life, death, fame, generosity, and the temporary nature of worldly power.",
+    "question": "Which idea is commonly explored in Purananuru poems?",
+    "options": [
+      "The impermanence of life",
+      "The invention of machines",
+      "Modern political elections",
+      "Space exploration"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "புறநானூற்றுப் பாடல்களில் பொதுவாக ஆராயப்படும் கருத்து எது?",
+    "tamil_options": [
+      "வாழ்க்கையின் நிலையாமை",
+      "இயந்திரங்களின் கண்டுபிடிப்பு",
+      "நவீன அரசியல் தேர்தல்கள்",
+      "விண்வெளி ஆய்வு"
+    ],
+    "tamil_story": "மனித வாழ்க்கை, மரணம், புகழ், கொடை மற்றும் உலகியலான அதிகாரத்தின் நிலையாமை பற்றிய சிந்தனைகள் புறநானூற்றில் காணப்படுகின்றன."
+  },
+  {
+    "quest_id": "purananuru_009",
+    "literature": "Purananuru",
+    "topic": "Puram",
+    "difficulty": "hard",
+    "story": "Classical Tamil literary tradition divides themes into Akam and Puram. Purananuru is associated with the Puram tradition.",
+    "question": "What does the Puram tradition mainly deal with?",
+    "options": [
+      "Public life, war, valor and social values",
+      "Secret romantic feelings",
+      "Marriage ceremonies only",
+      "Descriptions of plants only"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "புறம் மரபு முக்கியமாக எதைப் பற்றிப் பேசுகிறது?",
+    "tamil_options": [
+      "பொது வாழ்க்கை, போர், வீரியம் மற்றும் சமூக மதிப்புகள்",
+      "மறைக்கப்பட்ட காதல் உணர்வுகள்",
+      "திருமணச் சடங்குகள் மட்டும்",
+      "தாவரங்களின் விளக்கங்கள் மட்டும்"
+    ],
+    "tamil_story": "தமிழ் இலக்கிய மரபு கருப்பொருள்களை அகம் மற்றும் புறம் எனப் பிரிக்கிறது. புறநானூறு புற மரபுடன் தொடர்புடையது."
+  },
+  {
+    "quest_id": "purananuru_010",
+    "literature": "Purananuru",
+    "topic": "Historical Value",
+    "difficulty": "hard",
+    "story": "Purananuru is valuable not only as poetry but also for the information it preserves about ancient Tamil society.",
+    "question": "Why is Purananuru important for understanding ancient Tamil society?",
+    "options": [
+      "It provides poetic descriptions of rulers, warriors, society, values and historical life",
+      "It is a manual about modern science",
+      "It contains only religious rituals",
+      "It was written as a modern historical textbook"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "பண்டைய தமிழ் சமூகத்தைப் புரிந்துகொள்வதில் புறநானூறு ஏன் முக்கியமானது?",
+    "tamil_options": [
+      "ஆட்சியாளர்கள், வீரர்கள், சமூகம், மதிப்புகள் மற்றும் வரலாற்று வாழ்க்கையைப் பற்றிய கவிதை விளக்கங்களை வழங்குகிறது",
+      "இது நவீன அறிவியலைப் பற்றிய கையேடு",
+      "இதில் மதச் சடங்குகள் மட்டுமே உள்ளன",
+      "இது நவீன வரலாற்றுப் பாடநூலாக எழுதப்பட்டது"
+    ],
+    "tamil_story": "புறநானூறு கவிதையாக மட்டுமல்லாமல், பண்டைய தமிழ் சமூகத்தைப் பற்றிய தகவல்களையும் பாதுகாத்து வைத்திருப்பதால் முக்கியமானது."
+  }
+]

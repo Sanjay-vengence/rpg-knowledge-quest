@@ -1,0 +1,232 @@
+[
+  {
+    "quest_id": "manimegalai_001",
+    "literature": "Manimegalai",
+    "topic": "Characters",
+    "difficulty": "easy",
+    "story": "Manimegalai is a major Tamil Buddhist epic that follows the spiritual journey of its central character.",
+    "question": "Who is the central female character of Manimegalai?",
+    "options": [
+      "Manimegalai",
+      "Kannagi",
+      "Madhavi",
+      "Avvaiyar"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "மணிமேகலையின் மையப் பெண் கதாபாத்திரம் யார்?",
+    "tamil_options": [
+      "மணிமேகலை",
+      "கண்ணகி",
+      "மாதவி",
+      "அவ்வையார்"
+    ],
+    "tamil_story": "மணிமேகலை ஒரு முக்கியமான தமிழ் புத்த காப்பியம்; அதன் மையக் கதாபாத்திரத்தின் ஆன்மிகப் பயணத்தைப் பின்தொடர்கிறது."
+  },
+  {
+    "quest_id": "manimegalai_002",
+    "literature": "Manimegalai",
+    "topic": "Author",
+    "difficulty": "easy",
+    "story": "Manimegalai is traditionally associated with the poet who also wrote about Buddhist ideas and moral teachings.",
+    "question": "Who is traditionally credited as the author of Manimegalai?",
+    "options": [
+      "Sattanar",
+      "Ilango Adigal",
+      "Thiruvalluvar",
+      "Kambar"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "மணிமேகலையை இயற்றியவர் என மரபாகக் கருதப்படுபவர் யார்?",
+    "tamil_options": [
+      "சாத்தனார்",
+      "இளங்கோ அடிகள்",
+      "திருவள்ளுவர்",
+      "கம்பர்"
+    ],
+    "tamil_story": "புத்த சிந்தனைகள் மற்றும் அறக்கருத்துகளை எடுத்துரைத்த புலவருடன் மணிமேகலை மரபாகத் தொடர்புபடுத்தப்படுகிறது."
+  },
+  {
+    "quest_id": "manimegalai_003",
+    "literature": "Manimegalai",
+    "topic": "Characters",
+    "difficulty": "easy",
+    "story": "Manimegalai is connected to the characters and events of Silappadhigaram.",
+    "question": "Who is Manimegalai's mother?",
+    "options": [
+      "Madhavi",
+      "Kannagi",
+      "Avvaiyar",
+      "Manimekala Devi"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "மணிமேகலையின் தாய் யார்?",
+    "tamil_options": [
+      "மாதவி",
+      "கண்ணகி",
+      "அவ்வையார்",
+      "மணிமேகலைத் தேவி"
+    ],
+    "tamil_story": "மணிமேகலை சிலப்பதிகாரத்தின் கதாபாத்திரங்களுடனும் நிகழ்வுகளுடனும் தொடர்புடையது."
+  },
+  {
+    "quest_id": "manimegalai_004",
+    "literature": "Manimegalai",
+    "topic": "Religion",
+    "difficulty": "easy",
+    "story": "The epic presents Manimegalai's movement away from worldly life toward spiritual values.",
+    "question": "Which religious tradition is strongly associated with Manimegalai?",
+    "options": [
+      "Buddhism",
+      "Jainism",
+      "Saivism",
+      "Vaishnavism"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "மணிமேகலையுடன் வலுவாகத் தொடர்புடைய சமய மரபு எது?",
+    "tamil_options": [
+      "பௌத்தம்",
+      "சமணம்",
+      "சைவம்",
+      "வைணவம்"
+    ],
+    "tamil_story": "உலகியலான வாழ்க்கையிலிருந்து ஆன்மிக மதிப்புகளை நோக்கி மணிமேகலை நகர்வதை இந்தக் காப்பியம் எடுத்துரைக்கிறது."
+  },
+  {
+    "quest_id": "manimegalai_005",
+    "literature": "Manimegalai",
+    "topic": "Story",
+    "difficulty": "medium",
+    "story": "Manimegalai rejects a worldly life and chooses a path connected with spiritual practice and compassion.",
+    "question": "What does Manimegalai primarily seek through her spiritual journey?",
+    "options": [
+      "Spiritual liberation and compassion",
+      "Political power",
+      "Military victory",
+      "Wealth and fame"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "மணிமேகலை தனது ஆன்மிகப் பயணத்தின் மூலம் முக்கியமாக எதைத் தேடுகிறாள்?",
+    "tamil_options": [
+      "ஆன்மிக விடுதலை மற்றும் கருணை",
+      "அரசியல் அதிகாரம்",
+      "இராணுவ வெற்றி",
+      "செல்வமும் புகழும்"
+    ],
+    "tamil_story": "மணிமேகலை உலகியலான வாழ்க்கையைத் துறந்து ஆன்மிகப் பயிற்சி மற்றும் கருணையுடன் தொடர்புடைய பாதையைத் தேர்ந்தெடுக்கிறாள்."
+  },
+  {
+    "quest_id": "manimegalai_006",
+    "literature": "Manimegalai",
+    "topic": "Symbols",
+    "difficulty": "medium",
+    "story": "A magical bowl plays an important role in the story and is connected with Manimegalai's charitable activities.",
+    "question": "What is the name of the magical bowl associated with Manimegalai?",
+    "options": [
+      "Amudhasurabhi",
+      "Silambu",
+      "Kundalam",
+      "Valai"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "மணிமேகலையுடன் தொடர்புடைய மாயக் கிண்ணத்தின் பெயர் என்ன?",
+    "tamil_options": [
+      "அமுதசுரபி",
+      "சிலம்பு",
+      "குண்டலம்",
+      "வளையல்"
+    ],
+    "tamil_story": "ஒரு மாயக் கிண்ணம் கதையில் முக்கிய பங்கு வகிக்கிறது; அது மணிமேகலையின் அறப்பணிகளுடன் தொடர்புடையது."
+  },
+  {
+    "quest_id": "manimegalai_007",
+    "literature": "Manimegalai",
+    "topic": "Themes",
+    "difficulty": "medium",
+    "story": "The epic emphasizes compassion and helping people who suffer from hunger and poverty.",
+    "question": "Which value is strongly emphasized through Manimegalai's charitable actions?",
+    "options": [
+      "Compassion",
+      "Revenge",
+      "Conquest",
+      "Luxury"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "மணிமேகலையின் அறச்செயல்களின் மூலம் வலியுறுத்தப்படும் மதிப்பு எது?",
+    "tamil_options": [
+      "கருணை",
+      "பழிவாங்குதல்",
+      "வெற்றி கொள்ளுதல்",
+      "ஆடம்பரம்"
+    ],
+    "tamil_story": "பசியாலும் வறுமையாலும் துன்பப்படும் மக்களுக்கு உதவுவதையும் கருணையையும் இந்தக் காப்பியம் வலியுறுத்துகிறது."
+  },
+  {
+    "quest_id": "manimegalai_008",
+    "literature": "Manimegalai",
+    "topic": "Epic Tradition",
+    "difficulty": "medium",
+    "story": "Manimegalai continues the literary world introduced in Silappadhigaram.",
+    "question": "Manimegalai is traditionally considered which type of Tamil literary work?",
+    "options": [
+      "One of the Aimperumkappiyam, the Five Great Epics",
+      "A Sangam anthology",
+      "A grammar text",
+      "A devotional hymn collection"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "மணிமேகலை பாரம்பரியமாக எந்த வகையான தமிழ் இலக்கியப் படைப்பாகக் கருதப்படுகிறது?",
+    "tamil_options": [
+      "ஐம்பெருங்காப்பியங்களில் ஒன்று",
+      "ஒரு சங்கத் தொகுப்பு",
+      "ஒரு இலக்கண நூல்",
+      "ஒரு பக்திப் பாடல் தொகுப்பு"
+    ],
+    "tamil_story": "சிலப்பதிகாரத்தில் அறிமுகமான இலக்கிய உலகை மணிமேகலை தொடர்ந்து விரிவுபடுத்துகிறது."
+  },
+  {
+    "quest_id": "manimegalai_009",
+    "literature": "Manimegalai",
+    "topic": "Philosophy",
+    "difficulty": "hard",
+    "story": "The epic discusses Buddhist ideas and questions concerning suffering, desire, and liberation.",
+    "question": "Which philosophical idea is important in Manimegalai's spiritual journey?",
+    "options": [
+      "Freedom from desire and suffering",
+      "The pursuit of military glory",
+      "The accumulation of wealth",
+      "The expansion of kingdoms"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "மணிமேகலையின் ஆன்மிகப் பயணத்தில் முக்கியமான தத்துவக் கருத்து எது?",
+    "tamil_options": [
+      "ஆசை மற்றும் துன்பத்திலிருந்து விடுதலை",
+      "இராணுவப் புகழைத் தேடுதல்",
+      "செல்வத்தைச் சேர்த்தல்",
+      "அரசுகளை விரிவுபடுத்துதல்"
+    ],
+    "tamil_story": "துன்பம், ஆசை மற்றும் விடுதலை தொடர்பான புத்த தத்துவக் கருத்துகளை இந்தக் காப்பியம் ஆராய்கிறது."
+  },
+  {
+    "quest_id": "manimegalai_010",
+    "literature": "Manimegalai",
+    "topic": "Themes",
+    "difficulty": "hard",
+    "story": "Manimegalai combines its narrative with ethical and philosophical teachings.",
+    "question": "What broader message is strongly expressed through Manimegalai's transformation?",
+    "options": [
+      "Compassion, renunciation and spiritual pursuit",
+      "Power, conquest and wealth",
+      "Trade, warfare and politics",
+      "Fame, luxury and entertainment"
+    ],
+    "correct_answer": 0,
+    "tamil_question": "மணிமேகலையின் மாற்றத்தின் மூலம் வலுவாக வெளிப்படுத்தப்படும் பரந்த செய்தி எது?",
+    "tamil_options": [
+      "கருணை, துறவு மற்றும் ஆன்மிகத் தேடல்",
+      "அதிகாரம், வெற்றி மற்றும் செல்வம்",
+      "வாணிபம், போர் மற்றும் அரசியல்",
+      "புகழ், ஆடம்பரம் மற்றும் பொழுதுபோக்கு"
+    ],
+    "tamil_story": "மணிமேகலை தனது கதையை அற மற்றும் தத்துவ போதனைகளுடன் இணைக்கிறது."
+  }
+]

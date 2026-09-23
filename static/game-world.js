@@ -8,6 +8,290 @@
 // ==========================================
 // CANVAS SETUP
 // ==========================================
+// ==========================================
+// SELECTED LITERATURE
+// ==========================================
+
+const urlParams =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+// Literature passed from literature.html
+
+let selectedLiterature =
+    urlParams.get(
+        "literature"
+    );
+
+
+// If URL doesn't contain literature,
+// check browser storage.
+
+if (!selectedLiterature) {
+
+    selectedLiterature =
+        localStorage.getItem(
+            "selectedLiterature"
+        );
+
+}
+
+
+// Final fallback
+
+if (!selectedLiterature) {
+
+    selectedLiterature =
+        "thirukkural";
+
+}
+
+
+// Save it again
+
+localStorage.setItem(
+    "selectedLiterature",
+    selectedLiterature
+);
+
+
+// Debug
+
+console.log(
+    "=================================="
+);
+
+console.log(
+    "SELECTED LITERATURE:",
+    selectedLiterature
+);
+
+console.log(
+    "=================================="
+);
+
+// ==========================================
+// STAGES 7–9 — LITERATURE RPG PROFILES
+// ==========================================
+// Each literature keeps the same gameplay engine,
+// but receives its own story, areas, Guardians,
+// objectives and ending text.
+// ==========================================
+
+const literatureProfiles = {
+
+    thirukkural: {
+        tamilName: "திருக்குறள்",
+        englishName: "Thirukkural",
+        questTitleTa: "அறிவின் முதல் சோதனை",
+        questTitleEn: "The First Trial of Knowledge",
+        questDescriptionTa: "திருக்குறளின் ஞானப் பாதையில் உன் தகுதியை நிரூபி.",
+        questDescriptionEn: "Prove your worth on the path of Thirukkural wisdom.",
+        questQuestionTa: "இந்தச் சோதனையை ஏற்கிறாயா?",
+        questQuestionEn: "Will you accept this trial?",
+        sageDialogues: [
+            ["வருக, இளம் தேடுபவனே...", "Welcome, young seeker..."],
+            ["இந்தப் பழமையான கோயிலில் பல இரகசியங்கள் புதைந்துள்ளன.", "Many secrets lie hidden within this ancient temple."],
+            ["திருக்குறளின் ஞானத்தைத் தேடி வந்திருந்தால், உன் தகுதியை நிரூபி.", "If you seek the wisdom of Thirukkural, prove your worth."],
+            ["உனக்காக ஒரு சோதனை காத்திருக்கிறது.", "A trial awaits you."],
+            ["அதை வென்றால் மட்டுமே இந்தப் பாதையின் ரகசியங்களை அறிய முடியும்.", "Only by completing it can you uncover the secrets of this path."]
+        ],
+        areas: [
+            {
+                tamilName: "திருக்குறள் கோயில்",
+                englishName: "Temple of Thirukkural",
+                background: "temple",
+                gateTa: "📚 பழமையான நூலகம்",
+                gateEn: "Ancient Library"
+            },
+            {
+                tamilName: "பழமையான நூலகம்",
+                englishName: "The Ancient Library",
+                background: "library",
+                gateTa: "🏘️ அறிஞர்களின் கிராமம்",
+                gateEn: "Scholars' Village"
+            },
+            {
+                tamilName: "அறிஞர்களின் கிராமம்",
+                englishName: "The Scholars' Village",
+                background: "village",
+                gateTa: "🌲 புனித ஞானக் காடு",
+                gateEn: "Sacred Wisdom Forest"
+            },
+            {
+                tamilName: "புனித ஞானக் காடு",
+                englishName: "The Sacred Wisdom Forest",
+                background: "forest",
+                gateTa: "🏛️ இறுதி ஞான மண்டபம்",
+                gateEn: "Final Wisdom Sanctum"
+            },
+            {
+                tamilName: "இறுதி ஞான மண்டபம்",
+                englishName: "The Final Wisdom Sanctum",
+                background: "sanctum",
+                gateTa: "",
+                gateEn: ""
+            }
+        ],
+        guardians: [
+            ["ஞானக் காவலர்", "Knowledge Guardian", "ஞானக் காவலரை அடைந்து சோதனையைத் தொடங்கு", "Reach the Knowledge Guardian and begin the trial"],
+            ["நூலகக் காவலர்", "Library Guardian", "நூலகக் காவலரை எதிர்கொண்டு அடுத்த சோதனையை முடி", "Face the Library Guardian and complete the next trial"],
+            ["ஞானத்தின் காவலர்", "Guardian of Wisdom", "ஞானத்தின் காவலரை எதிர்கொண்டு சோதனையை முடி", "Face the Guardian of Wisdom and complete the trial"],
+            ["துணிச்சலின் காவலர்", "Guardian of Courage", "துணிச்சலின் காவலரை வீழ்த்தி இறுதி மண்டபத்தைத் திற", "Defeat the Guardian of Courage and unlock the final sanctum"],
+            ["நிழல் மன்னன்", "Shadow King", "நிழல் மன்னனை எதிர்கொண்டு இறுதி போரில் வெற்றி பெறு", "Face the Shadow King and win the final battle"]
+        ],
+        stageStories: [
+            ["கோயிலின் முதல் வாயில் உன்னைச் சோதிக்கிறது.", "The first temple gate tests your knowledge."],
+            ["பழமையான நூலகத்தின் இரகசியங்கள் அடுத்த சோதனையை மறைக்கின்றன.", "The Ancient Library hides the next trial."],
+            ["அறிஞர்களின் கிராமம் ஞானத்தின் ஆழத்தைச் சோதிக்கிறது.", "The Scholars' Village tests the depth of your wisdom."],
+            ["புனித ஞானக் காட்டை கடந்து இறுதி மண்டபத்தைத் திற.", "Cross the Sacred Wisdom Forest and unlock the final sanctum."],
+            ["இறுதி மண்டபத்தில் நிழல் மன்னன் காத்திருக்கிறான்.", "The Shadow King awaits in the Final Wisdom Sanctum."]
+        ],
+        endingTa: "நிழல் மன்னன் வீழ்ந்தான் — திருக்குறள் பயணம் நிறைவு.",
+        endingEn: "The Shadow King has fallen — your Thirukkural journey is complete."
+    },
+
+    silappadhigaram: {
+        tamilName: "சிலப்பதிகாரம்",
+        englishName: "Silappadhigaram",
+        questTitleTa: "கண்ணகியின் நீதிப் பயணம்",
+        questTitleEn: "Kannagi's Journey of Justice",
+        questDescriptionTa: "கண்ணகியின் பாதையைப் பின்தொடர்ந்து உண்மை மற்றும் நீதியைத் தேடு.",
+        questDescriptionEn: "Follow Kannagi's path and seek truth and justice.",
+        questQuestionTa: "இந்த நீதிப் பயணத்தை ஏற்கிறாயா?",
+        questQuestionEn: "Will you accept this journey of justice?",
+        sageDialogues: [
+            ["வருக, இளம் தேடுபவனே...", "Welcome, young seeker..."],
+            ["கண்ணகியின் கதை துயரத்தையும் நீதிக்கான தேடலையும் சுமக்கிறது.", "Kannagi's story carries both tragedy and a search for justice."],
+            ["புகாரிலிருந்து மதுரை வரை ஒரு பழமையான பயணம் உன்னை அழைக்கிறது.", "An ancient journey from Puhar to Madurai awaits you."],
+            ["ஒவ்வொரு சோதனையும் கண்ணகியின் கதையின் ஒரு பகுதியைத் திறக்கும்.", "Each trial will reveal another part of Kannagi's story."],
+            ["உண்மையை அறிந்தால் மட்டுமே இறுதி நீதிமன்றத்தை அடைய முடியும்.", "Only by understanding the truth can you reach the final court."]
+        ],
+        areas: [
+            { tamilName: "புகாரின் பழைய துறைமுகம்", englishName: "Ancient Port of Puhar", background: "village", gateTa: "🏛️ மதுரையின் வாயில்", gateEn: "Gate of Madurai" },
+            { tamilName: "மதுரையின் அரச வாயில்", englishName: "Royal Gate of Madurai", background: "temple", gateTa: "⚖️ நீதியின் மண்டபம்", gateEn: "Hall of Justice" },
+            { tamilName: "நீதியின் மண்டபம்", englishName: "Hall of Justice", background: "library", gateTa: "🌿 சேர நாட்டின் பாதை", gateEn: "Path to Chera Land" },
+            { tamilName: "சேர நாட்டின் புனிதப் பாதை", englishName: "Sacred Path of Chera Land", background: "forest", gateTa: "⚖️ இறுதி நீதிமன்றம்", gateEn: "Final Court" },
+            { tamilName: "இறுதி நீதிமன்றம்", englishName: "The Final Court", background: "sanctum", gateTa: "", gateEn: "" }
+        ],
+        guardians: [
+            ["புகாரின் காவலர்", "Guardian of Puhar", "புகாரின் காவலரை எதிர்கொண்டு முதல் சோதனையை முடி", "Face the Guardian of Puhar and complete the first trial"],
+            ["மதுரையின் காவலர்", "Guardian of Madurai", "மதுரையின் காவலரை எதிர்கொண்டு அடுத்த சோதனையை முடி", "Face the Guardian of Madurai and complete the next trial"],
+            ["நீதியின் காவலர்", "Guardian of Justice", "நீதியின் காவலரை எதிர்கொண்டு உண்மையை அறி", "Face the Guardian of Justice and uncover the truth"],
+            ["சேர நாட்டின் காவலர்", "Guardian of Chera Land", "சேர நாட்டின் காவலரை வீழ்த்தி இறுதி நீதிமன்றத்தைத் திற", "Defeat the Guardian of Chera Land and unlock the Final Court"],
+            ["நிழல் மன்னன்", "Shadow King", "நிழல் மன்னனை எதிர்கொண்டு இறுதி நீதிப் போரில் வெற்றி பெறு", "Face the Shadow King and win the final battle for justice"]
+        ],
+        stageStories: [
+            ["புகாரில் கண்ணகி மற்றும் கோவலனின் கதையின் முதல் தடம் கிடைக்கிறது.", "In Puhar, the first trail of Kannagi and Kovalan's story appears."],
+            ["மதுரையின் வாயில் அநீதியின் கதவைத் திறக்கிறது.", "The gate of Madurai reveals the turning point of injustice."],
+            ["நீதியின் மண்டபத்தில் உண்மை மற்றும் பொறுப்பு சோதிக்கப்படுகின்றன.", "Truth and responsibility are tested in the Hall of Justice."],
+            ["சேர நாட்டின் பாதை கண்ணகியின் புகழை இறுதி நிலைக்கு அழைத்துச் செல்கிறது.", "The path to Chera Land carries Kannagi's legacy toward its final trial."],
+            ["இறுதி நீதிமன்றத்தில் நிழல் மன்னன் உன் அறிவையும் நீதியையும் சோதிக்கிறான்.", "In the Final Court, the Shadow King tests your knowledge and sense of justice."]
+        ],
+        endingTa: "நிழல் மன்னன் வீழ்ந்தான் — சிலப்பதிகார நீதிப் பயணம் நிறைவு.",
+        endingEn: "The Shadow King has fallen — your Silappadhigaram journey of justice is complete."
+    },
+
+    purananuru: {
+        tamilName: "புறநானூறு",
+        englishName: "Purananuru",
+        questTitleTa: "புறத்தின் வீரப் பயணம்",
+        questTitleEn: "The Journey of Puram",
+        questDescriptionTa: "புலவர்கள், வீரர்கள், அரசர்கள் மற்றும் சமூக மதிப்புகளின் உலகை ஆராய்.",
+        questDescriptionEn: "Explore the world of poets, heroes, rulers and social values.",
+        questQuestionTa: "இந்தப் புறப் பயணத்தை ஏற்கிறாயா?",
+        questQuestionEn: "Will you accept this journey through Puram?",
+        sageDialogues: [
+            ["வருக, இளம் தேடுபவனே...", "Welcome, young seeker..."],
+            ["புறநானூறு பண்டைய தமிழ் சமூகத்தின் குரலைக் காக்கிறது.", "Purananuru preserves voices from ancient Tamil society."],
+            ["புலவர்களின் சொற்களில் வீரமும் கொடையும் வாழ்க்கையின் நிலையாமையும் ஒலிக்கின்றன.", "Through poets' words, heroism, generosity and impermanence echo."],
+            ["ஒவ்வொரு காவலரும் புற உலகின் ஒரு கதவைத் திறப்பார்.", "Each Guardian will open another gate into the world of Puram."],
+            ["இறுதி மண்டபத்தில் அறிவும் மனித மதிப்புகளும் உன்னைச் சோதிக்கும்.", "In the final hall, knowledge and human values will be tested."]
+        ],
+        areas: [
+            { tamilName: "புறநானூற்றின் மன்றம்", englishName: "Hall of Puram", background: "village", gateTa: "📜 புலவர்களின் மன்றம்", gateEn: "Hall of Poets" },
+            { tamilName: "புலவர்களின் மன்றம்", englishName: "Hall of Poets", background: "library", gateTa: "⚔️ வீரர்களின் நிலம்", gateEn: "Land of Heroes" },
+            { tamilName: "வீரர்களின் நிலம்", englishName: "Land of Heroes", background: "forest", gateTa: "🎁 கொடையின் மண்டபம்", gateEn: "Hall of Generosity" },
+            { tamilName: "கொடையின் மண்டபம்", englishName: "Hall of Generosity", background: "temple", gateTa: "🏛️ இறுதி புகழ் மண்டபம்", gateEn: "Final Hall of Fame" },
+            { tamilName: "இறுதி புகழ் மண்டபம்", englishName: "Final Hall of Fame", background: "sanctum", gateTa: "", gateEn: "" }
+        ],
+        guardians: [
+            ["புறத்தின் காவலர்", "Guardian of Puram", "புறத்தின் காவலரை எதிர்கொண்டு முதல் சோதனையை முடி", "Face the Guardian of Puram and complete the first trial"],
+            ["புலவர்களின் காவலர்", "Guardian of Poets", "புலவர்களின் காவலரை எதிர்கொண்டு அடுத்த சோதனையை முடி", "Face the Guardian of Poets and complete the next trial"],
+            ["வீரத்தின் காவலர்", "Guardian of Heroes", "வீரத்தின் காவலரை எதிர்கொண்டு சோதனையை முடி", "Face the Guardian of Heroes and complete the trial"],
+            ["கொடையின் காவலர்", "Guardian of Generosity", "கொடையின் காவலரை வீழ்த்தி இறுதி மண்டபத்தைத் திற", "Defeat the Guardian of Generosity and unlock the final hall"],
+            ["நிழல் மன்னன்", "Shadow King", "நிழல் மன்னனை எதிர்கொண்டு இறுதி போரில் வெற்றி பெறு", "Face the Shadow King and win the final battle"]
+        ],
+        stageStories: [
+            ["புறநானூற்றின் மன்றம் பண்டைய சமூகத்தின் முதல் கதவைத் திறக்கிறது.", "The Hall of Puram opens the first gate into ancient society."],
+            ["புலவர்களின் மன்றத்தில் சொற்களே ஆயுதங்களாக மாறுகின்றன.", "In the Hall of Poets, words become your weapons."],
+            ["வீரர்களின் நிலம் புகழ், போர் மற்றும் வாழ்க்கையின் நிலையாமையைச் சோதிக்கிறது.", "The Land of Heroes tests fame, war and the impermanence of life."],
+            ["கொடையின் மண்டபத்தில் அரசர்களின் பெருந்தன்மை சோதிக்கப்படுகிறது.", "The Hall of Generosity tests the generosity of rulers."],
+            ["இறுதி புகழ் மண்டபத்தில் நிழல் மன்னன் புற உலகின் அறிவைச் சவால் செய்கிறான்.", "In the Final Hall of Fame, the Shadow King challenges your knowledge of Puram."]
+        ],
+        endingTa: "நிழல் மன்னன் வீழ்ந்தான் — புறநானூறு பயணம் நிறைவு.",
+        endingEn: "The Shadow King has fallen — your Purananuru journey is complete."
+    },
+
+    manimegalai: {
+        tamilName: "மணிமேகலை",
+        englishName: "Manimegalai",
+        questTitleTa: "மணிமேகலையின் விடுதலைப் பயணம்",
+        questTitleEn: "Manimegalai's Path to Liberation",
+        questDescriptionTa: "கருணை, துறவு மற்றும் ஆன்மிகத் தேடலின் பாதையில் பயணம் செய்.",
+        questDescriptionEn: "Travel the path of compassion, renunciation and spiritual search.",
+        questQuestionTa: "இந்த ஆன்மிகப் பயணத்தை ஏற்கிறாயா?",
+        questQuestionEn: "Will you accept this spiritual journey?",
+        sageDialogues: [
+            ["வருக, இளம் தேடுபவனே...", "Welcome, young seeker..."],
+            ["மணிமேகலையின் உலகம் கருணையையும் ஆன்மிகத் தேடலையும் அழைக்கிறது.", "The world of Manimegalai calls you toward compassion and spiritual search."],
+            ["உலகியலான ஆசைகளைத் தாண்டி ஒரு புதிய பாதை உன்னை எதிர்பார்க்கிறது.", "Beyond worldly desires, a new path awaits you."],
+            ["ஒவ்வொரு சோதனையும் அறத்தின் ஒரு கதவைத் திறக்கும்.", "Each trial opens another door of virtue."],
+            ["இறுதி மண்டபத்தில் அறிவும் கருணையும் உன் வெற்றியைத் தீர்மானிக்கும்.", "In the final hall, knowledge and compassion will shape your victory."]
+        ],
+        areas: [
+            { tamilName: "மணிமேகலையின் தொடக்கப் பாதை", englishName: "Path of Manimegalai", background: "temple", gateTa: "☸️ அறத்தின் மண்டபம்", gateEn: "Hall of Virtue" },
+            { tamilName: "அறத்தின் மண்டபம்", englishName: "Hall of Virtue", background: "library", gateTa: "💠 கருணையின் நகரம்", gateEn: "City of Compassion" },
+            { tamilName: "கருணையின் நகரம்", englishName: "City of Compassion", background: "village", gateTa: "🌿 துறவின் காடு", gateEn: "Forest of Renunciation" },
+            { tamilName: "துறவின் புனிதக் காடு", englishName: "Forest of Renunciation", background: "forest", gateTa: "☸️ இறுதி விடுதலை மண்டபம்", gateEn: "Final Hall of Liberation" },
+            { tamilName: "இறுதி விடுதலை மண்டபம்", englishName: "Final Hall of Liberation", background: "sanctum", gateTa: "", gateEn: "" }
+        ],
+        guardians: [
+            ["அறத்தின் காவலர்", "Guardian of Virtue", "அறத்தின் காவலரை எதிர்கொண்டு முதல் சோதனையை முடி", "Face the Guardian of Virtue and complete the first trial"],
+            ["கருணையின் காவலர்", "Guardian of Compassion", "கருணையின் காவலரை எதிர்கொண்டு அடுத்த சோதனையை முடி", "Face the Guardian of Compassion and complete the next trial"],
+            ["துறவின் காவலர்", "Guardian of Renunciation", "துறவின் காவலரை எதிர்கொண்டு சோதனையை முடி", "Face the Guardian of Renunciation and complete the trial"],
+            ["விடுதலையின் காவலர்", "Guardian of Liberation", "விடுதலையின் காவலரை வீழ்த்தி இறுதி மண்டபத்தைத் திற", "Defeat the Guardian of Liberation and unlock the final hall"],
+            ["நிழல் மன்னன்", "Shadow King", "நிழல் மன்னனை எதிர்கொண்டு இறுதி ஆன்மிகப் போரில் வெற்றி பெறு", "Face the Shadow King and win the final spiritual battle"]
+        ],
+        stageStories: [
+            ["மணிமேகலையின் பாதை உன் ஆன்மிகத் தேடலைத் தொடங்குகிறது.", "The Path of Manimegalai begins your spiritual search."],
+            ["அறத்தின் மண்டபம் நல்லொழுக்கத்தின் மதிப்பைச் சோதிக்கிறது.", "The Hall of Virtue tests the value of moral conduct."],
+            ["கருணையின் நகரம் பிறருக்கான இரக்கத்தைச் சோதிக்கிறது.", "The City of Compassion tests your care for others."],
+            ["துறவின் காடு உலகியலான பற்றுகளைத் தாண்டிச் செல்லச் சவால் விடுக்கிறது.", "The Forest of Renunciation challenges you to move beyond worldly attachment."],
+            ["இறுதி விடுதலை மண்டபத்தில் நிழல் மன்னன் உன் அறிவையும் கருணையையும் சோதிக்கிறான்.", "In the Final Hall of Liberation, the Shadow King tests your knowledge and compassion."]
+        ],
+        endingTa: "நிழல் மன்னன் வீழ்ந்தான் — மணிமேகலை விடுதலைப் பயணம் நிறைவு.",
+        endingEn: "The Shadow King has fallen — your Manimegalai journey toward liberation is complete."
+    }
+};
+
+const activeLiteratureProfile =
+    literatureProfiles[selectedLiterature] ||
+    literatureProfiles.thirukkural;
+
+function getLiteratureStageStory(stageNumber) {
+    return activeLiteratureProfile.stageStories[
+        Math.max(
+            0,
+            Math.min(
+                stageNumber - 1,
+                activeLiteratureProfile.stageStories.length - 1
+            )
+        )
+    ];
+}
 
 const canvas = document.getElementById("game-canvas");
 const ctx = canvas.getContext("2d");
@@ -290,44 +574,14 @@ let showSageDialogue = false;
 // will eventually display one at a time.
 // ==========================================
 
-const sageDialogues = [
-
-    {
-        speaker: "ஞானி",
-
-        text:
-            "வருக, இளம் தேடுபவனே..."
-    },
-
-    {
-        speaker: "ஞானி",
-
-        text:
-            "இந்தப் பழமையான கோயிலில் பல இரகசியங்கள் புதைந்துள்ளன."
-    },
-
-    {
-        speaker: "ஞானி",
-
-        text:
-            "அறிவைத் தேடி வந்திருந்தால், உன் தகுதியை நிரூபி."
-    },
-
-    {
-        speaker: "ஞானி",
-
-        text:
-            "உனக்காக ஒரு சோதனை காத்திருக்கிறது."
-    },
-
-    {
-        speaker: "ஞானி",
-
-        text:
-            "அதை வென்றால் மட்டுமே இந்தக் கோயிலின் ரகசியங்களை அறிய முடியும்."
-    }
-
-];
+const sageDialogues =
+    activeLiteratureProfile.sageDialogues.map(
+        ([textTa, textEn]) => ({
+            speaker: "ஞானி",
+            text: textTa,
+            englishText: textEn
+        })
+    );
 
 
 // Current dialogue index.
@@ -363,16 +617,16 @@ let questNotificationTimer = 0;
 const activeQuest = {
 
     title:
-        "அறிவின் முதல் சோதனை",
+        activeLiteratureProfile.questTitleTa,
 
     englishTitle:
-        "The First Trial of Knowledge",
+        activeLiteratureProfile.questTitleEn,
 
     objective:
-        "ஞானக் காவலரை அடைந்து சோதனையைத் தொடங்கு",
+        activeLiteratureProfile.guardians[0][2],
 
     englishObjective:
-        "Reach the Knowledge Guardian and begin the trial"
+        activeLiteratureProfile.guardians[0][3]
 
 };
 
@@ -443,48 +697,30 @@ let guardianEncounter = 1;
 
 // Four explorable areas. Each area has its own background and
 // the Guardian for that stage appears inside it.
-const areaConfigs = {
-    1: {
-        tamilName: "திருக்குறள் கோயில்",
-        englishName: "Temple of Thirukkural",
-        background: "temple",
-        nextArea: 2,
-        nextGateTa: "📚 பழமையான நூலகம்",
-        nextGateEn: "Ancient Library"
-    },
-    2: {
-        tamilName: "பழமையான நூலகம்",
-        englishName: "The Ancient Library",
-        background: "library",
-        nextArea: 3,
-        nextGateTa: "🏘️ அறிஞர்களின் கிராமம்",
-        nextGateEn: "Scholars' Village"
-    },
-    3: {
-        tamilName: "அறிஞர்களின் கிராமம்",
-        englishName: "The Scholars' Village",
-        background: "village",
-        nextArea: 4,
-        nextGateTa: "🌲 புனித ஞானக் காடு",
-        nextGateEn: "Sacred Wisdom Forest"
-    },
-    4: {
-        tamilName: "புனித ஞானக் காடு",
-        englishName: "The Sacred Wisdom Forest",
-        background: "forest",
-        nextArea: 5,
-        nextGateTa: "🏛️ இறுதி ஞான மண்டபம்",
-        nextGateEn: "Final Wisdom Sanctum"
-    },
-    5: {
-        tamilName: "இறுதி ஞான மண்டபம்",
-        englishName: "The Final Wisdom Sanctum",
-        background: "sanctum",
-        nextArea: null,
-        nextGateTa: "",
-        nextGateEn: ""
+const areaConfigs = {};
+
+activeLiteratureProfile.areas.forEach(
+    (area, index) => {
+
+        const areaNumber = index + 1;
+
+        areaConfigs[areaNumber] = {
+            tamilName: area.tamilName,
+            englishName: area.englishName,
+            background: area.background,
+            nextArea:
+                areaNumber < activeLiteratureProfile.areas.length
+                    ? areaNumber + 1
+                    : null,
+            nextGateTa: area.gateTa,
+            nextGateEn: area.gateEn
+        };
     }
-};
+);
+
+function getCurrentAreaConfig() {
+    return areaConfigs[currentArea] || areaConfigs[1];
+}
 
 function getCurrentAreaConfig() {
     return areaConfigs[currentArea] || areaConfigs[1];
@@ -542,13 +778,29 @@ const area4 = areaConfigs[4];
 // The same 2D Guardian.png sprite is reused for the four Guardians.
 // The Shadow King appears separately in Area 5.
 // ==========================================
-const guardianStages = [
-    { stage: 1, tamilName: "ஞானக் காவலர்", englishName: "Knowledge Guardian", objectiveTa: "ஞானக் காவலரை அடைந்து சோதனையைத் தொடங்கு", objectiveEn: "Reach the Knowledge Guardian and begin the trial" },
-    { stage: 2, tamilName: "நூலகக் காவலர்", englishName: "Library Guardian", objectiveTa: "நூலகக் காவலரை எதிர்கொண்டு அடுத்த சோதனையை முடி", objectiveEn: "Face the Library Guardian and complete the next trial" },
-    { stage: 3, tamilName: "ஞானத்தின் காவலர்", englishName: "Guardian of Wisdom", objectiveTa: "ஞானத்தின் காவலரை எதிர்கொண்டு சோதனையை முடி", objectiveEn: "Face the Guardian of Wisdom and complete the trial" },
-    { stage: 4, tamilName: "துணிச்சலின் காவலர்", englishName: "Guardian of Courage", objectiveTa: "துணிச்சலின் காவலரை வீழ்த்தி இறுதி மண்டபத்தைத் திற", objectiveEn: "Defeat the Guardian of Courage and unlock the final sanctum" },
-    { stage: 5, tamilName: "நிழல் மன்னன்", englishName: "Shadow King", objectiveTa: "நிழல் மன்னனை எதிர்கொண்டு இறுதி போரில் வெற்றி பெறு", objectiveEn: "Face the Shadow King and win the final battle", isFinalBoss: true }
-];
+const guardianStages =
+    activeLiteratureProfile.guardians.map(
+        (guardianData, index) => ({
+            stage: index + 1,
+            tamilName: guardianData[0],
+            englishName: guardianData[1],
+            objectiveTa: guardianData[2],
+            objectiveEn: guardianData[3],
+            storyTa:
+                getLiteratureStageStory(index + 1)[0],
+            storyEn:
+                getLiteratureStageStory(index + 1)[1],
+            speechTa:
+                index === 4
+                    ? guardianData[0] + " உன் இறுதி சோதனையை முன்வைக்கிறான்."
+                    : guardianData[0] + " உன் அறிவைச் சோதிக்கிறான்.",
+            speechEn:
+                index === 4
+                    ? guardianData[1] + " presents the final challenge."
+                    : guardianData[1] + " tests your knowledge.",
+            isFinalBoss: index === 4
+        })
+    );
 
 function getCurrentGuardianStage() {
     return guardianStages[
@@ -568,12 +820,15 @@ let guardianResult = "";
 let guardianOptions = [];
 let guardianOptionRects = [];
 
+// HINT SYSTEM DISABLED:
+// All four literature paths use knowledge-only battles.
+// No hint counter, H-key hint, or answer-elimination mechanic is used.
+
 let playerHP = 100;
 let maxPlayerHP = 100;
 
 let playerXP = 0;
 let playerDifficulty = "easy";
-let playerHints = 8;
 
 const guardianCombat = {
     damageEasy: 15,
@@ -692,6 +947,586 @@ const uniqueThirukkuralQuestions = [
     }
 ];
 
+const literatureBilingualFallbacks = {
+    "silappadhigaram_001": {
+        "tamil_question": "சிலப்பதிகாரத்தின் மையப் பெண் கதாபாத்திரம் யார்?",
+        "tamil_options": [
+            "கண்ணகி",
+            "மணிமேகலை",
+            "அவ்வையார்",
+            "மாதவி"
+        ],
+        "tamil_story": "பண்டைய கதை கண்ணகி மற்றும் கோவலனின் வாழ்க்கையுடன் தொடங்குகிறது. இந்தக் காப்பியத்தின் முக்கிய கதாபாத்திரங்களில் ஒருவரை அடையாளம் காண்பதே உன் முதல் சோதனை."
+    },
+    "silappadhigaram_002": {
+        "tamil_question": "சிலப்பதிகாரத்தில் கண்ணகியின் கணவர் யார்?",
+        "tamil_options": [
+            "கோவலன்",
+            "சேரன் செங்குட்டுவன்",
+            "நெடுஞ்செழியன்",
+            "இளங்கோ அடிகள்"
+        ],
+        "tamil_story": "கண்ணகியின் கதை கோவலனின் வாழ்க்கைக் கதையுடன் நெருக்கமாக இணைந்துள்ளது."
+    },
+    "silappadhigaram_003": {
+        "tamil_question": "சிலப்பதிகாரத்தை இயற்றியவர் என மரபாகக் கருதப்படுபவர் யார்?",
+        "tamil_options": [
+            "இளங்கோ அடிகள்",
+            "திருவள்ளுவர்",
+            "கம்பர்",
+            "சாத்தனார்"
+        ],
+        "tamil_story": "சிலப்பதிகாரம் தமிழின் முக்கியமான காப்பியங்களில் ஒன்றாகும்."
+    },
+    "silappadhigaram_004": {
+        "tamil_question": "சிலப்பதிகாரத்திற்கு அதன் பெயரை வழங்கிய சிலம்பின் பெயர் என்ன?",
+        "tamil_options": [
+            "சிலம்பு",
+            "வளையல்",
+            "தாலி",
+            "குண்டலம்"
+        ],
+        "tamil_story": "சிலப்பதிகாரத்தின் கதை கண்ணகி மற்றும் கோவலனின் வாழ்க்கை அனுபவங்களைப் பின்தொடர்கிறது."
+    },
+    "silappadhigaram_005": {
+        "tamil_question": "கண்ணகியின் கதையுடன் வலுவாகத் தொடர்புடைய கருப்பொருள் எது?",
+        "tamil_options": [
+            "நீதி",
+            "வானியல்",
+            "வேளாண்மை",
+            "இசை"
+        ],
+        "tamil_story": "கோவலனுக்கு இழைக்கப்பட்ட அநீதிக்குப் பிறகு, கண்ணகியின் கதை நீதியைத் தேடும் பயணமாக மாறுகிறது."
+    },
+    "silappadhigaram_006": {
+        "tamil_question": "சிலப்பதிகாரத்தின் மையத் திருமணத் தம்பதியர் யார்?",
+        "tamil_options": [
+            "கண்ணகி மற்றும் கோவலன்",
+            "கண்ணகி மற்றும் இளங்கோ அடிகள்",
+            "மாதவி மற்றும் நெடுஞ்செழியன்",
+            "மணிமேகலை மற்றும் கோவலன்"
+        ],
+        "tamil_story": "கண்ணகியின் தனிப்பட்ட துயரத்தை நீதியின் பெரிய கேள்வியுடன் இந்தக் காப்பியம் இணைக்கிறது."
+    },
+    "silappadhigaram_007": {
+        "tamil_question": "சிலப்பதிகாரத்தில் பாண்டிய நாட்டுடன் தொடர்புடைய நகரம் எது?",
+        "tamil_options": [
+            "மதுரை",
+            "புகார்",
+            "வஞ்சி",
+            "காஞ்சி"
+        ],
+        "tamil_story": "இந்தக் காப்பியம் பண்டைய தமிழ் அரசுகளுடனும் அவற்றின் முக்கிய நகரங்களுடனும் நெருக்கமாகத் தொடர்புடையது."
+    },
+    "silappadhigaram_008": {
+        "tamil_question": "சிலப்பதிகாரத்தில் வரும் பண்டைய சோழர் துறைமுக நகரமான புகாரின் மற்றொரு பெயர் என்ன?",
+        "tamil_options": [
+            "காவேரிப்பட்டினம்",
+            "மதுரை",
+            "வஞ்சி",
+            "உறையூர்"
+        ],
+        "tamil_story": "சிலப்பதிகாரம் பண்டைய துறைமுக நகரமான புகாரில் தொடங்குகிறது; அது காவேரிப்பட்டினம் என்றும் அழைக்கப்படுகிறது."
+    },
+    "silappadhigaram_009": {
+        "tamil_question": "கோவலனுக்கு ஏற்பட்ட அநீதிக்கு கண்ணகி அளிக்கும் பதிலின் மையக் கருத்து எது?",
+        "tamil_options": [
+            "நீதி",
+            "சாகசம்",
+            "வாணிபம்",
+            "கல்வி"
+        ],
+        "tamil_story": "கண்ணகியின் பயணம் நீதி, பொறுப்பு மற்றும் அநீதியான முடிவுகளின் விளைவுகளைப் பற்றிய கேள்விகளை எழுப்புகிறது."
+    },
+    "silappadhigaram_010": {
+        "tamil_question": "கண்ணகியின் கதையின் மூலம் சிலப்பதிகாரம் எந்தப் பரந்த கருத்தை எடுத்துரைக்கிறது?",
+        "tamil_options": [
+            "நீதி மற்றும் அநீதியான முடிவுகளின் விளைவுகள்",
+            "நவீன தொழில்நுட்பத்தின் கண்டுபிடிப்பு",
+            "வானியலின் வரலாறு",
+            "நவீன அறிவியலின் வளர்ச்சி"
+        ],
+        "tamil_story": "தனிப்பட்ட துயரத்தை நீதியுடனும் ஆட்சியாளர்கள் எடுக்கும் முடிவுகளின் விளைவுகளுடனும் சிலப்பதிகாரம் இணைக்கிறது."
+    },
+    "purananuru_001": {
+        "tamil_question": "புறநானூறு சங்க இலக்கியத்தின் எந்தத் தொகுப்பைச் சேர்ந்தது?",
+        "tamil_options": [
+            "எட்டுத்தொகை",
+            "பத்துப்பாட்டு",
+            "பதினெண்கீழ்க்கணக்கு",
+            "ஐம்பெருங்காப்பியம்"
+        ],
+        "tamil_story": "புறநானூறு செம்மையான தமிழ் சங்க இலக்கியத்தின் முக்கியமான தொகுப்புகளில் ஒன்றாகும்."
+    },
+    "purananuru_002": {
+        "tamil_question": "புறநானூற்றில் மரபாக எத்தனை பாடல்கள் உள்ளதாகக் கருதப்படுகிறது?",
+        "tamil_options": [
+            "100",
+            "200",
+            "300",
+            "400"
+        ],
+        "tamil_story": "புறநானூறு என்ற பெயர் நானூறு பாடல்களைக் கொண்ட தொகுப்பைக் குறிக்கிறது."
+    },
+    "purananuru_003": {
+        "tamil_question": "புறநானூற்றுடன் வலுவாகத் தொடர்புடைய பரந்த கருப்பொருள் எது?",
+        "tamil_options": [
+            "போர் மற்றும் பொது வாழ்க்கை",
+            "வானியல்",
+            "இலக்கணம்",
+            "கணிதம்"
+        ],
+        "tamil_story": "புறநானூறு தனிப்பட்ட காதலைவிட பொது மற்றும் சமூக வாழ்க்கையின் அம்சங்களை முக்கியமாக எடுத்துரைக்கிறது."
+    },
+    "purananuru_004": {
+        "tamil_question": "புறநானூற்றில் பாடல்கள் இயற்றிய புகழ்பெற்ற தமிழ் புலவர் யார்?",
+        "tamil_options": [
+            "கணியன் பூங்குன்றனார்",
+            "கம்பர்",
+            "சேக்கிழார்",
+            "ஆண்டாள்"
+        ],
+        "tamil_story": "பல புகழ்பெற்ற தமிழ் புலவர்களின் பாடல்கள் புறநானூறு தொகுப்பில் இடம்பெற்றுள்ளன."
+    },
+    "purananuru_005": {
+        "tamil_question": "கணியன் பூங்குன்றனாரின் புறநானூற்றுப் பாடலுடன் புகழ்பெற்ற முறையில் தொடர்புடைய கருத்து எது?",
+        "tamil_options": [
+            "யாதும் ஊரே யாவரும் கேளிர்",
+            "அரசர்கள் மட்டுமே முக்கியமானவர்கள்",
+            "போர் மட்டுமே பெருமைக்கான பாதை",
+            "அறிவு புலவர்களுக்கு மட்டுமே உரியது"
+        ],
+        "tamil_story": "கணியன் பூங்குன்றனார் மனிதகுலத்தைப் பற்றிய பரந்த பார்வையை வெளிப்படுத்தும் புகழ்பெற்ற புறநானூற்றுப் பாடலுக்காக நினைவுகூரப்படுகிறார்."
+    },
+    "purananuru_006": {
+        "tamil_question": "புறநானூற்றில் ஆட்சியாளர்களின் எந்தப் பண்பு அடிக்கடி பாராட்டப்படுகிறது?",
+        "tamil_options": [
+            "கொடைத்தன்மை",
+            "மௌனம்",
+            "தனிமை",
+            "ரகசியம்"
+        ],
+        "tamil_story": "அரசர்கள், வீரர்கள், கொடை, போர், மரணம் மற்றும் சமூகத்தின் மதிப்புகள் பற்றிய பாடல்கள் புறநானூற்றில் உள்ளன."
+    },
+    "purananuru_007": {
+        "tamil_question": "சங்க இலக்கியத்தில் விவரிக்கப்படும் வரலாற்று உலகத்துடன் அடிக்கடி தொடர்புடைய மூன்று முக்கிய தமிழ் அரச வம்சங்கள் எவை?",
+        "tamil_options": [
+            "சேரர், சோழர் மற்றும் பாண்டியர்",
+            "பல்லவர், சாளுக்கியர் மற்றும் ராஷ்டிரகூடர்",
+            "முகலாயர், சோழர் மற்றும் பாண்டியர்",
+            "மௌரியர், குப்தர் மற்றும் சேரர்"
+        ],
+        "tamil_story": "புறநானூற்றுப் பாடல்கள் பண்டைய தமிழகத்தின் ஆட்சியாளர்கள் மற்றும் சமூக வாழ்க்கை பற்றிய தகவல்களை வழங்குகின்றன."
+    },
+    "purananuru_008": {
+        "tamil_question": "புறநானூற்றுப் பாடல்களில் பொதுவாக ஆராயப்படும் கருத்து எது?",
+        "tamil_options": [
+            "வாழ்க்கையின் நிலையாமை",
+            "இயந்திரங்களின் கண்டுபிடிப்பு",
+            "நவீன அரசியல் தேர்தல்கள்",
+            "விண்வெளி ஆய்வு"
+        ],
+        "tamil_story": "மனித வாழ்க்கை, மரணம், புகழ், கொடை மற்றும் உலகியலான அதிகாரத்தின் நிலையாமை பற்றிய சிந்தனைகள் புறநானூற்றில் காணப்படுகின்றன."
+    },
+    "purananuru_009": {
+        "tamil_question": "புறம் மரபு முக்கியமாக எதைப் பற்றிப் பேசுகிறது?",
+        "tamil_options": [
+            "பொது வாழ்க்கை, போர், வீரியம் மற்றும் சமூக மதிப்புகள்",
+            "மறைக்கப்பட்ட காதல் உணர்வுகள்",
+            "திருமணச் சடங்குகள் மட்டும்",
+            "தாவரங்களின் விளக்கங்கள் மட்டும்"
+        ],
+        "tamil_story": "தமிழ் இலக்கிய மரபு கருப்பொருள்களை அகம் மற்றும் புறம் எனப் பிரிக்கிறது. புறநானூறு புற மரபுடன் தொடர்புடையது."
+    },
+    "purananuru_010": {
+        "tamil_question": "பண்டைய தமிழ் சமூகத்தைப் புரிந்துகொள்வதில் புறநானூறு ஏன் முக்கியமானது?",
+        "tamil_options": [
+            "ஆட்சியாளர்கள், வீரர்கள், சமூகம், மதிப்புகள் மற்றும் வரலாற்று வாழ்க்கையைப் பற்றிய கவிதை விளக்கங்களை வழங்குகிறது",
+            "இது நவீன அறிவியலைப் பற்றிய கையேடு",
+            "இதில் மதச் சடங்குகள் மட்டுமே உள்ளன",
+            "இது நவீன வரலாற்றுப் பாடநூலாக எழுதப்பட்டது"
+        ],
+        "tamil_story": "புறநானூறு கவிதையாக மட்டுமல்லாமல், பண்டைய தமிழ் சமூகத்தைப் பற்றிய தகவல்களையும் பாதுகாத்து வைத்திருப்பதால் முக்கியமானது."
+    },
+    "manimegalai_001": {
+        "tamil_question": "மணிமேகலையின் மையப் பெண் கதாபாத்திரம் யார்?",
+        "tamil_options": [
+            "மணிமேகலை",
+            "கண்ணகி",
+            "மாதவி",
+            "அவ்வையார்"
+        ],
+        "tamil_story": "மணிமேகலை ஒரு முக்கியமான தமிழ் புத்த காப்பியம்; அதன் மையக் கதாபாத்திரத்தின் ஆன்மிகப் பயணத்தைப் பின்தொடர்கிறது."
+    },
+    "manimegalai_002": {
+        "tamil_question": "மணிமேகலையை இயற்றியவர் என மரபாகக் கருதப்படுபவர் யார்?",
+        "tamil_options": [
+            "சாத்தனார்",
+            "இளங்கோ அடிகள்",
+            "திருவள்ளுவர்",
+            "கம்பர்"
+        ],
+        "tamil_story": "புத்த சிந்தனைகள் மற்றும் அறக்கருத்துகளை எடுத்துரைத்த புலவருடன் மணிமேகலை மரபாகத் தொடர்புபடுத்தப்படுகிறது."
+    },
+    "manimegalai_003": {
+        "tamil_question": "மணிமேகலையின் தாய் யார்?",
+        "tamil_options": [
+            "மாதவி",
+            "கண்ணகி",
+            "அவ்வையார்",
+            "மணிமேகலைத் தேவி"
+        ],
+        "tamil_story": "மணிமேகலை சிலப்பதிகாரத்தின் கதாபாத்திரங்களுடனும் நிகழ்வுகளுடனும் தொடர்புடையது."
+    },
+    "manimegalai_004": {
+        "tamil_question": "மணிமேகலையுடன் வலுவாகத் தொடர்புடைய சமய மரபு எது?",
+        "tamil_options": [
+            "பௌத்தம்",
+            "சமணம்",
+            "சைவம்",
+            "வைணவம்"
+        ],
+        "tamil_story": "உலகியலான வாழ்க்கையிலிருந்து ஆன்மிக மதிப்புகளை நோக்கி மணிமேகலை நகர்வதை இந்தக் காப்பியம் எடுத்துரைக்கிறது."
+    },
+    "manimegalai_005": {
+        "tamil_question": "மணிமேகலை தனது ஆன்மிகப் பயணத்தின் மூலம் முக்கியமாக எதைத் தேடுகிறாள்?",
+        "tamil_options": [
+            "ஆன்மிக விடுதலை மற்றும் கருணை",
+            "அரசியல் அதிகாரம்",
+            "இராணுவ வெற்றி",
+            "செல்வமும் புகழும்"
+        ],
+        "tamil_story": "மணிமேகலை உலகியலான வாழ்க்கையைத் துறந்து ஆன்மிகப் பயிற்சி மற்றும் கருணையுடன் தொடர்புடைய பாதையைத் தேர்ந்தெடுக்கிறாள்."
+    },
+    "manimegalai_006": {
+        "tamil_question": "மணிமேகலையுடன் தொடர்புடைய மாயக் கிண்ணத்தின் பெயர் என்ன?",
+        "tamil_options": [
+            "அமுதசுரபி",
+            "சிலம்பு",
+            "குண்டலம்",
+            "வளையல்"
+        ],
+        "tamil_story": "ஒரு மாயக் கிண்ணம் கதையில் முக்கிய பங்கு வகிக்கிறது; அது மணிமேகலையின் அறப்பணிகளுடன் தொடர்புடையது."
+    },
+    "manimegalai_007": {
+        "tamil_question": "மணிமேகலையின் அறச்செயல்களின் மூலம் வலியுறுத்தப்படும் மதிப்பு எது?",
+        "tamil_options": [
+            "கருணை",
+            "பழிவாங்குதல்",
+            "வெற்றி கொள்ளுதல்",
+            "ஆடம்பரம்"
+        ],
+        "tamil_story": "பசியாலும் வறுமையாலும் துன்பப்படும் மக்களுக்கு உதவுவதையும் கருணையையும் இந்தக் காப்பியம் வலியுறுத்துகிறது."
+    },
+    "manimegalai_008": {
+        "tamil_question": "மணிமேகலை பாரம்பரியமாக எந்த வகையான தமிழ் இலக்கியப் படைப்பாகக் கருதப்படுகிறது?",
+        "tamil_options": [
+            "ஐம்பெருங்காப்பியங்களில் ஒன்று",
+            "ஒரு சங்கத் தொகுப்பு",
+            "ஒரு இலக்கண நூல்",
+            "ஒரு பக்திப் பாடல் தொகுப்பு"
+        ],
+        "tamil_story": "சிலப்பதிகாரத்தில் அறிமுகமான இலக்கிய உலகை மணிமேகலை தொடர்ந்து விரிவுபடுத்துகிறது."
+    },
+    "manimegalai_009": {
+        "tamil_question": "மணிமேகலையின் ஆன்மிகப் பயணத்தில் முக்கியமான தத்துவக் கருத்து எது?",
+        "tamil_options": [
+            "ஆசை மற்றும் துன்பத்திலிருந்து விடுதலை",
+            "இராணுவப் புகழைத் தேடுதல்",
+            "செல்வத்தைச் சேர்த்தல்",
+            "அரசுகளை விரிவுபடுத்துதல்"
+        ],
+        "tamil_story": "துன்பம், ஆசை மற்றும் விடுதலை தொடர்பான புத்த தத்துவக் கருத்துகளை இந்தக் காப்பியம் ஆராய்கிறது."
+    },
+    "manimegalai_010": {
+        "tamil_question": "மணிமேகலையின் மாற்றத்தின் மூலம் வலுவாக வெளிப்படுத்தப்படும் பரந்த செய்தி எது?",
+        "tamil_options": [
+            "கருணை, துறவு மற்றும் ஆன்மிகத் தேடல்",
+            "அதிகாரம், வெற்றி மற்றும் செல்வம்",
+            "வாணிபம், போர் மற்றும் அரசியல்",
+            "புகழ், ஆடம்பரம் மற்றும் பொழுதுபோக்கு"
+        ],
+        "tamil_story": "மணிமேகலை தனது கதையை அற மற்றும் தத்துவ போதனைகளுடன் இணைக்கிறது."
+    }
+};
+
+// ==========================================
+// STAGES 7–9 — CURATED LITERATURE QUESTIONS
+// ==========================================
+// The supplied datasets contain ten questions each.
+// The RPG uses questions 001–005 so every run has
+// exactly five stage questions: four Guardians +
+// one Shadow King.
+// ==========================================
+
+const literatureStageQuestionData = {
+
+    // ------------------------------------------
+    // SILAPPADHIGARAM
+    // ------------------------------------------
+
+    silappadhigaram_001: {
+        quest_id: "silappadhigaram_001",
+        difficulty: "easy",
+        story: "The ancient tale begins with the story of Kannagi and Kovalan. Your first challenge is to identify one of the central characters of the epic.",
+        question: "Who is the central female character of Silappadhigaram?",
+        options: [
+            "Kannagi",
+            "Manimekalai",
+            "Avvaiyar",
+            "Madhavi"
+        ],
+        correct_answer: 0
+    },
+
+    silappadhigaram_002: {
+        quest_id: "silappadhigaram_002",
+        difficulty: "easy",
+        story: "Kannagi's story is closely connected with the story of Kovalan.",
+        question: "Who is Kannagi's husband in Silappadhigaram?",
+        options: [
+            "Kovalan",
+            "Cheran Senguttuvan",
+            "Nedunchezhiyan",
+            "Ilango Adigal"
+        ],
+        correct_answer: 0
+    },
+
+    silappadhigaram_003: {
+        quest_id: "silappadhigaram_003",
+        difficulty: "easy",
+        story: "Silappadhigaram is one of the important Tamil epics.",
+        question: "Who is traditionally credited as the author of Silappadhigaram?",
+        options: [
+            "Ilango Adigal",
+            "Thiruvalluvar",
+            "Kambar",
+            "Sattanar"
+        ],
+        correct_answer: 0
+    },
+
+    silappadhigaram_004: {
+        quest_id: "silappadhigaram_004",
+        difficulty: "easy",
+        story: "The story of Silappadhigaram follows the experiences of Kannagi and Kovalan.",
+        question: "What is the name of the anklet that gives Silappadhigaram its title?",
+        options: [
+            "Silambu",
+            "Valai",
+            "Thali",
+            "Kundalam"
+        ],
+        correct_answer: 0
+    },
+
+    silappadhigaram_005: {
+        quest_id: "silappadhigaram_005",
+        difficulty: "easy",
+        story: "Kannagi's story becomes a journey of justice after a serious injustice is committed against Kovalan.",
+        question: "Which theme is strongly associated with Kannagi's story?",
+        options: [
+            "Justice",
+            "Astronomy",
+            "Agriculture",
+            "Music"
+        ],
+        correct_answer: 0
+    },
+
+    // ------------------------------------------
+    // PURANANURU
+    // ------------------------------------------
+
+    purananuru_001: {
+        quest_id: "purananuru_001",
+        difficulty: "easy",
+        story: "Purananuru is one of the important anthologies of classical Tamil Sangam literature.",
+        question: "Purananuru belongs to which collection of Sangam literature?",
+        options: [
+            "Ettuthokai",
+            "Pathupattu",
+            "Pathinenkilkanakku",
+            "Aimperumkappiyam"
+        ],
+        correct_answer: 0
+    },
+
+    purananuru_002: {
+        quest_id: "purananuru_002",
+        difficulty: "easy",
+        story: "The name Purananuru refers to an anthology containing four hundred poems.",
+        question: "How many poems are traditionally included in Purananuru?",
+        options: [
+            "100",
+            "200",
+            "300",
+            "400"
+        ],
+        correct_answer: 3
+    },
+
+    purananuru_003: {
+        quest_id: "purananuru_003",
+        difficulty: "easy",
+        story: "Purananuru mainly deals with public and social aspects of life rather than private love.",
+        question: "Which broad theme is strongly associated with Purananuru?",
+        options: [
+            "War and public life",
+            "Astronomy",
+            "Grammar",
+            "Mathematics"
+        ],
+        correct_answer: 0
+    },
+
+    purananuru_004: {
+        quest_id: "purananuru_004",
+        difficulty: "easy",
+        story: "Several celebrated Tamil poets are represented in the Purananuru anthology.",
+        question: "Which famous Tamil poet is associated with poems in Purananuru?",
+        options: [
+            "Kaniyan Pungundranar",
+            "Kambar",
+            "Sekkizhar",
+            "Andal"
+        ],
+        correct_answer: 0
+    },
+
+    purananuru_005: {
+        quest_id: "purananuru_005",
+        difficulty: "medium",
+        story: "Kaniyan Pungundranar is remembered for a famous Purananuru poem expressing a broad view of humanity.",
+        question: "Which idea is famously associated with Kaniyan Pungundranar's Purananuru poem?",
+        options: [
+            "All places are my own and all people are my kin",
+            "Only kings are important",
+            "War is the only path to greatness",
+            "Knowledge belongs only to poets"
+        ],
+        correct_answer: 0
+    },
+
+    // ------------------------------------------
+    // MANIMEGALAI
+    // ------------------------------------------
+
+    manimegalai_001: {
+        quest_id: "manimegalai_001",
+        difficulty: "easy",
+        story: "Manimegalai is a major Tamil Buddhist epic that follows the spiritual journey of its central character.",
+        question: "Who is the central female character of Manimegalai?",
+        options: [
+            "Manimegalai",
+            "Kannagi",
+            "Madhavi",
+            "Avvaiyar"
+        ],
+        correct_answer: 0
+    },
+
+    manimegalai_002: {
+        quest_id: "manimegalai_002",
+        difficulty: "easy",
+        story: "Manimegalai is traditionally associated with the poet who also wrote about Buddhist ideas and moral teachings.",
+        question: "Who is traditionally credited as the author of Manimegalai?",
+        options: [
+            "Sattanar",
+            "Ilango Adigal",
+            "Thiruvalluvar",
+            "Kambar"
+        ],
+        correct_answer: 0
+    },
+
+    manimegalai_003: {
+        quest_id: "manimegalai_003",
+        difficulty: "easy",
+        story: "Manimegalai is connected to the characters and events of Silappadhigaram.",
+        question: "Who is Manimegalai's mother?",
+        options: [
+            "Madhavi",
+            "Kannagi",
+            "Avvaiyar",
+            "Manimekala Devi"
+        ],
+        correct_answer: 0
+    },
+
+    manimegalai_004: {
+        quest_id: "manimegalai_004",
+        difficulty: "easy",
+        story: "The epic presents Manimegalai's movement away from worldly life toward spiritual values.",
+        question: "Which religious tradition is strongly associated with Manimegalai?",
+        options: [
+            "Buddhism",
+            "Jainism",
+            "Saivism",
+            "Vaishnavism"
+        ],
+        correct_answer: 0
+    },
+
+    manimegalai_005: {
+        quest_id: "manimegalai_005",
+        difficulty: "medium",
+        story: "Manimegalai rejects a worldly life and chooses a path connected with spiritual practice and compassion.",
+        question: "What does Manimegalai primarily seek through her spiritual journey?",
+        options: [
+            "Spiritual liberation and compassion",
+            "Political power",
+            "Military victory",
+            "Wealth and fame"
+        ],
+        correct_answer: 0
+    }
+};
+
+
+function applyLiteratureBilingualFallbacks(question) {
+    if (!question || selectedLiterature === "thirukkural") {
+        return question;
+    }
+
+    const questId = String(
+        question.quest_id ||
+        question.id ||
+        question.questId ||
+        ""
+    );
+
+    const fallback = literatureBilingualFallbacks[questId];
+
+    if (!fallback) {
+        return question;
+    }
+
+    if (
+        !question.tamil_question ||
+        !String(question.tamil_question).trim()
+    ) {
+        question.tamil_question = fallback.tamil_question;
+    }
+
+    if (
+        !Array.isArray(question.tamil_options) ||
+        question.tamil_options.length === 0
+    ) {
+        question.tamil_options = fallback.tamil_options.slice();
+    }
+
+    if (
+        !question.tamil_story ||
+        !String(question.tamil_story).trim()
+    ) {
+        question.tamil_story = fallback.tamil_story;
+    }
+
+    return question;
+}
+
 const guardianFallbackQuestion = uniqueThirukkuralQuestions[0];
 const area2FallbackQuestion = uniqueThirukkuralQuestions[1];
 const finalBossFallbackQuestion = uniqueThirukkuralQuestions[4];
@@ -705,14 +1540,29 @@ const sageQuestOffer = {
 
     speaker: "ஞானி",
 
-    title:
-        "அறிவின் முதல் சோதனை",
+    get title() {
+        return activeLiteratureProfile.questTitleTa;
+    },
 
-    description:
-        "உனக்காக ஒரு சோதனை காத்திருக்கிறது.",
+    get englishTitle() {
+        return activeLiteratureProfile.questTitleEn;
+    },
 
-    question:
-        "இந்தச் சோதனையை ஏற்கிறாயா?"
+    get description() {
+        return activeLiteratureProfile.questDescriptionTa;
+    },
+
+    get englishDescription() {
+        return activeLiteratureProfile.questDescriptionEn;
+    },
+
+    get question() {
+        return activeLiteratureProfile.questQuestionTa;
+    },
+
+    get englishQuestion() {
+        return activeLiteratureProfile.questQuestionEn;
+    }
 
 };
 
@@ -966,6 +1816,67 @@ window.addEventListener(
 
 
 // ==========================================
+// STAGE 10.8 — ACCEPT QUEST
+// ==========================================
+// Accepts the Sage's quest offer and starts
+// Stage 1 without changing player/NPC positions.
+// ==========================================
+
+function acceptQuest() {
+
+    if (!showQuestOffer) {
+        return;
+    }
+
+    questAccepted = true;
+    showQuestOffer = false;
+
+    // The old Active Quest HUD becomes available
+    // only after the quest is actually accepted.
+    showActiveQuestHUD = true;
+
+    showQuestAcceptedNotification = true;
+    questNotificationTimer = 0;
+
+    questStarted = false;
+
+    currentArea = 1;
+    guardianEncounter = 1;
+
+    guardianVisible = true;
+    finalBossVisible = false;
+    guardianDefeated = false;
+
+    area2Unlocked = false;
+    area3Unlocked = false;
+    area4Unlocked = false;
+
+    playerNearAreaGate = false;
+    playerNearGuardian = false;
+
+    activeQuest.objective =
+        guardianStages[0].objectiveTa;
+
+    activeQuest.englishObjective =
+        guardianStages[0].objectiveEn;
+
+    positionGuardianOnWorldFloor();
+    positionFinalBossOnWorldFloor();
+
+    updateCollisionBoundaries();
+
+    console.log(
+        "📜 QUEST ACCEPTED:",
+        activeLiteratureProfile.englishName
+    );
+
+    console.log(
+        "⚔️ STAGE 1 GUARDIAN ACTIVATED"
+    );
+}
+
+
+// ==========================================
 // CHECK INTERACTION
 // ==========================================
 
@@ -1000,27 +1911,7 @@ function checkInteraction() {
     }
 
     if (showQuestOffer) {
-        questAccepted = true;
-        showQuestOffer = false;
-        showQuestAcceptedNotification = true;
-        questNotificationTimer = 0;
-        showActiveQuestHUD = true;
-        questStarted = false;
-        currentArea = 1;
-        guardianEncounter = 1;
-        guardianVisible = true;
-        finalBossVisible = false;
-        guardianDefeated = false;
-        area2Unlocked = false;
-        area3Unlocked = false;
-        area4Unlocked = false;
-        playerNearAreaGate = false;
-        activeQuest.objective = guardianStages[0].objectiveTa;
-        activeQuest.englishObjective = guardianStages[0].objectiveEn;
-        positionGuardianOnWorldFloor();
-        positionFinalBossOnWorldFloor();
-        updateCollisionBoundaries();
-        console.log("📜 Quest accepted:", activeQuest.title);
+        acceptQuest();
         return;
     }
 
@@ -1033,6 +1924,11 @@ function checkInteraction() {
             if (currentSageDialogue >= sageDialogues.length) {
                 showSageDialogue = false;
                 currentSageDialogue = 0;
+
+                // Stage 10.7 — show the quest offer.
+                // Keep the Active Quest HUD hidden until
+                // the player explicitly accepts.
+                showActiveQuestHUD = false;
                 showQuestOffer = true;
             }
         }
@@ -1920,15 +2816,46 @@ function drawBackground() {
         ctx.drawImage(backgroundImage, drawX, drawY, drawWidth, drawHeight);
     }
 
-    const overlays = {
-        1: "rgba(15, 8, 4, 0.35)",
-        2: "rgba(10, 7, 4, 0.28)",
-        3: "rgba(7, 12, 6, 0.25)",
-        4: "rgba(2, 10, 5, 0.24)",
-        5: "rgba(12, 4, 20, 0.56)"
+    const overlaySets = {
+
+        thirukkural: [
+            "rgba(15, 8, 4, 0.35)",
+            "rgba(10, 7, 4, 0.28)",
+            "rgba(7, 12, 6, 0.25)",
+            "rgba(2, 10, 5, 0.24)",
+            "rgba(12, 4, 20, 0.56)"
+        ],
+
+        silappadhigaram: [
+            "rgba(52, 20, 8, 0.30)",
+            "rgba(45, 12, 8, 0.30)",
+            "rgba(35, 10, 8, 0.28)",
+            "rgba(20, 8, 4, 0.25)",
+            "rgba(48, 12, 8, 0.55)"
+        ],
+
+        purananuru: [
+            "rgba(30, 20, 8, 0.28)",
+            "rgba(20, 16, 8, 0.26)",
+            "rgba(10, 18, 8, 0.27)",
+            "rgba(18, 12, 5, 0.25)",
+            "rgba(35, 20, 8, 0.52)"
+        ],
+
+        manimegalai: [
+            "rgba(20, 12, 35, 0.28)",
+            "rgba(12, 18, 35, 0.25)",
+            "rgba(8, 25, 22, 0.25)",
+            "rgba(10, 28, 20, 0.25)",
+            "rgba(30, 10, 45, 0.55)"
+        ]
     };
 
-    ctx.fillStyle = overlays[currentArea] || overlays[1];
+    const overlays =
+        overlaySets[selectedLiterature] ||
+        overlaySets.thirukkural;
+
+    ctx.fillStyle = overlays[currentArea - 1] || overlays[0];
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     if (currentArea === 5) {
@@ -3184,7 +4111,11 @@ function drawRoundedPanel(x, y, width, height, radius, fill, stroke, lineWidth =
 
 function drawRPGStatHUD() {
 
-    if (!showActiveQuestHUD) {
+    // The Active Quest HUD is no longer relevant after the
+    // Shadow King is defeated and the quest is completed.
+    // Keep the completion banner visible without the old
+    // ACTIVE QUEST card remaining behind it.
+    if (!showActiveQuestHUD || questCompleted) {
         return;
     }
 
@@ -3206,9 +4137,22 @@ function drawRPGStatHUD() {
     // -----------------------------
     // LEFT — ACTIVE QUEST
     // -----------------------------
+    // Hide the Active Quest card during cinematic/interaction moments.
+    // Original vertical character positioning is preserved.
+    const hideQuestCard =
+        showSageDialogue ||
+        showQuestOffer ||
+        showQuestAcceptedNotification ||
+        playerNearGuardian ||
+        guardianBattleOpen ||
+        showRewardScreen ||
+        showAreaTransition ||
+        questCompleted;
 
     const questX = margin;
     const questY = margin;
+
+    if (!hideQuestCard) {
 
     drawRoundedPanel(
         questX,
@@ -3309,6 +4253,8 @@ function drawRPGStatHUD() {
         questY + hudHeight - 14
     );
 
+    } // end Active Quest card visibility block
+
     // -----------------------------
     // RIGHT — PLAYER STATUS
     // -----------------------------
@@ -3396,9 +4342,9 @@ function drawRPGStatHUD() {
 
     // Stat cards
     const cardY = statsY + 82;
-    const cardGap = 7;
+    const cardGap = 10;
     const cardWidth =
-        (hudWidth - 32 - cardGap * 2) / 3;
+        (hudWidth - 32 - cardGap) / 2;
     const cardHeight = 43;
 
     const cards = [
@@ -3411,11 +4357,6 @@ function drawRPGStatHUD() {
             x: statsX + 16 + cardWidth + cardGap,
             label: "⚔ LEVEL",
             value: String(playerDifficulty).toUpperCase()
-        },
-        {
-            x: statsX + 16 + (cardWidth + cardGap) * 2,
-            label: "💡 HINTS",
-            value: String(playerHints)
         }
     ];
 
@@ -3471,50 +4412,172 @@ async function loadGuardianQuestion() {
     guardianOptions = [];
 
     try {
-        // Exactly four Guardians + one separate Shadow King final boss.
-        // Curated bilingual Thirukkural questions guarantee that every
-        // option has both Tamil and English text and no question repeats.
-        const curatedIndex = guardianEncounter - 1;
-        const curatedQuestion = uniqueThirukkuralQuestions[curatedIndex];
 
-        if (curatedQuestion) {
-            guardianQuestion = JSON.parse(JSON.stringify(curatedQuestion));
-        } else {
-            const response = await fetch("/quest-data", {
-                method: "GET",
-                headers: { "Accept": "application/json" },
-                cache: "no-store"
-            });
-            if (!response.ok) throw new Error("Quest request failed: " + response.status);
-            guardianQuestion = await response.json();
+        // ==========================================
+        // THIRUKKURAL — KEEP THE EXISTING CURATED
+        // FIVE-QUESTION SYSTEM EXACTLY AS IT IS.
+        // ==========================================
+
+        if (selectedLiterature === "thirukkural") {
+
+            const curatedIndex =
+                guardianEncounter - 1;
+
+            guardianQuestion =
+                JSON.parse(
+                    JSON.stringify(
+                        uniqueThirukkuralQuestions[
+                            curatedIndex
+                        ]
+                    )
+                );
+
+            console.log(
+                "📜 Thirukkural stage question:",
+                guardianEncounter,
+                guardianQuestion.id
+            );
+
         }
 
-        guardianOptions = guardianQuestion.options || [];
-        playerDifficulty = guardianQuestion.difficulty || "easy";
+        // ==========================================
+        // OTHER LITERATURES — FIVE STAGE QUESTIONS
+        // ==========================================
+        // The first five questions of each supplied
+        // literature dataset are used in order:
+        //
+        // Stage 1 -> 001
+        // Stage 2 -> 002
+        // Stage 3 -> 003
+        // Stage 4 -> 004
+        // Stage 5 -> 005
+        //
+        // This prevents repeats and guarantees exactly
+        // one question per RPG stage.
+        // ==========================================
+
+        else {
+
+            const stageIndex =
+                Math.max(
+                    0,
+                    Math.min(
+                        guardianEncounter - 1,
+                        4
+                    )
+                );
+
+            const questionId =
+                selectedLiterature +
+                "_" +
+                String(
+                    stageIndex + 1
+                ).padStart(3, "0");
+
+            const curated =
+                literatureStageQuestionData[
+                    questionId
+                ];
+
+            if (!curated) {
+                throw new Error(
+                    "No curated stage question found for " +
+                    questionId
+                );
+            }
+
+            guardianQuestion =
+                JSON.parse(
+                    JSON.stringify(
+                        curated
+                    )
+                );
+
+            guardianQuestion =
+                applyLiteratureBilingualFallbacks(
+                    guardianQuestion
+                );
+
+            console.log(
+                "📚 Literature stage question:",
+                questionId
+            );
+        }
+
+        guardianOptions =
+            guardianQuestion.options ||
+            guardianQuestion.choices ||
+            guardianQuestion.answers ||
+            [];
+
+        playerDifficulty =
+            guardianQuestion.difficulty ||
+            guardianQuestion.level ||
+            "easy";
 
         if (!guardianOptions.length) {
-            throw new Error("The quest has no answer options.");
+            throw new Error(
+                "The quest has no answer options."
+            );
         }
 
-        activeQuest.objective = guardianEncounter === 5
-            ? "நிழல் மன்னனின் கேள்விக்கு சரியான பதிலை அளி"
-            : "காவலரின் கேள்விக்கு சரியான பதிலை அளி";
-        activeQuest.englishObjective = guardianEncounter === 5
-            ? "Answer the Shadow King's final question"
-            : "Answer the Guardian's question";
+        const stageConfig =
+            getCurrentGuardianStage();
 
-        console.log("📜 Unique bilingual Thirukkural question loaded:", guardianQuestion);
+        activeQuest.objective =
+            stageConfig.isFinalBoss
+                ? activeLiteratureProfile.questTitleTa
+                : stageConfig.objectiveTa;
+
+        activeQuest.englishObjective =
+            stageConfig.isFinalBoss
+                ? activeLiteratureProfile.questTitleEn
+                : stageConfig.objectiveEn;
 
     } catch (error) {
-        console.error("❌ Question loading failed:", error);
-        guardianQuestion = guardianEncounter === 5
-            ? finalBossFallbackQuestion
-            : uniqueThirukkuralQuestions[Math.max(0, Math.min(guardianEncounter - 1, 3))];
-        guardianOptions = guardianQuestion.options.slice();
-        playerDifficulty = guardianQuestion.difficulty;
-        guardianResult = "⚠️ Demo question loaded";
+
+        console.error(
+            "❌ Guardian question loading failed:",
+            error
+        );
+
+        // Safe fallback: never break the existing
+        // Thirukkural gameplay if a new dataset fails.
+        guardianQuestion =
+            selectedLiterature === "thirukkural"
+                ? uniqueThirukkuralQuestions[
+                    Math.max(
+                        0,
+                        Math.min(
+                            guardianEncounter - 1,
+                            4
+                        )
+                    )
+                ]
+                : uniqueThirukkuralQuestions[
+                    Math.max(
+                        0,
+                        Math.min(
+                            guardianEncounter - 1,
+                            4
+                        )
+                    )
+                ];
+
+        guardianOptions =
+            guardianQuestion.options.slice();
+
+        playerDifficulty =
+            guardianQuestion.difficulty ||
+            "easy";
+
+        guardianResult =
+            "⚠️ Demo question loaded";
+
     } finally {
+
         guardianQuestionLoading = false;
+
     }
 }
 
@@ -3626,11 +4689,18 @@ function startGuardianBattle() {
     guardianResult = "";
     guardianSelectedAnswer = -1;
 
+    const stageConfig =
+        getCurrentGuardianStage();
+
     activeQuest.objective =
-        "காவலரின் கேள்விக்கு சரியான பதிலை அளி";
+        stageConfig.isFinalBoss
+            ? activeLiteratureProfile.questQuestionTa
+            : stageConfig.objectiveTa;
 
     activeQuest.englishObjective =
-        "Answer the Guardian's question";
+        stageConfig.isFinalBoss
+            ? activeLiteratureProfile.questQuestionEn
+            : stageConfig.objectiveEn;
 
     console.log(
         "⚔️ Guardian battle started"
@@ -3787,77 +4857,6 @@ function getGuardianReward() {
     }
 
     return guardianCombat.rewardEasy;
-}
-
-
-// ==========================================
-// STAGE 13 — HINT
-// ==========================================
-
-function useGuardianHint() {
-
-    if (
-        !guardianBattleOpen ||
-        guardianQuestionLoading ||
-        !guardianQuestion
-    ) {
-        return;
-    }
-
-    if (playerHints <= 0) {
-
-        guardianResult =
-            "💡 No hints remaining.";
-
-        return;
-    }
-
-    playerHints--;
-
-    const correctAnswer =
-        guardianQuestion.correct_answer ??
-        guardianQuestion.correctAnswer ??
-        guardianQuestion.correct_option ??
-        guardianQuestion.correctOption ??
-        guardianQuestion.correct_index ??
-        guardianQuestion.correctIndex;
-
-    if (
-        typeof correctAnswer === "number" &&
-        guardianOptions.length >= 4
-    ) {
-
-        let removed = 0;
-
-        for (
-            let i = 0;
-            i < guardianOptions.length;
-            i++
-        ) {
-
-            if (
-                i !== correctAnswer &&
-                guardianOptions[i] !== null
-            ) {
-
-                guardianOptions[i] = null;
-                removed++;
-
-                if (removed >= 2) {
-                    break;
-                }
-            }
-        }
-
-        guardianResult =
-            "💡 HINT: Two wrong choices removed.";
-
-    } else {
-
-        guardianResult =
-            "💡 HINT: Eliminate the choices least related to the question.";
-
-    }
 }
 
 
@@ -4118,7 +5117,27 @@ function getGuardianTamilQuestion(question) {
         ""
     );
 
-    if (explicitTamil) return explicitTamil;
+    if (explicitTamil) {
+        return explicitTamil;
+    }
+
+    // If a literature question came from an older JSON file,
+    // recover its Tamil version from the built-in fallback map.
+    const questId = String(
+        guardianQuestion?.quest_id ||
+        guardianQuestion?.id ||
+        guardianQuestion?.questId ||
+        ""
+    );
+
+    const fallback = literatureBilingualFallbacks[questId];
+
+    if (
+        fallback &&
+        fallback.tamil_question
+    ) {
+        return fallback.tamil_question;
+    }
 
     const normalized = String(question || "").trim().toLowerCase();
 
@@ -4140,9 +5159,37 @@ function getGuardianOptionEnglish(index, option) {
 }
 
 function getGuardianOptionTamil(index, option) {
-    if (guardianQuestion && Array.isArray(guardianQuestion.tamil_options)) {
-        return guardianQuestion.tamil_options[index] || String(option);
+
+    if (
+        guardianQuestion &&
+        Array.isArray(guardianQuestion.tamil_options)
+    ) {
+        return (
+            guardianQuestion.tamil_options[index] ||
+            String(option)
+        );
     }
+
+    const questId = String(
+        guardianQuestion?.quest_id ||
+        guardianQuestion?.id ||
+        guardianQuestion?.questId ||
+        ""
+    );
+
+    const fallback =
+        literatureBilingualFallbacks[questId];
+
+    if (
+        fallback &&
+        Array.isArray(fallback.tamil_options)
+    ) {
+        return (
+            fallback.tamil_options[index] ||
+            String(option)
+        );
+    }
+
     return String(option);
 }
 
@@ -4159,7 +5206,26 @@ function getGuardianTamilStory(story) {
         ""
     );
 
-    if (explicitTamil) return explicitTamil;
+    if (explicitTamil) {
+        return explicitTamil;
+    }
+
+    const questId = String(
+        guardianQuestion?.quest_id ||
+        guardianQuestion?.id ||
+        guardianQuestion?.questId ||
+        ""
+    );
+
+    const fallback =
+        literatureBilingualFallbacks[questId];
+
+    if (
+        fallback &&
+        fallback.tamil_story
+    ) {
+        return fallback.tamil_story;
+    }
 
     const normalized = String(story || "").trim().toLowerCase();
 
@@ -4323,13 +5389,7 @@ function drawGuardianBattle() {
     ctx.font =
         "bold 14px 'Noto Sans Tamil', 'Nirmala UI', Arial, sans-serif";
     ctx.fillText(
-        guardianEncounter === 5
-            ? "நில், பயணியே! நிழல் மன்னனின் இறுதி சவாலை எதிர்கொள்."
-            : guardianEncounter === 3
-                ? "நில், பயணியே! ஞானத்தை நிரூபி."
-                : guardianEncounter === 4
-                    ? "நில், பயணியே! உன் துணிச்சலை நிரூபி."
-                    : "நில், பயணியே! அறிவை நிரூபி.",
+        battleStageConfig.speechTa,
         centerX,
         boxY + 129
     );
@@ -4337,13 +5397,7 @@ function drawGuardianBattle() {
     ctx.fillStyle = "#a99f91";
     ctx.font = "italic 11px Arial, sans-serif";
     ctx.fillText(
-        guardianEncounter === 5
-            ? "[ Halt, traveler. Face the Shadow King's final challenge. ]"
-            : guardianEncounter === 3
-                ? "[ Halt, traveler. Prove your wisdom. ]"
-                : guardianEncounter === 4
-                    ? "[ Halt, traveler. Prove your courage. ]"
-                    : "[ Halt, traveler. Prove your knowledge. ]",
+        "[ " + battleStageConfig.speechEn + " ]",
         centerX,
         boxY + 148
     );
@@ -4618,19 +5672,13 @@ function drawGuardianBattle() {
     ctx.textAlign = "center";
     ctx.fillStyle = "#f5d58a";
     ctx.font = "bold 11px Arial, sans-serif";
-    ctx.fillText(
-        "💡 H  குறிப்பு / HINT   •   1–4  தேர்வு / SELECT",
-        centerX,
-        controlsY - 14
-    );
-
     ctx.fillStyle = "#d9a441";
     ctx.font =
         "bold 12px 'Noto Sans Tamil', 'Nirmala UI', Arial, sans-serif";
     ctx.fillText(
-        "E — பதிலைச் சமர்ப்பிக்கவும்  [ Submit Answer ]",
+        "1–4  தேர்வு / SELECT   •   E — பதிலைச் சமர்ப்பிக்கவும்",
         centerX,
-        controlsY + 4
+        controlsY - 4
     );
 
     ctx.restore();
@@ -4782,7 +5830,7 @@ canvas.addEventListener(
 
 
 // ==========================================
-// STAGE 13 — KEYBOARD ANSWERS + HINT
+// STAGE 13 — KEYBOARD ANSWERS
 // ==========================================
 
 window.addEventListener(
@@ -4818,12 +5866,6 @@ window.addEventListener(
             return;
         }
 
-        if (key === "h") {
-
-            useGuardianHint();
-
-            event.preventDefault();
-        }
     }
 );
 
@@ -4842,9 +5884,17 @@ function continueFromRewardScreen() {
         finalBossBattleOpen = false;
         finalGuardianCompleted = true;
         questCompleted = true;
+
+        // Hide the old ACTIVE QUEST HUD immediately when the
+        // final boss is defeated. The QUEST COMPLETE banner
+        // will be drawn separately by the game loop.
+        showActiveQuestHUD = false;
+
         guardianDefeated = true;
-        activeQuest.objective = "தேடல் நிறைவு — கோயிலின் இறுதி ரகசியம் உன்னுடையது";
-        activeQuest.englishObjective = "QUEST COMPLETE — the temple's final secret is yours";
+        activeQuest.objective =
+            activeLiteratureProfile.endingTa;
+        activeQuest.englishObjective =
+            activeLiteratureProfile.endingEn;
         updateCollisionBoundaries();
         return;
     }
@@ -4879,11 +5929,19 @@ function drawQuestCompletionBanner() {
 
     ctx.fillStyle = "#f5d58a";
     ctx.font = "bold 17px 'Noto Sans Tamil', 'Nirmala UI', Arial, sans-serif";
-    ctx.fillText("நிழல் மன்னன் வீழ்ந்தான் — பயணம் நிறைவு", canvas.width / 2, y + 72);
+    ctx.fillText(
+        activeLiteratureProfile.endingTa,
+        canvas.width / 2,
+        y + 72
+    );
 
     ctx.fillStyle = "#c7bdad";
     ctx.font = "italic 11px Arial, sans-serif";
-    ctx.fillText("The Shadow King has fallen — your Temple of Thirukkural journey is complete.", canvas.width / 2, y + 98);
+    ctx.fillText(
+        activeLiteratureProfile.endingEn,
+        canvas.width / 2,
+        y + 98
+    );
     ctx.restore();
 }
 
@@ -4933,7 +5991,15 @@ function drawRewardScreen() {
 
     ctx.fillStyle = "#f5e6c8";
     ctx.font = "bold 13px 'Noto Sans Tamil', 'Nirmala UI', Arial, sans-serif";
-    const nextText = rewardScreenData.finalBoss ? "🏆 QUEST COMPLETE — கோயிலின் இறுதி ரகசியம் கண்டுபிடிக்கப்பட்டது" : rewardScreenData.stage === 4 ? "இறுதி மண்டபத்திற்குச் சென்று நிழல் மன்னனை எதிர்கொள்" : "அடுத்த பகுதிக்குச் சென்று அடுத்த காவலரை எதிர்கொள்";
+    const nextText =
+        rewardScreenData.finalBoss
+            ? "🏆 QUEST COMPLETE — " + activeLiteratureProfile.endingTa
+            : rewardScreenData.stage === 4
+                ? activeLiteratureProfile.areas[4].tamilName +
+                  " சென்று நிழல் மன்னனை எதிர்கொள்"
+                : "அடுத்த பகுதிக்குச் சென்று " +
+                  getCurrentAreaConfig().nextGateTa +
+                  " அடையவும்";
     ctx.fillText(nextText, canvas.width/2, y+278);
     ctx.fillStyle = "#d9a441";
     ctx.font = "bold 12px Arial, sans-serif";
@@ -5089,13 +6155,24 @@ function drawAreaTransition() {
     ctx.font = "italic 14px Arial, sans-serif";
     ctx.fillText("[ " + getCurrentAreaConfig().englishName + " ]", centerX, boxY + 118);
 
+    const stageStory =
+        getCurrentGuardianStage();
+
     ctx.fillStyle = "#f5e6c8";
     ctx.font = "bold 15px 'Noto Sans Tamil', 'Nirmala UI', Arial, sans-serif";
-    ctx.fillText("புதிய சோதனை உன்னை காத்திருக்கிறது.", centerX, boxY + 151);
+    ctx.fillText(
+        stageStory.storyTa,
+        centerX,
+        boxY + 151
+    );
 
     ctx.fillStyle = "#aaa093";
     ctx.font = "italic 11px Arial, sans-serif";
-    ctx.fillText("[ A new trial awaits you. ]", centerX, boxY + 174);
+    ctx.fillText(
+        "[ " + stageStory.storyEn + " ]",
+        centerX,
+        boxY + 174
+    );
     ctx.restore();
 }
 
@@ -5221,7 +6298,7 @@ function drawQuestOffer() {
         "italic 14px Arial, sans-serif";
 
     ctx.fillText(
-        "[ The First Trial of Knowledge ]",
+        "[ " + sageQuestOffer.englishTitle + " ]",
         canvas.width / 2,
         boxY + 102
     );
@@ -5255,7 +6332,7 @@ function drawQuestOffer() {
         "italic 15px Arial, sans-serif";
 
     ctx.fillText(
-        "[ A trial awaits you. ]",
+        "[ " + sageQuestOffer.englishDescription + " ]",
         canvas.width / 2,
         boxY + 164
     );
@@ -5289,7 +6366,7 @@ function drawQuestOffer() {
         "italic 15px Arial, sans-serif";
 
     ctx.fillText(
-        "[ Will you accept this trial? ]",
+        "[ " + sageQuestOffer.englishQuestion + " ]",
         canvas.width / 2,
         boxY + 222
     );
@@ -5501,21 +6578,14 @@ function drawSageDialogue() {
 
 function getSageEnglishSubtitle(index) {
 
-    const subtitles = [
+    const dialogue =
+        sageDialogues[index];
 
-        "Welcome, young seeker...",
+    if (dialogue && dialogue.englishText) {
+        return dialogue.englishText;
+    }
 
-        "Many secrets lie hidden within this ancient temple.",
-
-        "If you have come seeking knowledge, prove your worth.",
-
-        "A trial awaits you.",
-
-        "Only by completing it can you uncover the secrets of this temple."
-
-    ];
-
-    return subtitles[index] || "";
+    return "";
 }
 
 
@@ -5624,6 +6694,67 @@ function drawAreaGatePrompt() {
     ctx.restore();
 }
 
+function drawLiteratureBadge() {
+
+    if (
+        guardianBattleOpen ||
+        showQuestOffer ||
+        showSageDialogue ||
+        showRewardScreen ||
+        showAreaTransition
+    ) {
+        return;
+    }
+
+    ctx.save();
+
+    const width =
+        Math.min(
+            260,
+            canvas.width - 30
+        );
+
+    const x = 18;
+    const y = 18;
+
+    drawRoundedPanel(
+        x,
+        y,
+        width,
+        34,
+        9,
+        "rgba(18, 10, 6, 0.84)",
+        "rgba(217, 164, 65, 0.55)",
+        1
+    );
+
+    ctx.textAlign = "left";
+    ctx.textBaseline = "middle";
+
+    ctx.fillStyle = "#f5d58a";
+    ctx.font =
+        "bold 11px 'Noto Sans Tamil', 'Nirmala UI', Arial, sans-serif";
+
+    ctx.fillText(
+        activeLiteratureProfile.tamilName,
+        x + 12,
+        y + 12
+    );
+
+    ctx.fillStyle = "#bdb4a6";
+    ctx.font =
+        "italic 9px Arial, sans-serif";
+
+    ctx.fillText(
+        activeLiteratureProfile.englishName,
+        x + 12,
+        y + 25
+    );
+
+    ctx.restore();
+}
+
+
 function gameLoop() {
 
     // Hide the browser movement hint while a cinematic
@@ -5721,8 +6852,9 @@ function gameLoop() {
     // Battle panel is drawn at full saturation.
     drawGuardianBattle();
 
-    // HUD is deliberately drawn LAST so HP / XP / difficulty / hints
+    // HUD is deliberately drawn LAST so HP / XP / difficulty
     // always remain bright and readable.
+    drawLiteratureBadge();
     drawActiveQuestHUD();
 
     drawGuardianVictoryNotification();
@@ -5750,15 +6882,19 @@ function gameLoop() {
 // ==========================================
 
 console.log(
-    "🏛️ Temple of Thirukkural world starting..."
+    "📚 Literature RPG world starting:",
+    activeLiteratureProfile.englishName
 );
 
 console.log(
-    "👹 Stages 12–18 — Multi-Guardian In-World Battle active"
+    "👹 Five-stage Guardian system active"
 );
 
 console.log(
-    "🌍 Five stage areas active: Temple → Library → Village → Sacred Forest → Final Sanctum"
+    "🌍 Selected path:",
+    activeLiteratureProfile.areas
+        .map(area => area.englishName)
+        .join(" → ")
 );
 
 

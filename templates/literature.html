@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Tamil Literature RPG</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
+    <style>
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #3a2414,
+                    #140d08 65%,
+                    #080604
+                );
+
+            color: #f5dfad;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .literature-container {
+
+            width: 90%;
+            max-width: 1100px;
+
+            text-align: center;
+
+            padding: 40px 20px;
+        }
+
+        .literature-container h1 {
+
+            font-size: 42px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 10px;
+
+            text-shadow:
+                0 0 10px #d49a45,
+                0 0 25px rgba(212, 154, 69, 0.4);
+        }
+
+        .subtitle {
+
+            font-size: 18px;
+
+            color: #d6b985;
+
+            margin-bottom: 40px;
+        }
+
+        .literature-list {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(230px, 1fr)
+                );
+
+            gap: 25px;
+        }
+
+        .literature-card {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(80, 50, 25, 0.95),
+                    rgba(30, 18, 10, 0.98)
+                );
+
+            border: 2px solid #8d642f;
+
+            border-radius: 15px;
+
+            padding: 30px 20px;
+
+            min-height: 190px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0, 0, 0, 0.5);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .literature-card:hover {
+
+            transform:
+                translateY(-8px);
+
+            border-color: #e4b75f;
+
+            box-shadow:
+                0 15px 40px
+                rgba(210, 150, 65, 0.25);
+        }
+
+        .literature-card h2 {
+
+            font-size: 25px;
+
+            margin-bottom: 10px;
+
+            color: #f3cf82;
+        }
+
+        .literature-card p {
+
+            color: #c8b28b;
+
+            margin-bottom: 20px;
+        }
+
+        .literature-card button {
+
+            border: none;
+
+            padding:
+                12px 28px;
+
+            border-radius: 8px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #b47a32,
+                    #e0ad52
+                );
+
+            color: #1b1007;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            font-size: 15px;
+
+            transition:
+                transform 0.2s ease,
+                filter 0.2s ease;
+        }
+
+        .literature-card button:hover {
+
+            transform:
+                scale(1.05);
+
+            filter:
+                brightness(1.15);
+        }
+
+        .loading {
+
+            color: #d6b985;
+
+            font-size: 18px;
+        }
+
+        .error {
+
+            color: #e57373;
+
+            font-size: 18px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="literature-container">
+
+        <h1>
+            TAMIL LITERATURE RPG
+        </h1>
+
+        <p class="subtitle">
+            Choose your literary adventure
+        </p>
+
+
+        <div
+            id="literature-list"
+            class="literature-list"
+        >
+
+            <p class="loading">
+                Loading literatures...
+            </p>
+
+        </div>
+
+    </div>
+
+
+<script>
+
+async function loadLiteratures() {
+
+    const container =
+        document.getElementById(
+            "literature-list"
+        );
+
+    try {
+
+        const response =
+            await fetch(
+                "/literatures"
+            );
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Failed to load literature data"
+            );
+
+        }
+
+        const data =
+            await response.json();
+
+        container.innerHTML = "";
+
+
+        data.literatures.forEach(
+            literature => {
+
+                const card =
+                    document.createElement(
+                        "div"
+                    );
+
+                card.className =
+                    "literature-card";
+
+
+                card.innerHTML = `
+
+                    <h2>
+                        ${literature.name}
+                    </h2>
+
+                    <p>
+                        ${literature.quest_count}
+                        quests available
+                    </p>
+
+                    <button
+                        onclick="
+                            selectLiterature(
+                                '${literature.id}'
+                            )
+                        "
+                    >
+                        ENTER
+                    </button>
+
+                `;
+
+
+                container.appendChild(
+                    card
+                );
+
+            }
+        );
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        container.innerHTML = `
+
+            <p class="error">
+                Failed to load literatures.
+                <br>
+                Check that the FastAPI server
+                is running.
+            </p>
+
+        `;
+
+    }
+
+}
+
+
+function selectLiterature(
+    literature
+) {
+
+    console.log(
+        "Selected Literature:",
+        literature
+    );
+
+
+    /*
+        Save the selection locally.
+
+        This means the selected literature
+        remains available even if the player
+        reloads the page.
+    */
+
+    localStorage.setItem(
+        "selectedLiterature",
+        literature
+    );
+
+
+    /*
+        Send the player into the RPG world.
+    */
+
+    window.location.href =
+        `/world?literature=${literature}`;
+
+}
+
+
+loadLiteratures();
+
+</script>
+
+
+</body>
+
+</html>
