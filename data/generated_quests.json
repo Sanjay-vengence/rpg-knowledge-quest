@@ -1,0 +1,962 @@
+[
+  {
+    "id": "quest_001",
+    "stage": 1,
+    "stage_name_tamil": "ஞானக் காவலர்",
+    "stage_name_english": "Knowledge Guardian",
+    "is_final_boss": false,
+    "difficulty": "easy",
+    "topic": "Tell me about the first Kural and its meaning.",
+    "story_tamil": "பண்டைய எழுத்துகளின் கோயிலின் ஆழத்தில், ஞானக் காவலர் புனித சன்னதிக்குச் செல்லும் பாதையைத் தடுத்திருக்கிறார். கடந்து செல்ல, முதல் குறளில் மறைந்துள்ள அடிப்படை உண்மையைச் சரியாகக் கண்டறிந்து உன் தகுதியை நிரூபிக்க வேண்டும்.",
+    "story_english": "Deep within the ancient Temple of Letters, the Guardian of Wisdom blocks your path to the sacred shrine. To prove your worth and pass, you must correctly identify the foundational truth hidden in the very first verse of the Tirukkural.",
+    "question_tamil": "திருவள்ளுவரின் முதல் குறளின்படி, எல்லா எழுத்துகளுக்கும் முதலாகக் கூறப்படும் எழுத்து எது?",
+    "question_english": "According to the first Kural by Thiruvalluvar, which letter is said to be the first of all letters?",
+    "options": [
+      {
+        "tamil": "உ (உகரம்)",
+        "english": "உ (U)"
+      },
+      {
+        "tamil": "அ (அகரம்)",
+        "english": "அ (A)"
+      },
+      {
+        "tamil": "இ (இகரம்)",
+        "english": "இ (I)"
+      },
+      {
+        "tamil": "ம (மகரம்)",
+        "english": "ம (Ma)"
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_002",
+    "stage": 1,
+    "stage_name_tamil": "ஞானக் காவலர்",
+    "stage_name_english": "Knowledge Guardian",
+    "is_final_boss": false,
+    "difficulty": "medium",
+    "topic": "Tell me about the first Kural and its meaning.",
+    "story_tamil": "புனித திருக்குறள் அறையின் ஆழத்தில், கோயில் காவலர் பண்டைய பலிபீடத்திற்குச் செல்லும் பாதையைத் தடுத்திருக்கிறார். முதல் குறளின் ஆழமான பொருளை அறிந்து உன் தேர்ச்சியை நிரூபிக்க வேண்டும்.",
+    "story_english": "Deep within the sacred Chamber of Thirukkural, the temple guardian blocks your path to the ancient altar. He demands you prove your mastery of the opening verse before the sacred scroll reveals its ultimate secret.",
+    "question_tamil": "திருவள்ளுவரின் முதல் குறளின் விளக்கத்தின்படி, 'அ' என்ற எழுத்து இறைவனுடன் ஒப்பிடப்படுவதன் பொருள் என்ன?",
+    "question_english": "According to the commentary on the very first Kural by Thiruvalluvar, what does the letter 'A' symbolize in the comparison to the eternal God?",
+    "options": [
+      {
+        "tamil": "தமிழ் எழுத்துக்களின் இறுதி எழுத்து",
+        "english": "The final letter of the Tamil alphabet"
+      },
+      {
+        "tamil": "எல்லா எழுத்துகளுக்கும் முதலாக இருந்து, அதிலிருந்து அனைத்தும் தொடர்வது",
+        "english": "The first of all letters from which everything follows"
+      },
+      {
+        "tamil": "கோயில் மணிகளின் புனித ஒலி",
+        "english": "The sacred sound of temple bells"
+      },
+      {
+        "tamil": "பிரபஞ்சத்தை உடல்ரீதியாகப் படைத்தவர்",
+        "english": "The physical creator of the universe"
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_003",
+    "stage": 1,
+    "stage_name_tamil": "ஞானக் காவலர்",
+    "stage_name_english": "Knowledge Guardian",
+    "is_final_boss": false,
+    "difficulty": "hard",
+    "topic": "Tell me about the first Kural and its meaning.",
+    "story_tamil": "முதன்மை எழுத்துகளின் புனித சன்னதியின் ஆழத்தில், கல் காவலர் முதல் குறளின் ஆசிரியரையும் குறள் எண்ணையும் கேட்டு உன்னைச் சோதிக்கிறார்.",
+    "story_english": "Deep within the sacred sanctum of the Temple of Primordial Letters, the stone guardian demands the exact verse number and author of the opening couplet before granting passage to the innermost chamber.",
+    "question_tamil": "'கடவுள் வாழ்த்து' அதிகாரத்தின் முதல் குறளை இயற்றியவர் யார், அதன் குறள் எண் என்ன?",
+    "question_english": "Which author composed the very first Kural under the chapter 'Praise of God', and what is its specific verse number?",
+    "options": [
+      {
+        "tamil": "இளங்கோ அடிகள், குறள் எண் 10",
+        "english": "Authored by Ilango Adigal, verse number 10"
+      },
+      {
+        "tamil": "திருவள்ளுவர், குறள் எண் 1",
+        "english": "Authored by Thiruvalluvar, verse number 1"
+      },
+      {
+        "tamil": "ஔவையார், குறள் எண் 1",
+        "english": "Authored by Avvaiyar, verse number 1"
+      },
+      {
+        "tamil": "திருவள்ளுவர், குறள் எண் 133",
+        "english": "Authored by Thiruvalluvar, verse number 133"
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_004",
+    "stage": 1,
+    "stage_name_tamil": "ஞானக் காவலர்",
+    "stage_name_english": "Knowledge Guardian",
+    "is_final_boss": false,
+    "difficulty": "easy",
+    "topic": "Tell me about the second Kural and its meaning.",
+    "story_tamil": "புனித ஞான அறையில், ஒளிரும் சுருளை நோக்கிச் செல்லும் பாதையைப் பண்டைய காவலர் தடுத்திருக்கிறார். கற்றலின் உண்மையான நோக்கத்தைப் புரிந்திருப்பதை நிரூபிக்க வேண்டும்.",
+    "story_english": "Deep within the sacred Chamber of Wisdom, an ancient guardian blocks your path to a glowing scroll. To pass, you must prove your understanding of the true purpose of learning.",
+    "question_tamil": "இரண்டாம் குறளின்படி, உலகியலான கல்வியின் உயர்ந்த பயன் என்ன?",
+    "question_english": "According to Verse 2, what is considered the ultimate use of all worldly learning?",
+    "options": [
+      {
+        "tamil": "அரசில் செல்வமும் வளமும் பெறுதல்",
+        "english": "To gain wealth and prosperity in the kingdom"
+      },
+      {
+        "tamil": "தூய அறிவுடைய இறைவனின் நல்ல திருவடிகளை வணங்குதல்",
+        "english": "To worship the good feet of Him who possesses pure knowledge"
+      },
+      {
+        "tamil": "கிராமத்திற்காக சிறந்த இலக்கியக் காவியங்களை எழுதுதல்",
+        "english": "To write great literary epics for the village"
+      },
+      {
+        "tamil": "அரசியல் ஞானத்துடன் நாட்டை ஆட்சி செய்தல்",
+        "english": "To govern the land with political wisdom"
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_005",
+    "stage": 1,
+    "stage_name_tamil": "ஞானக் காவலர்",
+    "stage_name_english": "Knowledge Guardian",
+    "is_final_boss": false,
+    "difficulty": "medium",
+    "topic": "Tell me about the second Kural and its meaning.",
+    "story_tamil": "வள்ளுவர் சன்னதியின் பண்டைய மண்டபங்களில், கல் காவலர் புனித சுருள் அறைக்குச் செல்லும் பாதையைத் தடுத்திருக்கிறார். உலகியலான கல்வியின் உண்மையான பயனைப் பற்றி கேட்கிறார்.",
+    "story_english": "Deep within the ancient halls of the Valluvar Shrine, the stone guardian blocks your path to the sacred scroll chamber. To pass, you must prove your understanding of the foundational teachings inscribed upon the temple walls regarding the true purpose of all worldly learning.",
+    "question_tamil": "இரண்டாம் குறளின்படி, தூய அறிவுடைய இறைவனின் நல்ல திருவடிகளை வணங்காதவர்களுக்கு எது முற்றிலும் பயனற்றதாகும்?",
+    "question_english": "According to the second verse of Thirukkural, what is declared to be completely useless if one fails to worship the good feet of Him who possesses pure knowledge?",
+    "options": [
+      {
+        "tamil": "செல்வமும் பொருட்செல்வங்களும்",
+        "english": "Wealth and material possessions"
+      },
+      {
+        "tamil": "உலகியலான அனைத்து கல்வியும்",
+        "english": "All worldly learning and education"
+      },
+      {
+        "tamil": "உடல் வலிமையும் போர்க்கலைகளும்",
+        "english": "Physical strength and martial arts"
+      },
+      {
+        "tamil": "அரசியல் அதிகாரமும் ஆட்சியும்",
+        "english": "Political power and governance"
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_006",
+    "stage": 1,
+    "stage_name_tamil": "ஞானக் காவலர்",
+    "stage_name_english": "Knowledge Guardian",
+    "is_final_boss": false,
+    "difficulty": "hard",
+    "topic": "Tell me about the second Kural and its meaning.",
+    "story_tamil": "பண்டைய தூய ஞானக் கோயிலின் சன்னதியில், கல் காவலர் உன் கல்வியின் உண்மையான நோக்கத்தை நிரூபிக்கச் சொல்கிறார்.",
+    "story_english": "Deep within the sanctum of the ancient Temple of Pure Wisdom, the stone Guardian bars your path, demanding that you unlock the true purpose of scholarship. To prove your worthiness and open the inner vault, you must decode the ultimate significance behind the sacred teachings of Thiruvalluvar.",
+    "question_tamil": "திருக்குறளின் 'கடவுள் வாழ்த்து' அதிகாரத்தின் இரண்டாம் குறளின்படி, உலகியலான கல்வியைப் பெறுவதன் உண்மையான பயன் என்ன?",
+    "question_english": "According to Verse 2 of Thirukkural from the chapter 'Praise of God', what is declared to be the ultimate consequence or uselessness of acquiring worldly learning?",
+    "options": [
+      {
+        "tamil": "உலக அறிவியல்களில் முழுமையான தேர்ச்சி இல்லையெனில் அது ஆன்மீக அகந்தையை ஏற்படுத்தும்",
+        "english": "It leads to spiritual arrogance if one does not attain absolute mastery over all worldly sciences."
+      },
+      {
+        "tamil": "தூய அறிவுடைய இறைவனின் நல்ல திருவடிகளை வணங்காவிட்டால் அது முற்றிலும் பொருளற்றது; உண்மையான பயன் தராது",
+        "english": "It is completely meaningless and yields no true benefit if one does not worship the good feet of Him who possesses pure knowledge."
+      },
+      {
+        "tamil": "பண்டைய தமிழ் இலக்கணம் மற்றும் கவிதை இயற்றும் திறனுடன் இருந்தால்தான் அது முழுமை பெறும்",
+        "english": "It remains incomplete unless accompanied by the mastery of ancient Tamil grammar and poetic composition."
+      },
+      {
+        "tamil": "சமூகத்துடன் பகிராவிட்டால் அறிஞருக்கு பொருள் செல்வத்தையும் வளத்தையும் தராது",
+        "english": "It fails to bring material wealth and prosperity to the scholar if not shared with the community."
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_007",
+    "stage": 2,
+    "stage_name_tamil": "நூலகக் காவலர்",
+    "stage_name_english": "Library Guardian",
+    "is_final_boss": false,
+    "difficulty": "easy",
+    "topic": "Tell me about the third Kural and its meaning.",
+    "story_tamil": "பண்டைய ஞானக் கோயிலில், கல் காவலர் புனித கல்வெட்டின் பொருளை விளக்கச் சொல்லி உன் பக்தியையும் அறிவையும் சோதிக்கிறார்.",
+    "story_english": "Deep within the ancient Temple of Wisdom, the stone guardian blocks your path and asks you to interpret the sacred inscription of verse 3 to prove your devotion and pass safely.",
+    "question_tamil": "மூன்றாம் குறளின்படி, பூவின்மேல் இருப்பவனின் புகழ்மிகு திருவடிகளை அடைந்தவர்கள் எவ்வாறு வாழ்வார்கள்?",
+    "question_english": "According to verse 3, whose glorious feet must one reach to live long and gloriously on this earth?",
+    "options": [
+      {
+        "tamil": "பூவின்மேல் இருப்பவனின் திருவடிகளை அடைந்தவர்கள் இந்த உலகில் நீண்ட காலமும் புகழுடனும் வாழ்வார்கள்",
+        "english": "The One who dwells upon the flower in the heart"
+      },
+      {
+        "tamil": "பூவின்மேல் இருப்பவனின் திருவடிகளை அடைந்தவர்கள் உடனடியாக பிறவியிலிருந்து விடுதலை பெறுவார்கள்",
+        "english": "The king who rules the vast earthly kingdom"
+      },
+      {
+        "tamil": "அவர்கள் அளவற்ற செல்வத்தையும் பொக்கிஷங்களையும் பெறுவார்கள்",
+        "english": "The wise village elder of the sacred mountains"
+      },
+      {
+        "tamil": "அவர்கள் தமிழ் மொழியில் முழுமையான ஆளுமையைப் பெறுவார்கள்",
+        "english": "The immortal guardian of the temple gates"
+      }
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": "quest_008",
+    "stage": 2,
+    "stage_name_tamil": "நூலகக் காவலர்",
+    "stage_name_english": "Library Guardian",
+    "is_final_boss": false,
+    "difficulty": "medium",
+    "topic": "Tell me about the third Kural and its meaning.",
+    "story_tamil": "புனித குறள்களின் அறையில், திருவள்ளுவரின் மூன்றாம் குறள் ஒளிர்கிறது. பூவின்மேல் இருப்பவனின் பொருளை விளக்குமாறு கோயில் காவலர் கேட்கிறார்.",
+    "story_english": "Deep within the sacred Chamber of Epigrams, a glowing inscription of Thiruvalluvar's third verse appears before you. The temple guardian bars your path, demanding that you interpret the true meaning of the One who dwells upon the flower to prove your wisdom.",
+    "question_tamil": "கடவுள் வாழ்த்து அதிகாரத்தின் மூன்றாம் குறளின்படி, பூவின்மேல் இருப்பவனின் புகழ்மிகு திருவடிகளை அடைந்தவர்களுக்கு என்ன வாக்குறுதி அளிக்கப்படுகிறது?",
+    "question_english": "According to Verse 3 of the Praise of God chapter, what is promised to those who reach the glorious feet of the One who dwells upon the flower?",
+    "options": [
+      {
+        "tamil": "அவர்கள் உடனடியாக பிறவிச் சுழற்சியிலிருந்து விடுதலை பெறுவார்கள்",
+        "english": "They will achieve instant liberation from all earthly rebirths."
+      },
+      {
+        "tamil": "அவர்கள் இந்த உலகில் நீண்ட காலமும் புகழுடனும் வாழ்வார்கள்",
+        "english": "They will live long and gloriously on this earth."
+      },
+      {
+        "tamil": "அவர்கள் அளவற்ற செல்வமும் பொன் பொக்கிஷங்களும் பெறுவார்கள்",
+        "english": "They will acquire immense wealth and golden treasures."
+      },
+      {
+        "tamil": "அவர்கள் தமிழ் மொழியில் உயர்ந்த ஞானத்தைப் பெறுவார்கள்",
+        "english": "They will gain absolute mastery over the Tamil language."
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_009",
+    "stage": 2,
+    "stage_name_tamil": "நூலகக் காவலர்",
+    "stage_name_english": "Library Guardian",
+    "is_final_boss": false,
+    "difficulty": "hard",
+    "topic": "Tell me about the third Kural and its meaning.",
+    "story_tamil": "தாமரை இதயத்தின் புனித சன்னதியில், கல் காவலர் மூன்றாம் குறளின் ஆழமான பொருளைத் தீர்த்து கதவைத் திறக்கச் சொல்கிறார்.",
+    "story_english": "Deep within the sacred sanctum of the Temple of the Lotus Heart, the stone guardian blocks your path to the eternal scroll. To unlock the heavy basalt doors, you must decipher the cryptic meaning behind the third verse of the divine chapter, 'Praise of God'.",
+    "question_tamil": "திருவள்ளுவரின் 'கடவுள் வாழ்த்து' அதிகாரத்தின் மூன்றாம் குறளின்படி, பூவின்மேல் இருப்பவனின் புகழ்மிகு திருவடிகளை அடைந்தவர்களுக்கு கிடைக்கும் இறுதி பலன் என்ன?",
+    "question_english": "According to Verse 3 of 'Praise of God' (கடவுள் வாழ்த்து) by Thiruvalluvar, what is the ultimate reward promised to those who reach the glorious feet of the One who dwells upon the flower?",
+    "options": [
+      {
+        "tamil": "அவர்கள் உடனடியாக பிறவிச் சுழற்சியிலிருந்து விடுதலை பெறுவார்கள்",
+        "english": "They will achieve immediate liberation from the cycle of rebirth."
+      },
+      {
+        "tamil": "அவர்கள் இந்த உலகில் நீண்ட காலமும் புகழுடனும் வாழ்வார்கள்",
+        "english": "They will live long and gloriously on this earth."
+      },
+      {
+        "tamil": "அவர்கள் அளவற்ற செல்வமும் உலகப் பொருட்களும் பெறுவார்கள்",
+        "english": "They will acquire immense wealth and earthly treasures."
+      },
+      {
+        "tamil": "அவர்கள் அரசுகளை ஆளும் உயர்ந்த ஞானத்தைப் பெறுவார்கள்",
+        "english": "They will attain supreme wisdom to rule the kingdoms."
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_010",
+    "stage": 2,
+    "stage_name_tamil": "நூலகக் காவலர்",
+    "stage_name_english": "Library Guardian",
+    "is_final_boss": false,
+    "difficulty": "easy",
+    "topic": "Tell me about the fourth Kural and its meaning.",
+    "story_tamil": "பண்டைய கோயிலில் உள்ள ஒளிரும் சுருளைச் சுற்றி, கிராம மூத்தவர் நான்காம் குறளின் ஞானத்தைப் புரிந்தவர்களுக்கே அமைதியின் அறை திறக்கும் என்று கூறுகிறார்.",
+    "story_english": "You discover an ancient, glowing scroll resting upon a stone pedestal inside a sacred temple. The village elder tells you that only those who understand the wisdom of Thiruvalluvar's fourth verse can unlock the chamber of peace.",
+    "question_tamil": "நான்காம் குறளின்படி, ஆசையும் வெறுப்பும் அற்ற இறைவனின் திருவடிகளை அடைந்தவர்களுக்கு என்ன நிகழும்?",
+    "question_english": "According to Verse 4, what happens to those who reach the feet of the One who is free from desire and aversion?",
+    "options": [
+      {
+        "tamil": "அவர்கள் ஒருபோதும் எந்த நேரத்திலும் துயரத்தை எதிர்கொள்ள மாட்டார்கள்",
+        "english": "They will never face sorrow at any time."
+      },
+      {
+        "tamil": "அவர்கள் அளவற்ற செல்வமும் அதிகாரமும் பெறுவார்கள்",
+        "english": "They will gain immense wealth and power."
+      },
+      {
+        "tamil": "அவர்கள் அனைத்து அரசுகளையும் ஆள்வார்கள்",
+        "english": "They will rule over all the kingdoms."
+      },
+      {
+        "tamil": "அவர்கள் உடனடியாக அனைத்து மொழிகளிலும் தேர்ச்சி பெறுவார்கள்",
+        "english": "They will instantly master all languages."
+      }
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": "quest_011",
+    "stage": 2,
+    "stage_name_tamil": "நூலகக் காவலர்",
+    "stage_name_english": "Library Guardian",
+    "is_final_boss": false,
+    "difficulty": "medium",
+    "topic": "Tell me about the fourth Kural and its meaning.",
+    "story_tamil": "புனித திருக்குறள் அறையில், கோயில் காவலர் நான்காம் குறளின் பொருளை நிரூபிக்கச் சொல்லி பண்டைய பலிபீடத்தை நோக்கிச் செல்லும் பாதையைத் தடுக்கிறார்.",
+    "story_english": "Deep within the sacred Chamber of Thirukkural, the Temple Guardian blocks your path to the ancient altar of wisdom. He demands that you prove your understanding of the Divine before allowing you to claim the scroll of Verse 4.",
+    "question_tamil": "திருக்குறளின் நான்காம் குறளின்படி, ஆசையும் வெறுப்பும் அற்ற இறைவனின் திருவடிகளை அடைந்தவர்களுக்கு என்ன வாக்குறுதி அளிக்கப்படுகிறது?",
+    "question_english": "According to Verse 4 of Thirukkural, what is promised to those who reach the feet of the One who is free from desire and aversion?",
+    "options": [
+      {
+        "tamil": "அவர்கள் உலகியலான செல்வமும் பொக்கிஷங்களும் பெறுவார்கள்",
+        "english": "They will acquire immense worldly wealth and treasures"
+      },
+      {
+        "tamil": "அவர்கள் எந்த நேரத்திலும் துயரத்தை எதிர்கொள்ள மாட்டார்கள்",
+        "english": "They will never face sorrow, at any time"
+      },
+      {
+        "tamil": "அவர்கள் அனைத்து மொழிகளிலும் தேர்ச்சி பெறுவார்கள்",
+        "english": "They will attain mastery over all languages"
+      },
+      {
+        "tamil": "அவர்கள் முதுமையின்றி என்றென்றும் வாழ்வார்கள்",
+        "english": "They will live forever without ever aging"
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_012",
+    "stage": 2,
+    "stage_name_tamil": "நூலகக் காவலர்",
+    "stage_name_english": "Library Guardian",
+    "is_final_boss": false,
+    "difficulty": "hard",
+    "topic": "Tell me about the fourth Kural and its meaning.",
+    "story_tamil": "முதன்மை குறளின் சன்னதியில், கல் காவலர் நான்காம் குறளின் தத்துவப் பொருளை விளக்கினால்தான் விண்ணக முத்திரையைத் தாண்ட முடியும் என்கிறார்.",
+    "story_english": "Deep within the sanctum of the Temple of the Primordial Verse, the stone guardian blocks the path to the sacred dais. To prove your worth and bypass the celestial seal, you must correctly interpret the metaphysical philosophy inscribed on the altar.",
+    "question_tamil": "திருவள்ளுவரின் 'கடவுள் வாழ்த்து' நான்காம் குறளின்படி, துன்பத்திலிருந்து விடுவிக்கும் இறைவனின் எந்தப் பண்பு அடைக்கலமாகக் குறிப்பிடப்படுகிறது?",
+    "question_english": "According to the fourth verse of the 'Praise of God' chapter by Thiruvalluvar, what specific attribute of the Divine is highlighted as the refuge that frees devotees from all distress and sorrow?",
+    "options": [
+      {
+        "tamil": "இயற்கையின் ஐம்பூதங்களையும் படைத்தவர் என்பது",
+        "english": "Being the creator of the five elements of nature"
+      },
+      {
+        "tamil": "ஆசையும் வெறுப்பும் முற்றிலும் இல்லாதவர் என்பது",
+        "english": "Being completely free from desire and aversion"
+      },
+      {
+        "tamil": "எல்லையற்ற செல்வமும் அளவற்ற அதிகாரமும் உடையவர் என்பது",
+        "english": "Possessing infinite wealth and boundless power"
+      },
+      {
+        "tamil": "உயர்ந்த விண்ணுலகில் நிரந்தரமாக வசிப்பவர் என்பது",
+        "english": "Residing permanently in the highest heavenly realm"
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_013",
+    "stage": 3,
+    "stage_name_tamil": "ஞானத்தின் காவலர்",
+    "stage_name_english": "Guardian of Wisdom",
+    "is_final_boss": false,
+    "difficulty": "easy",
+    "topic": "Tell me about the fifth Kural and its meaning.",
+    "story_tamil": "ஞானச் சன்னதியின் பொற்கதவுகளின் முன், பண்டைய காவலர் ஐந்தாம் குறளின் பொருளை அறிந்திருக்கிறாயா என்று சோதிக்கிறார்.",
+    "story_english": "You stand before the golden doors of the Sanctuary of Wisdom, where an ancient guardian blocks your path. He demands that you prove your understanding of the fifth Kural before granting you safe passage.",
+    "question_tamil": "ஐந்தாம் குறளின்படி, இறைவனின் தகைமைமிக்க புகழை உண்மையாகப் போற்றியவர்களுக்கு என்ன நிகழும்?",
+    "question_english": "According to the fifth Kural, what happens to those who have truly praised the worthy glory of God?",
+    "options": [
+      {
+        "tamil": "அவர்கள் நாட்டின் செல்வந்த ஆட்சியாளர்களாக மாறுவார்கள்",
+        "english": "They become wealthy rulers of the land"
+      },
+      {
+        "tamil": "நன்மை அல்லது தீமை ஆகிய இருவகைத் தீவினைகளும் அவர்களைத் தீண்டாது",
+        "english": "Neither of the two kinds of tainted deeds (good or bad) will touch them"
+      },
+      {
+        "tamil": "அவர்களுக்கு இயற்கையின் கூறுகளை கட்டுப்படுத்தும் சக்தி வழங்கப்படும்",
+        "english": "They are granted the power to control the elements"
+      },
+      {
+        "tamil": "அவர்கள் மேலும் பல நற்செயல்களைச் செய்ய வேண்டியிருக்கும்",
+        "english": "They are required to perform more meritorious deeds"
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_014",
+    "stage": 3,
+    "stage_name_tamil": "ஞானத்தின் காவலர்",
+    "stage_name_english": "Guardian of Wisdom",
+    "is_final_boss": false,
+    "difficulty": "medium",
+    "topic": "Tell me about the fifth Kural and its meaning.",
+    "story_tamil": "ஐந்தாம் குறளின் புனித அறையில் ஒளிரும் பண்டைய தமிழ் கல்வெட்டு உன் பாதையைத் தடுக்கிறது. இறைவனின் புகழும் செயல்களின் உண்மைப் பொருளும் உனக்குத் தெரியும் என்பதை நிரூபிக்க வேண்டும்.",
+    "story_english": "You stand before the sacred chamber of the Fifth Kural, where a glowing inscription in the ancient Tamil text bars your path. The temple guardian warns that only those who understand the true philosophy of deeds and divine praise may safely pass.",
+    "question_tamil": "ஐந்தாம் குறளின்படி, இறைவனின் தகைமைமிக்க புகழை உண்மையாகப் போற்றியவர்களுக்கு என்ன நிகழும்?",
+    "question_english": "According to the fifth Kural, what happens to those who have truly praised the worthy glory of God?",
+    "options": [
+      {
+        "tamil": "அவர்கள் பூமியின் ஆட்சியாளர்களாக மாறுவார்கள்",
+        "english": "They become rulers of the earthly realm."
+      },
+      {
+        "tamil": "நன்மை அல்லது தீமை ஆகிய இருவகைத் தீவினைகளும் அவர்களைத் தீண்டாது",
+        "english": "Neither of the two kinds of deeds (good or bad) will touch them."
+      },
+      {
+        "tamil": "அவர்களுக்கு அளவற்ற செல்வமும் பொருள் வளமும் வழங்கப்படும்",
+        "english": "They are granted immense wealth and material prosperity."
+      },
+      {
+        "tamil": "அவர்களின் நற்செயல்கள் மட்டுமே பத்து மடங்கு பெருகும்",
+        "english": "Only their good deeds are multiplied tenfold."
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_015",
+    "stage": 3,
+    "stage_name_tamil": "ஞானத்தின் காவலர்",
+    "stage_name_english": "Guardian of Wisdom",
+    "is_final_boss": false,
+    "difficulty": "hard",
+    "topic": "Tell me about the fifth Kural and its meaning.",
+    "story_tamil": "புனித குறள்களின் சன்னதியில், ஐந்தாம் குறளின் விடுதலைப் பொருளை விளக்குமாறு காவலர் கேட்கிறார்.",
+    "story_english": "Deep within the Sanctuary of the Sacred Couplets, the Guardian Spirit of the Fifth Kural blocks your path, demanding that you interpret the ultimate truth of liberation. He asks you to identify the precise outcome for those who immerse themselves in the divine praise.",
+    "question_tamil": "ஐந்தாம் குறளின்படி, இறைவனின் புகழை உண்மையாகப் போற்றியவர்களுக்கு ஏற்படும் குறிப்பிட்ட விளைவு என்ன?",
+    "question_english": "According to the fifth Kural, what specifically happens to those who have truly praised the worthy glory of God?",
+    "options": [
+      {
+        "tamil": "அவர்கள் நன்மை மற்றும் தீமை ஆகிய இருவகைச் செயல்களையும் சமமாகச் சேர்த்துக் கொள்வார்கள்",
+        "english": "They accumulate both good and bad deeds equally"
+      },
+      {
+        "tamil": "நன்மை அல்லது தீமை ஆகிய இருவகைத் தீவினைகளும் அவர்களைத் தீண்டாது",
+        "english": "Neither of the two tainted deeds (good or bad) will touch them"
+      },
+      {
+        "tamil": "அவர்கள் உலகியலான கர்மச் சுழற்சியில் என்றென்றும் கட்டுண்டிருப்பார்கள்",
+        "english": "They become bound forever to the worldly cycle of karma"
+      },
+      {
+        "tamil": "அவர்களின் நற்செயல்கள் மட்டுமே பத்து மடங்கு பெருகும்",
+        "english": "Only their meritorious deeds are multiplied tenfold"
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_016",
+    "stage": 3,
+    "stage_name_tamil": "ஞானத்தின் காவலர்",
+    "stage_name_english": "Guardian of Wisdom",
+    "is_final_boss": false,
+    "difficulty": "easy",
+    "topic": "Tell me about the sixth Kural and its meaning.",
+    "story_tamil": "பண்டைய கோயிலின் கல் வாயில்களின் முன் ஞானமிக்க கிராம மூத்தவர் உன் பாதையைத் தடுத்து ஆறாம் குறளின் போதனையைப் புரிந்திருக்கிறாயா என்று சோதிக்கிறார்.",
+    "story_english": "You stand before the sacred stone gates of an ancient temple, where a wise village elder blocks your path. To pass safely and uncover the secrets of the chamber, you must prove your understanding of the sixth Kural's divine teaching.",
+    "question_tamil": "ஆறாம் குறளின்படி, மனிதர்கள் பின்பற்ற வேண்டிய இறைவனுக்கு கூறப்படும் சாதனை என்ன?",
+    "question_english": "According to the sixth Kural, what achievement is attributed to God, whom humanity is encouraged to follow?",
+    "options": [
+      {
+        "tamil": "ஐம்புலன்களை வெல்வது",
+        "english": "Conquering the five senses"
+      },
+      {
+        "tamil": "முழு திருக்குறளையும் எழுதுவது",
+        "english": "Writing the entire Thirukkural"
+      },
+      {
+        "tamil": "பண்டைய கோயிலை உருவாக்குவது",
+        "english": "Creating the ancient temple"
+      },
+      {
+        "tamil": "முழு உலகத்தையும் ஆள்வது",
+        "english": "Ruling over the entire world"
+      }
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": "quest_017",
+    "stage": 3,
+    "stage_name_tamil": "ஞானத்தின் காவலர்",
+    "stage_name_english": "Guardian of Wisdom",
+    "is_final_boss": false,
+    "difficulty": "medium",
+    "topic": "Tell me about the sixth Kural and its meaning.",
+    "story_tamil": "ஞானக் கோயிலின் பண்டைய மண்டபங்களில், கல் காவலர் ஆறாம் குறளின் மூலம் நீண்ட மற்றும் வளமான வாழ்க்கையை எவ்வாறு அடைவது என்று கேட்கிறார்.",
+    "story_english": "Deep within the ancient halls of the Temple of Wisdom, the stone guardian blocks your path and demands that you prove your understanding of the sacred Tirukkural. It points to the sixth verse and asks how one achieves a long and prosperous life.",
+    "question_tamil": "ஆறாம் குறளின்படி, யார் நீண்ட காலம் வாழ்ந்து செழிப்புடன் இருப்பார்கள்?",
+    "question_english": "According to the sixth Kural, who are the ones that will live long and prosper?",
+    "options": [
+      {
+        "tamil": "அதிகமான பொருள் செல்வமும் அதிகாரமும் சேர்ப்பவர்கள்",
+        "english": "Those who amass great material wealth and power"
+      },
+      {
+        "tamil": "ஐம்புலன்களை வென்ற இறைவனின் உண்மையான பாதையைப் பின்பற்றுபவர்கள்",
+        "english": "Those who follow the truthful path of the One who has conquered the five senses"
+      },
+      {
+        "tamil": "தமிழ்நாட்டின் பண்டைய போர்க்கலைகளில் தேர்ச்சி பெற்றவர்கள்",
+        "english": "Those who master the ancient martial arts of Tamil Nadu"
+      },
+      {
+        "tamil": "தெய்வங்களுக்காக மிகப்பெரிய கோயில்களை கட்டுபவர்கள்",
+        "english": "Those who build magnificent temples for the gods"
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_018",
+    "stage": 3,
+    "stage_name_tamil": "ஞானத்தின் காவலர்",
+    "stage_name_english": "Guardian of Wisdom",
+    "is_final_boss": false,
+    "difficulty": "hard",
+    "topic": "Tell me about the sixth Kural and its meaning.",
+    "story_tamil": "புனித தேர்ச்சி அறையில், புலன்களின் காவலர் இறுதி சுருளுக்குச் செல்லும் பாதையைத் தடுத்து ஆறாம் குறளின் தெய்வீக உண்மையை விளக்கச் சொல்கிறார்.",
+    "story_english": "Deep within the sacred Chamber of Mastery, the Guardian of the Senses blocks your path to the ultimate scroll. To unlock the heavy stone doors and secure eternal prosperity, you must correctly interpret the divine truth of Kural 6.",
+    "question_tamil": "'கடவுள் வாழ்த்து' அதிகாரத்தின் ஆறாம் குறளின்படி, ஐம்புலன்களை வென்றவரின் உண்மை மற்றும் ஒழுக்கமான பாதையைப் பின்பற்றுபவர்களுக்கு இறுதியில் என்ன கிடைக்கும்?",
+    "question_english": "According to the sixth Kural under the chapter 'Praise of God', what is the ultimate fate of those who follow the truthful and disciplined path of the One who has conquered the five senses?",
+    "options": [
+      {
+        "tamil": "அவர்கள் உடனடியாக மறுபிறவி அடைவார்கள்",
+        "english": "They will achieve immediate reincarnation"
+      },
+      {
+        "tamil": "அவர்கள் நீண்ட காலம் வாழ்ந்து செழிப்புடன் இருப்பார்கள்",
+        "english": "They will live long and prosper"
+      },
+      {
+        "tamil": "அவர்கள் விண்ணுலகத்தின் ஆட்சியாளர்களாக மாறுவார்கள்",
+        "english": "They will become the rulers of the celestial realm"
+      },
+      {
+        "tamil": "அவர்கள் உயர்ந்த மாய சக்திகளைப் பெறுவார்கள்",
+        "english": "They will acquire supreme magical powers"
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_019",
+    "stage": 4,
+    "stage_name_tamil": "துணிச்சலின் காவலர்",
+    "stage_name_english": "Guardian of Courage",
+    "is_final_boss": false,
+    "difficulty": "easy",
+    "topic": "Tell me about the seventh Kural and its meaning.",
+    "story_tamil": "பண்டைய கோயிலின் புனித அறைக்குள் நுழையும்போது, கிராம மூத்தவர் ஏழாம் குறளின் ஒளிரும் சுருளைத் தருகிறார். மாயக் கதவு திறக்க அதன் மையச் செய்தியை கண்டறிய வேண்டும்.",
+    "story_english": "As you enter the sacred chamber of the ancient temple, the village elder hands you an illuminated scroll detailing the seventh Kural. He asks you to identify the core message of the verse before the mystical door will open.",
+    "question_tamil": "ஏழாம் குறளின்படி, மனத்தின் கவலைகளை எவ்வாறு அகற்றலாம்?",
+    "question_english": "According to the seventh Kural, how can one remove the anxieties of the mind?",
+    "options": [
+      {
+        "tamil": "அளவற்ற செல்வமும் பொருள் பொக்கிஷங்களும் பெறுவதன் மூலம்",
+        "english": "By acquiring vast wealth and material treasures"
+      },
+      {
+        "tamil": "ஒப்பற்ற இறைவனின் திருவடிகளை அடைவதன் மூலம்",
+        "english": "By reaching the feet of the incomparable God"
+      },
+      {
+        "tamil": "தொலைதூர அறியப்படாத நாடுகளுக்குப் பயணம் செய்வதன் மூலம்",
+        "english": "By traveling to distant and unknown lands"
+      },
+      {
+        "tamil": "கிராம மூத்தோர்களிடமிருந்து மட்டும் ஞானத்தைப் பெறுவதன் மூலம்",
+        "english": "By seeking wisdom solely from village elders"
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_020",
+    "stage": 4,
+    "stage_name_tamil": "துணிச்சலின் காவலர்",
+    "stage_name_english": "Guardian of Courage",
+    "is_final_boss": false,
+    "difficulty": "medium",
+    "topic": "Tell me about the seventh Kural and its meaning.",
+    "story_tamil": "பண்டைய ஞானக் கோயிலின் பலிபீடத்தின் முன், கல் காவலர் ஏழாம் குறளின் போதனையைப் புரிந்திருக்கிறாயா என்று கேட்டு உண்மையான மன அமைதியை எவ்வாறு அடைவது என்று சோதிக்கிறார்.",
+    "story_english": "As you stand before the sacred altar in the ancient Temple of Wisdom, the stone guardian blocks your path and demands that you prove your understanding of the divine verses. Recalling the teachings of the seventh Kural, you must correctly identify how true peace of mind and the removal of anxieties can be attained.",
+    "question_tamil": "ஏழாம் குறளின்படி, மனத்தின் கவலைகளை அகற்றி உண்மையான அமைதியை எவ்வாறு அடையலாம்?",
+    "question_english": "According to the seventh Kural, how can one remove the anxieties of the mind and achieve true peace?",
+    "options": [
+      {
+        "tamil": "அளவற்ற செல்வமும் பொருள் வளமும் பெறுவதன் மூலம்",
+        "english": "By acquiring vast wealth and material success"
+      },
+      {
+        "tamil": "ஒப்பற்ற உயர்ந்த இறைவனின் திருவடிகளை அடைவதன் மூலம்",
+        "english": "By reaching the feet of the incomparable, supreme God"
+      },
+      {
+        "tamil": "கிராம மூத்தோர்களிடமிருந்து மட்டும் ஞானத்தைப் பெறுவதன் மூலம்",
+        "english": "By seeking wisdom solely from village elders"
+      },
+      {
+        "tamil": "கவிதை மற்றும் இலக்கியக் கலைகளில் தேர்ச்சி பெறுவதன் மூலம்",
+        "english": "By mastering the arts of poetry and literature"
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_021",
+    "stage": 4,
+    "stage_name_tamil": "துணிச்சலின் காவலர்",
+    "stage_name_english": "Guardian of Courage",
+    "is_final_boss": false,
+    "difficulty": "hard",
+    "topic": "Tell me about the seventh Kural and its meaning.",
+    "story_tamil": "பண்டைய கோயிலின் புனித சன்னதியில், கல் காவலர் ஏழாம் குறளின் ஆன்மிகப் பொருளைத் தீர்த்து உன் தகுதியை நிரூபிக்கச் சொல்கிறார்.",
+    "story_english": "Deep within the sacred sanctum of the ancient Temple of Valluvar, a stone guardian blocks the path to the inner chamber, demanding that you decode the spiritual essence of the seventh Kural to prove your worth.",
+    "question_tamil": "ஏழாம் குறளின்படி, மனத்தின் கவலைகளை வெற்றிகரமாக அகற்றுவதற்கு குறிப்பாக என்ன தேவை?",
+    "question_english": "According to the seventh Kural, what is specifically required to successfully remove the anxieties of the mind?",
+    "options": [
+      {
+        "tamil": "தனிமையான மலைக் குகைகளில் கடுமையான தியானம் செய்வதன் மூலம்",
+        "english": "Practicing rigorous meditation in isolated mountain caves"
+      },
+      {
+        "tamil": "ஒப்பற்ற உயர்ந்த இறைவனின் திருவடிகளை அடைவதன் மூலம்",
+        "english": "Reaching the feet of the incomparable supreme God"
+      },
+      {
+        "tamil": "செம்மொழித் தமிழ் இலக்கியத்தைப் பற்றிய பெரும் அறிவைப் பெறுவதன் மூலம்",
+        "english": "Acquiring vast knowledge of classical Tamil literature"
+      },
+      {
+        "tamil": "தொண்டு செய்து சமூகத்திற்கு உதவுவதன் மூலம்",
+        "english": "Engaging in charitable deeds and helping society"
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_022",
+    "stage": 4,
+    "stage_name_tamil": "துணிச்சலின் காவலர்",
+    "stage_name_english": "Guardian of Courage",
+    "is_final_boss": false,
+    "difficulty": "easy",
+    "topic": "Tell me about the eighth Kural and its meaning.",
+    "story_tamil": "கடவுள் வாழ்த்து அதிகாரத்தின் பண்டைய கல் வாயிலின் முன், காவல் ஆவி எட்டாம் குறளின் மூலம் பிறவிப் பெருங்கடலை எவ்வாறு கடப்பது என்று கேட்கிறது.",
+    "story_english": "As you stand before the ancient stone gateway in the Chapter 'Praise of God', a guardian spirit blocks your path, testing your wisdom of the sacred verses. The guardian points to the eighth Kural and asks how one can escape the perilous ocean of endless births.",
+    "question_tamil": "எட்டாம் குறளின்படி, பிறவிப் பெருங்கடலைக் கடக்க யாருடைய திருவடிகளை அடைய வேண்டும்?",
+    "question_english": "According to the eighth Kural, whose feet must one reach to swim across the ocean of births?",
+    "options": [
+      {
+        "tamil": "அறத்தின் பெருங்கடலாகிய இரக்கமுள்ள ஒருவரின் திருவடிகளை",
+        "english": "The compassionate One who is an ocean of righteousness"
+      },
+      {
+        "tamil": "பரந்த தமிழ்நாடுகளை ஆளும் மன்னனின் திருவடிகளை",
+        "english": "The king who rules the vast Tamil lands"
+      },
+      {
+        "tamil": "புனித நூல்களை எழுதிய ஞானியின் திருவடிகளை",
+        "english": "The wise sage who wrote the sacred texts"
+      },
+      {
+        "tamil": "கடல்களை வென்ற அஞ்சாத வீரனின் திருவடிகளை",
+        "english": "The fearless warrior who conquered the seas"
+      }
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": "quest_023",
+    "stage": 4,
+    "stage_name_tamil": "துணிச்சலின் காவலர்",
+    "stage_name_english": "Guardian of Courage",
+    "is_final_boss": false,
+    "difficulty": "medium",
+    "topic": "Tell me about the eighth Kural and its meaning.",
+    "story_tamil": "பிறவியின் பண்டைய கல் வாயில்களின் முன், காவல் ஆவி புனித பலிபீடத்தில் உள்ள இரண்டு கடல்களின் உவமையை விளக்கச் சொல்கிறது.",
+    "story_english": "As you stand before the ancient stone gates of the Temple of Rebirth, the guardian spirit blocks your path and demands proof of your wisdom. To open the inner sanctum and cross the turbulent waters of existence, you must correctly interpret the sacred metaphor inscribed upon the altar.",
+    "question_tamil": "எட்டாம் குறளில் திருவள்ளுவர் பயன்படுத்தும் உவமையில் கூறப்படும் இரண்டு கடல்கள் எவை?",
+    "question_english": "In the eighth Kural, what are the two oceans represented by the metaphor used by Thiruvalluvar?",
+    "options": [
+      {
+        "tamil": "அறத்தின் கடலும் முடிவற்ற பிறவிகளின் கடலும்",
+        "english": "The ocean of righteousness and the ocean of endless births"
+      },
+      {
+        "tamil": "ஞானத்தின் கடலும் உலகியலான செல்வத்தின் கடலும்",
+        "english": "The ocean of wisdom and the ocean of worldly wealth"
+      },
+      {
+        "tamil": "துயரத்தின் கடலும் தெய்வீக அருளின் கடலும்",
+        "english": "The ocean of sorrow and the ocean of divine grace"
+      },
+      {
+        "tamil": "காலத்தின் கடலும் மனித வாழ்வின் கடலும்",
+        "english": "The ocean of time and the ocean of mortal existence"
+      }
+    ],
+    "correct_answer": 0
+  },
+  {
+    "id": "quest_024",
+    "stage": 4,
+    "stage_name_tamil": "துணிச்சலின் காவலர்",
+    "stage_name_english": "Guardian of Courage",
+    "is_final_boss": false,
+    "difficulty": "hard",
+    "topic": "Tell me about the eighth Kural and its meaning.",
+    "story_tamil": "மறுபிறவியின் புனித அறையில், திருவள்ளுவரின் இரண்டு கடல்களின் உவமையைச் சரியாகப் புரிந்தால்தான் பாதை திறக்கும் என்று காவலர் கூறுகிறார்.",
+    "story_english": "Deep within the sacred Chamber of Rebirth, the guardian of Thiruvalluvar blocks your path across a treacherous expanse. To unlock the passage, you must correctly interpret the celestial metaphor of the two mystical oceans.",
+    "question_tamil": "'கடவுள் வாழ்த்து' அதிகாரத்தின் எட்டாம் குறளில், பிறவிச் சுழற்சியைத் தாண்டுவதை விளக்கும் இரண்டு 'கடல்கள்' எதைக் குறிக்கின்றன?",
+    "question_english": "In the eighth Kural from the 'Praise of God' chapter, what do the two contrasting 'oceans' represent in the metaphor used to explain overcoming the cycle of rebirth?",
+    "options": [
+      {
+        "tamil": "முடிவற்ற துன்பத்தின் கடலும் நித்திய ஞானத்தின் கடலும்",
+        "english": "The ocean of endless suffering and the ocean of eternal wisdom"
+      },
+      {
+        "tamil": "இறைவனின் அறக்கடலும் பிறப்பு மற்றும் மறுபிறவிகளின் கடலும்",
+        "english": "God's ocean of righteousness and the ocean of births and rebirths"
+      },
+      {
+        "tamil": "உலக மாயையின் கடலும் தெய்வீக விடுதலையின் கடலும்",
+        "english": "The ocean of worldly illusion and the ocean of divine liberation"
+      },
+      {
+        "tamil": "கர்மத்தின் கடலும் முழுமையான அருளின் கடலும்",
+        "english": "The ocean of karma and the ocean of absolute grace"
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_025",
+    "stage": 5,
+    "stage_name_tamil": "நிழல் மன்னன்",
+    "stage_name_english": "Shadow King",
+    "is_final_boss": true,
+    "difficulty": "easy",
+    "topic": "Tell me about the ninth Kural and its meaning.",
+    "story_tamil": "நற்பண்புகளின் மாய அறையில், பண்டைய கோயில் காவலர் ஒன்பதாம் குறளின் கல்வெட்டைப் புரிந்துகொள்ளச் சொல்லி உன் அறிவைச் சோதிக்கிறார்.",
+    "story_english": "As you enter the mystical Chamber of Virtues, the ancient temple guardian blocks your path and points to a sacred inscription on the wall. He challenges your wisdom before granting passage deeper into the sanctuary.",
+    "question_tamil": "ஒன்பதாம் குறளின்படி, எட்டு சிறந்த குணங்களைக் கொண்ட இறைவனின் திருவடிகளை வணங்காத தலை எதற்கு ஒப்பிடப்படுகிறது?",
+    "question_english": "In the ninth Kural, to what does Thiruvalluvar compare a head that does not bow to the feet of the One with eight great qualities?",
+    "options": [
+      {
+        "tamil": "வறண்டு போன நதி",
+        "english": "A river that has run dry"
+      },
+      {
+        "tamil": "தன் செயல்பாட்டை இழந்த புலனுறுப்பு",
+        "english": "A sense organ that has lost its function"
+      },
+      {
+        "tamil": "வெயிலில் வாடிய மலர்",
+        "english": "A flower that has withered in the sun"
+      },
+      {
+        "tamil": "சுக்கான் இழந்த கப்பல்",
+        "english": "A ship that has lost its rudder"
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_026",
+    "stage": 5,
+    "stage_name_tamil": "நிழல் மன்னன்",
+    "stage_name_english": "Shadow King",
+    "is_final_boss": true,
+    "difficulty": "medium",
+    "topic": "Tell me about the ninth Kural and its meaning.",
+    "story_tamil": "புனித குறள்களின் பண்டைய சன்னதியில், பொன்னிற கல்வெட்டு ஒளிர்கிறது. ஒன்பதாம் குறளின் உண்மையான பொருளை விளக்குமாறு காவலர் கேட்கிறார்.",
+    "story_english": "Deep within the ancient Sanctum of the Sacred Verses, a golden inscription glows faintly in the gloom. The temple guardian bars your path, demanding that you interpret the true significance of the ninth Kural before you may pass.",
+    "question_tamil": "ஒன்பதாம் குறளின்படி, எட்டு சிறந்த குணங்களைக் கொண்ட இறைவனின் திருவடிகளை வணங்காத தலை எதற்கு ஒப்பிடப்படுகிறது?",
+    "question_english": "In the ninth Kural, what does Thiruvalluvar compare a head that does not bow to the feet of the One possessing the eight great qualities to?",
+    "options": [
+      {
+        "tamil": "புயலில் சுக்கான் இழந்த கப்பல்",
+        "english": "A ship that has lost its rudder in a storm"
+      },
+      {
+        "tamil": "தன் செயல்பாட்டை இழந்த புலனுறுப்பு",
+        "english": "A sense organ that has lost its function"
+      },
+      {
+        "tamil": "பழம் தராத வாடிய மரம்",
+        "english": "A withered tree that bears no fruit"
+      },
+      {
+        "tamil": "எண்ணெய் தீர்ந்த விளக்கு",
+        "english": "A lamp that has run out of oil"
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_027",
+    "stage": 5,
+    "stage_name_tamil": "நிழல் மன்னன்",
+    "stage_name_english": "Shadow King",
+    "is_final_boss": true,
+    "difficulty": "hard",
+    "topic": "Tell me about the ninth Kural and its meaning.",
+    "story_tamil": "எட்டு நற்பண்புகளின் கோயில் சன்னதியில், காவலர் ஒன்பதாம் குறளின் ஆழமான உவமையை விளக்கச் சொல்லி கல் கதவுகளைத் திறக்கச் சவால் விடுக்கிறார்.",
+    "story_english": "Deep within the sacred sanctum of the Temple of the Eight Virtues, the Guardian Statue bars your path, demanding that you interpret the profound metaphor of Kural 9. Unless you can correctly identify what the unbowing head is compared to, the heavy stone doors will remain sealed forever.",
+    "question_tamil": "ஒன்பதாம் குறளின்படி, எட்டு சிறந்த குணங்களைக் கொண்ட இறைவனின் திருவடிகளை வணங்கத் தவறும் தலை எதற்கு ஒப்பிடப்படுகிறது?",
+    "question_english": "According to the ninth Kural, a head that fails to worship the feet of the One with eight great qualities is compared to what?",
+    "options": [
+      {
+        "tamil": "பழம் தராத வாடிய மரம்",
+        "english": "A withered tree that bears no fruit"
+      },
+      {
+        "tamil": "தன் செயல்பாட்டை இழந்த புலனுறுப்பு",
+        "english": "A sense organ that has lost its function"
+      },
+      {
+        "tamil": "இருண்ட காட்டில் வழிதவறிய குருடன்",
+        "english": "A blind traveler lost in a dark forest"
+      },
+      {
+        "tamil": "போரில் தாக்க முடியாத உடைந்த வாள்",
+        "english": "A broken sword that cannot strike in battle"
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_028",
+    "stage": 5,
+    "stage_name_tamil": "நிழல் மன்னன்",
+    "stage_name_english": "Shadow King",
+    "is_final_boss": true,
+    "difficulty": "easy",
+    "topic": "Tell me about the tenth Kural and its meaning.",
+    "story_tamil": "ஆரம்பங்களின் புனித கல் பலிபீடத்தின் முன், காவல் ஆவி பிறவிச் சுழற்சியிலிருந்து தப்புவது பற்றிய புதிரை முன்வைக்கிறது.",
+    "story_english": "As you stand before the ancient stone altar in the Sanctuary of Beginnings, the guardian spirit whispers a riddle about escaping the endless cycle of rebirth.",
+    "question_tamil": "பத்தாம் குறளின்படி, பிறவிகளின் பெருங்கடலை ஒருவர் எவ்வாறு கடக்க முடியும்?",
+    "question_english": "According to Verse 10, how does one swim across the great ocean of births?",
+    "options": [
+      {
+        "tamil": "அளவற்ற உலகியலான செல்வத்தைப் பெறுவதன் மூலம்",
+        "english": "By acquiring vast worldly wealth"
+      },
+      {
+        "tamil": "இறைவனின் திருவடிகளை அடைவதன் மூலம்",
+        "english": "By reaching the feet of God"
+      },
+      {
+        "tamil": "பண்டைய கல் கல்வெட்டுகளைப் படிப்பதன் மூலம்",
+        "english": "By studying ancient stone inscriptions"
+      },
+      {
+        "tamil": "அண்டை அரசுகளை வெல்வதன் மூலம்",
+        "english": "By conquering neighboring kingdoms"
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_029",
+    "stage": 5,
+    "stage_name_tamil": "நிழல் மன்னன்",
+    "stage_name_english": "Shadow King",
+    "is_final_boss": true,
+    "difficulty": "medium",
+    "topic": "Tell me about the tenth Kural and its meaning.",
+    "story_tamil": "மறுபிறவியின் புனித அறையில், இறைவனின் திருவடிகளை அடைவதால் ஏற்படும் இறுதி விளைவை காவலர் கேட்கிறார்.",
+    "story_english": "As you stand before the ancient stone altar in the Chamber of Rebirth, the guardian spirit blocks your path and demands to know the ultimate consequence of reaching the feet of God as taught by Thiruvalluvar.",
+    "question_tamil": "'கடவுள் வாழ்த்து' அதிகாரத்தின் பத்தாம் குறளின்படி, இறைவனின் திருவடிகளை அடைந்தவர்களுக்கு என்ன நிகழும்?",
+    "question_english": "According to Verse 10 of the Praise of God chapter, what happens to those who reach the feet of God?",
+    "options": [
+      {
+        "tamil": "அவர்கள் அளவற்ற பூமிச் செல்வமும் அதிகாரமும் பெறுவார்கள்",
+        "english": "They will attain immense earthly wealth and power."
+      },
+      {
+        "tamil": "அவர்கள் பிறவிகளின் பெருங்கடலைக் கடப்பார்கள்",
+        "english": "They will swim across the great ocean of births."
+      },
+      {
+        "tamil": "அவர்கள் விண்ணுலகத்தின் ஆட்சியாளர்களாக மாறுவார்கள்",
+        "english": "They will become the rulers of the celestial heavens."
+      },
+      {
+        "tamil": "அவர்கள் அனைத்து தமிழ் இலக்கியங்களிலும் தேர்ச்சி பெறுவார்கள்",
+        "english": "They will be granted mastery over all Tamil literature."
+      }
+    ],
+    "correct_answer": 1
+  },
+  {
+    "id": "quest_030",
+    "stage": 5,
+    "stage_name_tamil": "நிழல் மன்னன்",
+    "stage_name_english": "Shadow King",
+    "is_final_boss": true,
+    "difficulty": "hard",
+    "topic": "Tell me about the tenth Kural and its meaning.",
+    "story_tamil": "புனித காவியங்களின் சன்னதியில், காவல் ஆவி இறுதி குறளின் உண்மையை அறிந்து பிறவிப் பெருங்கடலைக் கடக்கும் வழியைச் சொல்லுமாறு சவால் விடுக்கிறது.",
+    "story_english": "Deep within the sacred sanctum of the Temple of Epics, the Guardian Spirit blocks your path to the ultimate scroll. To pass the mystical barrier and conquer the ocean of births, you must correctly interpret the final verse of the opening chapter.",
+    "question_tamil": "திருவள்ளுவரின் 'கடவுள் வாழ்த்து' அதிகாரத்தின் பத்தாம் குறளின்படி, பிறவிகளின் பெருங்கடலை வெற்றிகரமாகக் கடப்பவர்கள் யார்?",
+    "question_english": "According to Verse 10 of the 'Praise of God' (கடவுள் வாழ்த்து) chapter by Thiruvalluvar, who will successfully swim across the great ocean of births?",
+    "options": [
+      {
+        "tamil": "அளவற்ற பூமிச் செல்வமும் அதிகாரமும் சேர்ப்பவர்கள்",
+        "english": "Those who accumulate great earthly wealth and power"
+      },
+      {
+        "tamil": "இறைவனின் திருவடிகளை அடைந்தவர்கள்",
+        "english": "Those who reach the feet of God"
+      },
+      {
+        "tamil": "பண்டைய தமிழ் இலக்கணங்கள் அனைத்திலும் தேர்ச்சி பெற்றவர்கள்",
+        "english": "Those who master all ancient Tamil grammars"
+      },
+      {
+        "tamil": "பக்தியின்றி முழுமையாக உலகைத் துறந்தவர்கள்",
+        "english": "Those who renounce the mortal world entirely without devotion"
+      }
+    ],
+    "correct_answer": 1
+  }
+]

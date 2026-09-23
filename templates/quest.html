@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RPG Knowledge Quest</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <main class="game-container">
+
+        <!-- Game Title -->
+        <h1>🏛️ Temple of Thirukkural</h1>
+
+        <!-- Quest Content -->
+        <section id="quest-box">
+
+            <!-- Story Description -->
+            <p id="story-text">
+                Loading your quest...
+            </p>
+
+            <!-- Question -->
+            <p id="question-text"></p>
+
+            <!-- Answer Buttons Will Be Added by game.js -->
+            <div id="options-container"></div>
+
+            <!-- Correct / Incorrect Feedback -->
+            <p id="result-text"></p>
+
+        </section>
+
+
+        <!-- Action Buttons -->
+        <div class="button-row">
+
+            <button
+                id="reset-btn"
+                class="option-btn"
+                type="button">
+                🔄 Restart Journey
+            </button>
+
+            <button
+                id="return-world-btn"
+                class="option-btn"
+                type="button">
+                🏛️ Return to Temple
+            </button>
+
+        </div>
+
+
+        <!-- Player Statistics -->
+        <div id="player-stats">
+
+            <span id="score-display">
+                Score: 0
+            </span>
+
+            <span class="stats-divider">|</span>
+
+            <span id="difficulty-display">
+                Difficulty: easy
+            </span>
+
+        </div>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="/static/game.js"></script>
+
+</body>
+</html>
