@@ -124,7 +124,7 @@ def home(request: Request):
 
     return templates.TemplateResponse(
         request,
-        "quest.html"
+        "hub.html"
     )
 
 
