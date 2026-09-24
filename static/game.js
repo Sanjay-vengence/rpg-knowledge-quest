@@ -27,7 +27,7 @@ const optionsContainer = document.getElementById("options-container");
 const resultText = document.getElementById("result-text");
 
 const resetBtn = document.getElementById("reset-btn");
-const returnWorldBtn = document.getElementById("return-world-btn");
+const returnHomeBtn = document.getElementById("return-home-btn");
 
 const scoreDisplay = document.getElementById("score-display");
 const difficultyDisplay = document.getElementById("difficulty-display");
@@ -57,9 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
         resetBtn.addEventListener("click", resetGame);
     }
 
-    if (returnWorldBtn) {
-        returnWorldBtn.addEventListener("click", () => {
-            window.location.href = "/world";
+    if (returnHomeBtn) {
+        returnHomeBtn.addEventListener("click", () => {
+            window.location.href = "/";
         });
     }
 

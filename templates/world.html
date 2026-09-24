@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
@@ -10,7 +10,30 @@
 
     <link rel="stylesheet" href="/static/style.css">
 </head>
+
 <body>
+
+    <!-- HOME BUTTON -->
+    <button
+        onclick="window.location.href='/'"
+        style="
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            padding: 12px 24px;
+            background: #1b120b;
+            color: #f5d78e;
+            border: 2px solid #d9a441;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        "
+    >
+        🏠 HOME
+    </button>
+
 
     <div id="game-wrapper">
 
@@ -22,8 +45,10 @@
 
     </div>
 
+
     <script src="/static/game-world.js"></script>
 
 </body>
+
 </html>
 
