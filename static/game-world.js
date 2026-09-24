@@ -600,6 +600,140 @@ let showQuestOffer = false;
 
 let questAccepted = false;
 
+// ==========================================
+// VISUAL EFFECTS — QUEST / COMBAT FEEDBACK
+// ==========================================
+
+let questAcceptedGlow = false;
+let questAcceptedGlowTimer = 0;
+const QUEST_GLOW_DURATION = 45;
+
+let guardianSpawnFlash = false;
+let guardianSpawnFlashTimer = 0;
+const GUARDIAN_FLASH_DURATION = 45;
+
+// "guardian" for stages 1-4, "boss" for stage 5.
+let guardianSpawnFlashTarget = "guardian";
+
+let answerFeedback = "";
+let answerFeedbackTimer = 0;
+let answerFeedbackCorrect = false;
+const ANSWER_FEEDBACK_DURATION = 55;
+
+// ==========================================
+// XP POPUP SYSTEM
+// ==========================================
+
+let xpPopup = "";
+let xpPopupTimer = 0;
+
+// Long enough to remain clearly visible after
+// the Guardian reward screen appears.
+const XP_POPUP_DURATION = 120;
+
+// Web Audio API tones.
+// No external sound files are required.
+let gameAudioContext = null;
+
+function playGameTone(type) {
+    try {
+        const AudioContextClass =
+            window.AudioContext ||
+            window.webkitAudioContext;
+
+        if (!AudioContextClass) {
+            return;
+        }
+
+        if (!gameAudioContext) {
+            gameAudioContext =
+                new AudioContextClass();
+        }
+
+        if (gameAudioContext.state === "suspended") {
+            gameAudioContext.resume();
+        }
+
+        const oscillator =
+            gameAudioContext.createOscillator();
+
+        const gain =
+            gameAudioContext.createGain();
+
+        oscillator.connect(gain);
+        gain.connect(gameAudioContext.destination);
+
+        const now =
+            gameAudioContext.currentTime;
+
+        if (type === "quest") {
+            oscillator.type = "sine";
+            oscillator.frequency.setValueAtTime(
+                440,
+                now
+            );
+            oscillator.frequency.exponentialRampToValueAtTime(
+                660,
+                now + 0.18
+            );
+        } else if (type === "correct") {
+            oscillator.type = "triangle";
+            oscillator.frequency.setValueAtTime(
+                520,
+                now
+            );
+            oscillator.frequency.exponentialRampToValueAtTime(
+                780,
+                now + 0.16
+            );
+        } else if (type === "spawn") {
+            oscillator.type = "sine";
+            oscillator.frequency.setValueAtTime(
+                180,
+                now
+            );
+            oscillator.frequency.exponentialRampToValueAtTime(
+                520,
+                now + 0.28
+            );
+        } else {
+            oscillator.type = "sawtooth";
+            oscillator.frequency.setValueAtTime(
+                220,
+                now
+            );
+            oscillator.frequency.exponentialRampToValueAtTime(
+                120,
+                now + 0.18
+            );
+        }
+
+        gain.gain.setValueAtTime(
+            0.0001,
+            now
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.08,
+            now + 0.015
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.0001,
+            now + 0.22
+        );
+
+        oscillator.start(now);
+        oscillator.stop(now + 0.24);
+
+    } catch (error) {
+        console.warn(
+            "Game audio unavailable:",
+            error
+        );
+    }
+}
+
 
 // ==========================================
 // STAGE 10.8 — QUEST ACCEPTED STATE
@@ -1816,6 +1950,26 @@ window.addEventListener(
 
 
 // ==========================================
+// GUARDIAN / BOSS SPAWN EFFECT TRIGGER
+// ==========================================
+// Uses the same effect for all five stages and
+// all four literature paths.
+// ==========================================
+function triggerGuardianSpawnEffect(isFinalBoss = false) {
+
+    guardianSpawnFlashTarget =
+        isFinalBoss ? "boss" : "guardian";
+
+    guardianSpawnFlash = true;
+    guardianSpawnFlashTimer = 0;
+
+    // Audio is tied to the spawn event so every
+    // Guardian and the Shadow King gets a sound.
+    playGameTone("spawn");
+}
+
+
+// ==========================================
 // STAGE 10.8 — ACCEPT QUEST
 // ==========================================
 // Accepts the Sage's quest offer and starts
@@ -1831,6 +1985,11 @@ function acceptQuest() {
     questAccepted = true;
     showQuestOffer = false;
 
+    // ✨ Quest accepted visual/audio feedback.
+    questAcceptedGlow = true;
+    questAcceptedGlowTimer = 0;
+    playGameTone("quest");
+
     // The old Active Quest HUD becomes available
     // only after the quest is actually accepted.
     showActiveQuestHUD = true;
@@ -1844,6 +2003,10 @@ function acceptQuest() {
     guardianEncounter = 1;
 
     guardianVisible = true;
+
+    // ⚔️ Stage 1 Guardian spawn flash + sound.
+    triggerGuardianSpawnEffect(false);
+
     finalBossVisible = false;
     guardianDefeated = false;
 
@@ -4626,6 +4789,10 @@ function enterNextArea() {
     positionGuardianOnWorldFloor();
     positionFinalBossOnWorldFloor();
 
+    // ⚔️ Every new stage gets the same spawn effect.
+    // Stage 5 uses the Shadow King target automatically.
+    triggerGuardianSpawnEffect(stageConfig.isFinalBoss);
+
     showAreaTransition = true;
     areaTransitionTimer = 0;
     playerNearAreaGate = false;
@@ -4664,6 +4831,11 @@ function activateNextGuardian() {
 
     positionGuardianOnWorldFloor();
     positionFinalBossOnWorldFloor();
+
+    // ⚔️ Keep the effect consistent even if this activation path
+    // is used by a future stage-transition change.
+    triggerGuardianSpawnEffect(stageConfig.isFinalBoss);
+
     updateCollisionBoundaries();
     showGuardianVictoryNotification = false;
     guardianVictoryTimer = 0;
@@ -4899,9 +5071,35 @@ async function submitGuardianAnswer() {
         const isFinalBoss = guardianEncounter === 5 || finalBossVisible;
         const maxHpGain = isFinalBoss ? 20 : 10;
         const hpGain = isFinalBoss ? 50 : 25;
+        // ==========================================
+        // XP REWARD — EVERY GUARDIAN STAGE
+        // ==========================================
+
         playerXP += reward;
+
+        // Start a fresh visible popup for this stage.
+        // This works for Guardians 1–4 and the Shadow King.
+        xpPopup =
+            "+" + reward + " XP";
+
+        xpPopupTimer =
+            XP_POPUP_DURATION;
+
         maxPlayerHP += maxHpGain;
-        playerHP = Math.min(maxPlayerHP, playerHP + hpGain);
+
+        playerHP =
+            Math.min(
+                maxPlayerHP,
+                playerHP + hpGain
+            );
+
+        // ⭐ Correct-answer feedback + XP popup.
+        answerFeedback = "✓ CORRECT!";
+        answerFeedbackCorrect = true;
+        answerFeedbackTimer =
+            ANSWER_FEEDBACK_DURATION;
+
+        playGameTone("correct");
 
         const defeatedQuestId = String(
             guardianQuestion.id ||
@@ -4983,6 +5181,14 @@ async function submitGuardianAnswer() {
 
         guardianResult =
             "✗ WRONG! HP -" + damage;
+
+        // 💥 Wrong-answer feedback.
+        answerFeedback = "✕ WRONG!";
+        answerFeedbackCorrect = false;
+        answerFeedbackTimer =
+            ANSWER_FEEDBACK_DURATION;
+
+        playGameTone("wrong");
 
         guardianSelectedAnswer = -1;
 
@@ -6590,7 +6796,335 @@ function getSageEnglishSubtitle(index) {
 
 
 // ==========================================
+// ✨ QUEST ACCEPTED GLOW
+// ==========================================
+
+function drawQuestAcceptedGlow() {
+
+    if (!questAcceptedGlow) {
+        return;
+    }
+
+    questAcceptedGlowTimer++;
+
+    const progress =
+        questAcceptedGlowTimer /
+        QUEST_GLOW_DURATION;
+
+    const alpha =
+        Math.max(
+            0,
+            0.38 * (1 - progress)
+        );
+
+    ctx.save();
+
+    ctx.fillStyle =
+        `rgba(255, 215, 80, ${alpha})`;
+
+    ctx.fillRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    ctx.restore();
+
+    if (
+        questAcceptedGlowTimer >=
+        QUEST_GLOW_DURATION
+    ) {
+        questAcceptedGlow = false;
+        questAcceptedGlowTimer = 0;
+    }
+}
+
+
+// ==========================================
+// ⚔️ GUARDIAN SPAWN FLASH
+// ==========================================
+
+function drawGuardianSpawnFlash() {
+
+    if (!guardianSpawnFlash) {
+        return;
+    }
+
+    guardianSpawnFlashTimer++;
+
+    const progress =
+        guardianSpawnFlashTimer /
+        GUARDIAN_FLASH_DURATION;
+
+    const radius =
+        25 + progress * 145;
+
+    const alpha =
+        Math.max(
+            0,
+            0.82 * (1 - progress)
+        );
+
+    const target =
+        guardianSpawnFlashTarget === "boss"
+            ? finalBoss
+            : guardian;
+
+    const centerX =
+        target.x + target.width / 2;
+
+    const centerY =
+        target.y + target.height * 0.78;
+
+    ctx.save();
+
+    // Outer expanding energy ring.
+    ctx.beginPath();
+
+    ctx.arc(
+        centerX,
+        centerY,
+        radius,
+        0,
+        Math.PI * 2
+    );
+
+    ctx.strokeStyle =
+        `rgba(255, 215, 80, ${alpha})`;
+
+    ctx.lineWidth = 6;
+
+    ctx.shadowColor =
+        `rgba(255, 215, 80, ${alpha})`;
+
+    ctx.shadowBlur = 18;
+
+    ctx.stroke();
+
+    // Inner white ring.
+    ctx.beginPath();
+
+    ctx.arc(
+        centerX,
+        centerY,
+        radius * 0.62,
+        0,
+        Math.PI * 2
+    );
+
+    ctx.strokeStyle =
+        `rgba(255, 255, 255, ${alpha * 0.9})`;
+
+    ctx.lineWidth = 2.5;
+
+    ctx.shadowBlur = 8;
+
+    ctx.stroke();
+
+    // Small vertical light burst.
+    const burstHeight =
+        35 + progress * 70;
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        centerX,
+        centerY - burstHeight
+    );
+
+    ctx.lineTo(
+        centerX,
+        centerY + burstHeight
+    );
+
+    ctx.strokeStyle =
+        `rgba(255, 215, 80, ${alpha * 0.55})`;
+
+    ctx.lineWidth = 3;
+
+    ctx.stroke();
+
+    ctx.restore();
+
+    if (
+        guardianSpawnFlashTimer >=
+        GUARDIAN_FLASH_DURATION
+    ) {
+        guardianSpawnFlash = false;
+        guardianSpawnFlashTimer = 0;
+    }
+}
+
+// ==========================================
+// 💥 ANSWER FEEDBACK
+// ==========================================
+
+function drawAnswerFeedback() {
+
+    if (answerFeedbackTimer <= 0) {
+        return;
+    }
+
+    const progress =
+        1 -
+        answerFeedbackTimer /
+        ANSWER_FEEDBACK_DURATION;
+
+    const alpha =
+        Math.max(
+            0,
+            1 - progress
+        );
+
+    const y =
+        canvas.height * 0.42 -
+        progress * 38;
+
+    ctx.save();
+
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+
+    ctx.font =
+        "bold 32px Arial, sans-serif";
+
+    ctx.fillStyle =
+        answerFeedbackCorrect
+            ? `rgba(126, 231, 135, ${alpha})`
+            : `rgba(255, 138, 128, ${alpha})`;
+
+    ctx.shadowColor =
+        answerFeedbackCorrect
+            ? "rgba(126, 231, 135, 0.55)"
+            : "rgba(255, 80, 80, 0.55)";
+
+    ctx.shadowBlur = 14;
+
+    ctx.fillText(
+        answerFeedback,
+        canvas.width / 2,
+        y
+    );
+
+    ctx.restore();
+
+    answerFeedbackTimer--;
+
+    if (answerFeedbackTimer <= 0) {
+        answerFeedback = "";
+    }
+}
+
+
+// ==========================================
+// ⭐ XP / REWARD POPUP
+// ==========================================
+
+function drawXPPopup() {
+
+    if (
+        !xpPopup ||
+        xpPopupTimer <= 0
+    ) {
+        return;
+    }
+
+    // Progress from 0 -> 1 during the popup.
+    const elapsed =
+        XP_POPUP_DURATION - xpPopupTimer;
+
+    const progress =
+        Math.max(
+            0,
+            Math.min(
+                1,
+                elapsed / XP_POPUP_DURATION
+            )
+        );
+
+    // Fade in at the beginning and fade out near the end.
+    let alpha = 1;
+
+    if (progress < 0.15) {
+        alpha = progress / 0.15;
+    } else if (progress > 0.75) {
+        alpha = (1 - progress) / 0.25;
+    }
+
+    alpha =
+        Math.max(
+            0,
+            Math.min(1, alpha)
+        );
+
+    // Float upward as the popup is displayed.
+    const floatY =
+        progress * 70;
+
+    const x =
+        canvas.width / 2;
+
+    const y =
+        canvas.height * 0.25 - floatY;
+
+    ctx.save();
+
+    ctx.globalAlpha = alpha;
+
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+
+    // Gold glow.
+    ctx.shadowColor =
+        "rgba(255, 215, 0, 0.95)";
+
+    ctx.shadowBlur = 24;
+
+    ctx.font =
+        "bold 34px Arial, sans-serif";
+
+    // Black outline for readability over
+    // the world and reward screen.
+    ctx.lineWidth = 7;
+
+    ctx.strokeStyle =
+        "rgba(0, 0, 0, 0.95)";
+
+    ctx.strokeText(
+        xpPopup,
+        x,
+        y
+    );
+
+    // Main gold XP text.
+    ctx.shadowBlur = 14;
+
+    ctx.fillStyle =
+        "#FFD700";
+
+    ctx.fillText(
+        xpPopup,
+        x,
+        y
+    );
+
+    ctx.restore();
+
+    // Countdown happens here exactly once per frame.
+    xpPopupTimer--;
+
+    if (xpPopupTimer <= 0) {
+        xpPopupTimer = 0;
+        xpPopup = "";
+    }
+}
+
+
+// ==========================================
 // ATMOSPHERIC VIGNETTE
+// ==========================================
+
 // ==========================================
 
 function drawVignette() {
@@ -6824,6 +7358,9 @@ function gameLoop() {
     // Stage 12 — draw Knowledge Guardian
     drawGuardian();
 
+    // ⚔️ Guardian spawn effect
+    drawGuardianSpawnFlash();
+
     drawPlayer();
 
     drawInteractionPrompt();
@@ -6844,6 +7381,12 @@ function gameLoop() {
 
     drawQuestAcceptedNotification();
 
+    // ✨ Quest accepted flash
+    drawQuestAcceptedGlow();
+
+    // 💥 Correct / wrong answer feedback
+    drawAnswerFeedback();
+
     // Draw the vignette BEFORE the battle/HUD layers.
     // This prevents it from washing out the HP bar, quest panel,
     // question text, and answer controls.
@@ -6861,6 +7404,13 @@ function gameLoop() {
     drawAreaTransition();
     drawRewardScreen();
     drawQuestCompletionBanner();
+
+    // ======================================
+    // ⭐ XP REWARD POPUP — DRAW LAST
+    // ======================================
+    // This is intentionally after the reward screen
+    // so the XP popup can never be hidden behind it.
+    drawXPPopup();
 
     // Collision debug is OFF by default.
     drawCollisionDebug();
