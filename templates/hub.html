@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tamil Literature | தமிழ் இலக்கியம்</title>
+
+    <link rel="stylesheet" href="/static/hub.css">
+</head>
+
+<body>
+
+    <main class="hub">
+
+        <!-- MAIN HEADER -->
+        <header class="hub-header">
+
+            <div class="temple-icon">🏛️</div>
+
+            <h1>TAMIL LITERATURE</h1>
+
+            <h2>தமிழ் இலக்கியம்</h2>
+
+            <p>
+                Explore the ancient stories and wisdom of Tamil Nadu
+            </p>
+
+        </header>
+
+
+        <!-- LITERATURE CARDS -->
+        <section class="literature-grid">
+
+
+            <!-- THIRUKKURAL -->
+            <div class="literature-card active"
+                 onclick="startLiterature('thirukkural')">
+
+                <div class="card-icon">📜</div>
+
+                <h2>
+                    திருக்குறள்
+                    <span>[THIRUKKURAL]</span>
+                </h2>
+
+                <p>
+                    Ancient Tamil wisdom and teachings
+                </p>
+
+                <button onclick="event.stopPropagation(); startLiterature('thirukkural')">
+                    ENTER GAME
+                </button>
+
+            </div>
+
+
+            <!-- SILAPPADHIGARAM -->
+            <div class="literature-card active"
+                 onclick="startLiterature('silappadhigaram')">
+
+                <div class="card-icon">🔥</div>
+
+                <h2>
+                    சிலப்பதிகாரம்
+                    <span>[SILAPPADHIGARAM]</span>
+                </h2>
+
+                <p>
+                    Journey through the epic story of Kannagi
+                </p>
+
+                <button onclick="event.stopPropagation(); startLiterature('silappadhigaram')">
+                    ENTER GAME
+                </button>
+
+            </div>
+
+
+            <!-- PURANAANOORU -->
+            <div class="literature-card active"
+                 onclick="startLiterature('puranaanooru')">
+
+                <div class="card-icon">🌿</div>
+
+                <h2>
+                    புறநானூறு
+                    <span>[PURANAANOORU]</span>
+                </h2>
+
+                <p>
+                    Explore ancient Tamil poetry
+                </p>
+
+                <button onclick="event.stopPropagation(); startLiterature('puranaanooru')">
+                    ENTER GAME
+                </button>
+
+            </div>
+
+
+            <!-- MANIMEGALAI -->
+            <div class="literature-card active"
+                 onclick="startLiterature('manimegalai')">
+
+                <div class="card-icon">🌊</div>
+
+                <h2>
+                    மணிமேகலை
+                    <span>[MANIMEGALAI]</span>
+                </h2>
+
+                <p>
+                    Discover another great Tamil epic
+                </p>
+
+                <button onclick="event.stopPropagation(); startLiterature('manimegalai')">
+                    ENTER GAME
+                </button>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <script src="/static/hub.js"></script>
+
+</body>
+
+</html>

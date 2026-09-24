@@ -1,0 +1,493 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    min-height: 100vh;
+    font-family:
+        "Noto Sans Tamil",
+        "Latha",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color: #f5e6c8;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(120, 80, 30, 0.35),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #17100a,
+            #302010 50%,
+            #120d08
+        );
+}
+
+
+/* =========================
+   MAIN HUB
+========================= */
+
+.hub {
+    min-height: 100vh;
+    padding: 50px 30px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.hub-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+
+/* Temple Icon */
+
+.temple-icon {
+    font-size: 55px;
+    margin-bottom: 10px;
+
+    filter:
+        drop-shadow(
+            0 0 10px rgba(243, 201, 105, 0.35)
+        );
+}
+
+
+/* English Main Heading */
+
+.hub-header h1 {
+    font-size: 42px;
+    letter-spacing: 5px;
+    color: #f3c969;
+
+    text-shadow:
+        0 0 10px rgba(243, 201, 105, 0.5);
+}
+
+
+/* Tamil Main Heading */
+
+.hub-header h2 {
+    margin-top: 6px;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: #f3c969;
+}
+
+
+/* Header Description */
+
+.hub-header p {
+    margin-top: 15px;
+    font-size: 17px;
+    color: #d7c19a;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   SELECT YOUR ADVENTURE
+========================= */
+
+.hub-header::after {
+    content: "SELECT YOUR ADVENTURE";
+
+    display: block;
+
+    margin-top: 22px;
+
+    font-size: 13px;
+    letter-spacing: 3px;
+
+    color: #b99455;
+}
+
+
+/* =========================
+   LITERATURE GRID
+========================= */
+
+.literature-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 28px;
+}
+
+
+/* =========================
+   LITERATURE CARD
+========================= */
+
+.literature-card {
+    position: relative;
+
+    min-height: 290px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    border: 2px solid #755528;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(73, 49, 24, 0.95),
+            rgba(35, 24, 13, 0.98)
+        );
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.45);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* Small decorative corner */
+
+.literature-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 10px;
+    left: 10px;
+
+    width: 18px;
+    height: 18px;
+
+    border-top: 2px solid #9b7538;
+    border-left: 2px solid #9b7538;
+
+    opacity: 0.7;
+}
+
+
+/* =========================
+   CARD HOVER
+========================= */
+
+.literature-card:hover {
+    transform: translateY(-8px) scale(1.015);
+
+    border-color: #d6a84d;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.65),
+        0 0 25px rgba(214, 168, 77, 0.18);
+}
+
+
+/* =========================
+   CARD ICON
+========================= */
+
+.card-icon {
+    font-size: 55px;
+
+    margin-bottom: 18px;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+/* Icon hover */
+
+.literature-card:hover .card-icon {
+    transform: translateY(-4px) scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 0 8px rgba(243, 201, 105, 0.45)
+        );
+}
+
+
+/* =========================
+   CARD MAIN HEADING
+========================= */
+
+.literature-card h2 {
+    font-size: 26px;
+
+    line-height: 1.4;
+
+    color: #f1d08a;
+
+    margin-bottom: 12px;
+}
+
+
+/* English word inside brackets */
+
+.literature-card h2 span {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 18px;
+
+    letter-spacing: 1.5px;
+
+    color: #e7c77c;
+}
+
+
+/* =========================
+   CARD DESCRIPTION
+========================= */
+
+.literature-card p {
+    margin-top: 10px;
+
+    line-height: 1.6;
+
+    font-size: 16px;
+
+    color: #d4c2a5;
+}
+
+
+/* =========================
+   ACTIVE CARD
+========================= */
+
+.literature-card.active {
+    border-color: #c58b35;
+
+    box-shadow:
+        0 0 20px rgba(197, 139, 53, 0.25);
+}
+
+
+/* =========================
+   ACTIVE CARD HOVER
+========================= */
+
+.literature-card.active:hover {
+    border-color: #f0bd50;
+
+    box-shadow:
+        0 0 30px rgba(240, 189, 80, 0.3),
+        0 15px 40px rgba(0, 0, 0, 0.65);
+}
+
+
+/* =========================
+   ENTER STORY BUTTON
+========================= */
+
+.literature-card button {
+    margin-top: 22px;
+
+    padding: 13px 30px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #b87925;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Button Hover */
+
+.literature-card button:hover {
+    background: #d59a3a;
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 5px 20px rgba(213, 154, 58, 0.35);
+}
+
+
+/* Button Click */
+
+.literature-card button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   LOCKED CARD
+========================= */
+
+.literature-card.locked {
+    opacity: 0.65;
+}
+
+
+/* Locked label */
+
+.lock {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 8px 17px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(0, 0, 0, 0.35);
+
+    color: #aaa;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .hub {
+        padding: 30px 15px;
+    }
+
+
+    /* Main English title */
+
+    .hub-header h1 {
+        font-size: 28px;
+        letter-spacing: 3px;
+    }
+
+
+    /* Main Tamil title */
+
+    .hub-header h2 {
+        font-size: 22px;
+    }
+
+
+    /* Description */
+
+    .hub-header p {
+        font-size: 14px;
+    }
+
+
+    /* Adventure label */
+
+    .hub-header::after {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+
+    /* One card per row */
+
+    .literature-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+
+    /* Cards */
+
+    .literature-card {
+        min-height: 250px;
+
+        padding: 25px 20px;
+    }
+
+
+    /* Tamil heading */
+
+    .literature-card h2 {
+        font-size: 23px;
+    }
+
+
+    /* English heading */
+
+    .literature-card h2 span {
+        font-size: 17px;
+    }
+
+
+    /* Description */
+
+    .literature-card p {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .hub-header h1 {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+
+    .hub-header h2 {
+        font-size: 20px;
+    }
+
+
+    .temple-icon {
+        font-size: 45px;
+    }
+
+
+    .literature-card {
+        padding: 22px 15px;
+    }
+}
